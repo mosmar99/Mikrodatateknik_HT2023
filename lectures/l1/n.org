@@ -1,0 +1,63 @@
+# arm-cortex-m
+
+* 100 Mhz
+- (?) klockbaserade?
+- A/D omvandlare: analoga signaler -> digitala värden
+
+* editormiljö: "stm-32-cube-ide"
+** 
+**   Analog signals are continuous and represent real-world data 
+**   as varying voltage levels or continuous waves. They can take
+**   on any value within a range and are susceptible to noise and 
+**   degradation. Digital signals are discrete and represent data 
+**   as binary values (0s and 1s), allowing for precise representation, 
+**   error correction, and noise immunity, commonly used in modern 
+**   electronics and communication systems.
+**
+
+* snabb responstid, snabbare än på PC
+
+* bra batteritid är viktigt
+** lösning, sleepmode drar 1uA eller 1nA.
+
+* koppla ihop processor och dator med hårdvarudebugger, finns i vår komponent
+
+* finns en hel del boiler-platekod, dock kan den medföra lite begränsningar
+
+* "timer" en modul som finns i stm32, kan användas för att ta tid,
+
+* PWM(pulse width modulation)
+** reglerar hur starkt lampan ser ut att lysa för oss genom att reglera hur ofta den switchar från på till av
+
+* STM32 memory
+- has flash and ram memory
+
+* DMA (Direct Memory Access)
+- specialfunktion i processorn, perifierblock, kan kommuncera mellan olika delar
+- kopiera från denna DMA till output
+- PROS: avbesasta processor, DMA kan jobba i bakgrunden, ex: printa till output
+
+* embedded systems, internet of things
+- smarta lampor, kameror, mikrougnar, värmeluftfläktar, gamingpads
+- de allra flesta datorer är embedded systems, inte pcs 
+
+* sleep, used 32kHz instead of 100Mhz clock
+
+* TIM2, TIM3, TIM4, TIM5, mät tid
+
+* USART2, send serial data, RX, TX, etc
+
+* WDG (WatchDog)
+** kick on from time to time to check errors to ensure that the program works
+** ex: resets program if detected error
+
+* A GPIO port is ( "General-Purpose Input/Output"):
+*** a set of pins on a microcontroller or computer that can be configured for input or 
+*** output to interact with external devices.
+
+* Serial Wire Debug SWD: DEBUGGER
+
+
+
+
+
