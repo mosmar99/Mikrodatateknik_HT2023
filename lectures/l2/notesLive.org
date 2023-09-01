@@ -1,0 +1,5 @@
+* Processorn har data-buss och adress buss
+* Periferienheter gör så man kan kommunicera med omvärlden
+* Man har delat upp dessa minnet i olika delar, systemet, periferienheter, osv.
+* snabb ändring från 0 till 1 = hög elektristet (switchar till 1 snabbare) => höga frekvenser, 
+** har högre tendens att slingra ut ur komponenter, stör annat runtomkring

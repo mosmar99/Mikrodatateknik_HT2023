@@ -99,15 +99,15 @@ int main(void)
   int nblink = 0; // number of blinks
   while (1)
   {
-	/*HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5, GPIO_PIN_SET); // LED ON
-	HAL_Delay(500); // delay in ms
+	HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5, GPIO_PIN_SET); // LED ON
+	HAL_Delay(200); // delay in ms
 	HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5, GPIO_PIN_RESET); // LED OFF
-	HAL_Delay(500); // delay in ms*/
+	HAL_Delay(800); // delay in ms
 
-	HAL_GPIO_WritePin(LD2_GPIO_Port, LD2_Pin, GPIO_PIN_SET);
+	/*HAL_GPIO_WritePin(LD2_GPIO_Port, LD2_Pin, GPIO_PIN_SET);
 	HAL_Delay(200);
 	HAL_GPIO_WritePin(LD2_GPIO_Port, LD2_Pin, GPIO_PIN_RESET);
-	HAL_Delay(800);
+	HAL_Delay(800);*/
 
 	nblink++;
 	str_len = sprintf(str, "Blinky has succeeded %d times!\r\n", nblink);
@@ -215,6 +215,11 @@ static void MX_GPIO_Init(void)
   __HAL_RCC_GPIOA_CLK_ENABLE();
   __HAL_RCC_GPIOB_CLK_ENABLE();
 
+  {
+	 S_DEFUALT;
+	 S_OFF_STATE;
+  };
+
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(GPIOA, LD2_Pin|LED_YLW_Pin, GPIO_PIN_RESET);
 
@@ -240,10 +245,10 @@ static void MX_GPIO_Init(void)
 }
 
 /* USER CODE BEGIN 4 */
-/*void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
+void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 {
 	HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_5);
-}*/
+}
 /* USER CODE END 4 */
 
 /**
