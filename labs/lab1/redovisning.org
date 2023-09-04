@@ -1,1 +1,71 @@
-* 
+* (1) Ligger data lagrat i minnet enligt
+*     big endian eller little endian på
+*     denna ARM-processor?
+** little endian (se bild, fraga1.png)
+    Program memory, data memory, registers and I/O ports are organized within the same linear
+    4 Gbyte address space.
+    The bytes are coded in memory in __little endian__ format. The lowest numbered byte in a word
+    is considered the word’s least significant byte and the highest numbered byte, the word’s
+    most significant.
+
+* (2) Du har använt dig av utskrifter
+*     över UART och då användes
+*     enheten USART2. Vad heter den
+*     buss som USART2 ligger på?
+** AFB1
+
+* (3) Vilken adress börjar GPIOC på?
+** 0x4002 0800
+
+* (4) Vilken adress slutar GPIOC på?
+** 0x4002 0BFF
+
+* (5) Vad betyder förkortningen IDR?
+** Independent data register
+
+* (6) Vad betyder förkortningen ODR?
+** Output data register
+
+* (7) Hur många olika
+* portkonfigurationer kan ett
+* GPIO-ben2
+* försättas i genom att
+* skriva till MODER?
+
+** (00) Ingång (input) 
+** (01) Utgång (output) 
+** (10) Alternativ funktion (alternative function - AF) 
+** (11) Analogt läge (reserved) 
+
+
+* (8) Vilket läge är vanligtvis
+* skönsalternativet vid
+* konfiguration av MODER? (defualt läget)
+** During and just after reset, the alternate functions are not active and the I/O ports are
+** configured in input floating mode
+
+* (9) Hur många I/O-portar
+* kontrolleras av en GPIO-enhet?
+** Up to 16 I/Os under control
+
+* (10)  Titta i CubeMX, hur många ben kan
+* du hitta som hör till GPIOD (de
+* som börjar PD)? Hur många hittar
+* du som hör till GPIOE?
+** 0 som börjar på PD
+** 0 som börjar på PE
+
+* (11)  Har du någon gissning om varför
+* så mycket verkar saknas?
+** R betyder 64 Pins
+** Jämför s.35-36.
+**      64 pins => ingen PD eller PE Pins
+**      100 pins => finns stort utbud av både PD och PE pins
+
+* Kompilerad kod lägger sig i Flash-minnet
+* (12) Öppna upp databladet för F411
+* och gå till kapitlet ”Memory
+* mapping”. Mellan vilka två
+* adresser ligger flash-minnet?
+** Flash Memory: 0x08000000 - 0x0807FFFF
+
