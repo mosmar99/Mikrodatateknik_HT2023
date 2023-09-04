@@ -1,0 +1,57 @@
+* Code generator generarar Pin&ClockConfig. 
+* I STM32Cube HAL finns funktioner som vi kan använda oss av
+* HAL_UART_Transmit()
+* HAL (hardware abstraction layer)
+* ARM gör IP (intellectual property)
+* CMSIS-Driver: ARM specificerar vilka drivrutiner som tillverkarna som ST måste innehålla
+
+* FAT32 - filsystem av lagring (File-Allocation-Table: hur den strukturerar data på kortet)
+* Standard Middleware (FAT32)
+
+* ClockConfig
+* PLL: Phase-Locked-Loop, skapa en ny frekvens än grundfrekvensen genom att dela upp den
+
+* Extern klocka: mycket bättre precision än intern klocka, gör stor skillnad på ett år om vi mäter tid
+
+* Middleware Libraries: 
+    - inga kommer vi använda
+
+* BSP (Board Support Package): Hjälpfiler som används för att sätta upp kortet
+
+FRÅGA:
+    - tenta, måste vi memora funktioner? är tentan som i vhdl?
+    + beskrivning
+
+int main()
+{
+    System_Init();
+
+    // Begin round robin scheduling
+    while (1) 
+    {
+        Task_1();
+
+        Task_2();
+    }
+
+    return 0;
+}
+
+* Man kan interrupta interrupten, det finns prioriteringar på interruptsen
+
+* IRQ: flagga, noterar att knappen har blivit tryckt, kan spara undan för varje gång den blivit tryckt
+
+* Kontaktstudsar: när mekaniska komponeter intergerar kan dom studsa, kolla tiden mellan dom
+*                   var det verkligen två tryckningar eller bara en kontaktstuds?
+
+* States: Lägen
+* Events: Triggers - byter nuvarande state
+
+* Två typer av tillståndsmaskiner (googla detta)
+** Moore maskiner:
+*** Den gör handlingen under state2 (efter trigger som anropas i state1)
+** Mealy maskiner:
+*** Den gör handlingen under state1 (efter trigger) mha ex. en funktion
+
+
+
