@@ -69,3 +69,41 @@
 * adresser ligger flash-minnet?
 ** Flash Memory: 0x08000000 - 0x0807FFFF
 
+* Skriv ned enhet och pin-nummer för
+* kortets blå knapp (B1) och kortets
+* gröna diod (LD2).
+
+** B1  - PC13
+** LD2 - PA5
+
+* (1) När koden är pausad vid
+* HAL_Init(), vad står
+* programräknaren (PC) på?
+** 00001000000000000000010011011010 (0x80004da)
+
+* (2) Titta på Memory Map i databladet.
+* Vad heter den region av
+* adressrymden som PC (program counter) pekar på?
+** När programmet exekverar HAL_Init() i en STM32-mikrokontrollerapplikation, 
+** pekar PC (Program Counter) på instruktionen i minnesområdet där HAL_Init()-funktionen är lagrad.
+** Eftersom toppen på reserved är från 0x60000000 0xBFFFFFF, därimellan ligger HAL_Init, alltså i "Reserved".
+
+* Är den blå knappen aktivt hög
+* eller aktivt låg?
+** Aktivt hög, den stängs av när jag trycker ned den
+
+* Vilka register ändrar sig (byter
+* bakgrundsfärg) i och med att
+* knappen/dioden ändrar
+* tillstånd? Om ett svar är ”MODER
+* på GPIOB” så skriv det som
+* GPIOB->MODER.
+** GPIOA->IDR
+** GPIOC->IDR (input data register) och GPIOC->ODR(output data register)
+
+* (5) Vilket enhet uppdateras mellan varje paus?
+** SysTick->STCVR
+
+* (6) Varför tror du att den gör den det?
+** Timern är ju igång och räknar hela tiden
+
