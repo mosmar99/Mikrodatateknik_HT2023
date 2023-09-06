@@ -90,7 +90,7 @@
 
 * Är den blå knappen aktivt hög
 * eller aktivt låg?
-** Aktivt hög, den stängs av när jag trycker ned den
+** Aktivt låg, GDIOC->IDR blir = 0 så sätts lampan på
 
 * Vilka register ändrar sig (byter
 * bakgrundsfärg) i och med att
@@ -98,7 +98,6 @@
 * tillstånd? Om ett svar är ”MODER
 * på GPIOB” så skriv det som
 * GPIOB->MODER.
-** GPIOA->IDR
 ** GPIOC->IDR (input data register) och GPIOC->ODR(output data register)
 
 * (5) Vilket enhet uppdateras mellan varje paus?
@@ -106,4 +105,9 @@
 
 * (6) Varför tror du att den gör den det?
 ** Timern är ju igång och räknar hela tiden
+
+* 2.3 KODUPPGIFTEN
+** (1 << 13) är en bitmask som är noll överallt utom på bit 13, 
+** vilket används för att isolera den specifika biten. 
+** OBS: Ekvivalent är att skriva GPIO_PIN_13
 

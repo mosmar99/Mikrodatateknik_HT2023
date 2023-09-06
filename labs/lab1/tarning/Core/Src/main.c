@@ -21,7 +21,7 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
+#include <stdio.h>
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -52,6 +52,7 @@ static void MX_GPIO_Init(void);
 static void MX_USART2_UART_Init(void);
 /* USER CODE BEGIN PFP */
 int is_blue_button_pressed();
+void put_die_dots(uint8_t die_nbr);
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
@@ -60,7 +61,47 @@ int is_blue_button_pressed();
 // return 0 if blue button isn't pressed
 int is_blue_button_pressed() {
 
-	return 0;
+	if ((GPIOC->IDR & GPIO_PIN_13) == 0) {
+		return 1; // knappen är nedtryckt
+	}
+	else
+	{
+		return 0; //knappen är inte nedtryckt
+	}
+}
+
+void put_die_dots(uint8_t die_nbr) {
+	// die can only be between 1 and 6
+	switch (die_nbr)
+	​{
+	    case 1:
+	      // statements
+	      break;
+
+	    case 2:
+	      // statements
+	      break;
+
+	    case 3:
+	      // statements
+	      break;
+
+	    case 4:
+	      // statements
+	      break;
+
+	    case 5:
+	      // statements
+	      break;
+
+	    case 6:
+	      // statements
+	      break;
+
+	    default:
+	      // default statements
+	}
+
 }
 /* USER CODE END 0 */
 
@@ -94,15 +135,30 @@ int main(void)
   MX_GPIO_Init();
   MX_USART2_UART_Init();
   /* USER CODE BEGIN 2 */
-
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   int pressed = 0;
+  uint8_t die_value = 1; // 1 <= die_value <= 6
+  char str[50] = { '\0' };
+  uint16_t str_len = 0;
   while (1)
   {
-	  pressed = HAL_GPIO_ReadPin(B1_GPIO_Port, B1_Pin);
+	  HAL_Delay(3000);
+	  str_len = sprintf(str, "Dice: %u \r\n", die_value);
+	  HAL_UART_Transmit(&huart2, (uint8_t*) str, str_len, HAL_MAX_DELAY);
+
+	  if(die_value < 6) {
+		  die_value++;
+	  }
+	  else
+	  {
+		  die_value = 1;
+	  }
+
+	  //pressed = HAL_GPIO_ReadPin(B1_GPIO_Port, B1_Pin);
+	  pressed = is_blue_button_pressed();
 	  if (pressed)
 	  {
 		  HAL_GPIO_WritePin(LD2_GPIO_Port, LD2_Pin, GPIO_PIN_SET);
@@ -114,8 +170,8 @@ int main(void)
 		  uint16_t      ld2_pin     = 0x01 << ld2_pin_nbr;
 		  HAL_GPIO_WritePin(ld2_gpio, ld2_pin, GPIO_PIN_RESET);
 	  }
-    /* USER CODE END WHILE */
 
+    /* USER CODE END WHILE */
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */
