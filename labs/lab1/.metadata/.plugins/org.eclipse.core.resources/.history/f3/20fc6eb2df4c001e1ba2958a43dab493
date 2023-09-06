@@ -71,9 +71,9 @@ int is_blue_button_pressed() {
 }
 
 void put_die_dots(uint8_t die_nbr) {
-    // die can only be between 1 and 6
-    switch (die_nbr)
-    {
+	// die can only be between 1 and 6
+	switch (die_nbr)
+	​{
 	    case 1:
 			HAL_GPIO_WritePin(DI_A_GPIO_Port, DI_A_Pin, GPIO_PIN_RESET);
 			HAL_GPIO_WritePin(DI_B_GPIO_Port, DI_B_Pin, GPIO_PIN_RESET);
@@ -143,6 +143,7 @@ void put_die_dots(uint8_t die_nbr) {
 			HAL_GPIO_WritePin(DI_F_GPIO_Port, DI_F_Pin, GPIO_PIN_SET);
 			HAL_GPIO_WritePin(DI_G_GPIO_Port, DI_G_Pin, GPIO_PIN_SET);
 	}
+
 }
 /* USER CODE END 0 */
 

@@ -472,3 +472,4 @@
 2023-09-06 17:07:27,396 [INFO] CADModel:165 - CPN selected for project levelSTM32F411RET6
 2023-09-06 17:07:27,396 [INFO] CADModel:114 - Register for checkConnection events
 2023-09-06 17:07:27,450 [INFO] OpenFileManager:328 - Restore cursor
+2023-09-06 18:37:44,468 [INFO] Gpio:273 - dependency for GPIO [RCC, SYS, USART2]

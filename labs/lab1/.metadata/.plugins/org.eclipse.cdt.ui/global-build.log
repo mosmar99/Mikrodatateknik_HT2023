@@ -168,3 +168,164 @@ Finished building: default.size.stdout
  
 Finished building: tarning.list
  
+18:57:46 **** Incremental Build of configuration Debug for project tarning ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'put_die_dots':
+../Core/Src/main.c:76:9: error: '\U0000200b' undeclared (first use in this function)
+   76 |         ​{
+      |          
+../Core/Src/main.c:76:9: note: each undeclared identifier is reported only once for each function it appears in
+../Core/Src/main.c:76:9: error: expected ';' before '{' token
+   76 |         ​{
+      |         ^
+      |         ;
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+18:58:27 **** Incremental Build of configuration Debug for project tarning ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'put_die_dots':
+../Core/Src/main.c:76:9: error: '\U0000200b' undeclared (first use in this function)
+   76 |         ​{
+      |          
+../Core/Src/main.c:76:9: note: each undeclared identifier is reported only once for each function it appears in
+../Core/Src/main.c:76:9: error: expected ';' before '{' token
+   76 |         ​{
+      |         ^
+      |         ;
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+18:59:58 **** Incremental Build of configuration Debug for project tarning ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'put_die_dots':
+../Core/Src/main.c:76:9: error: '\U0000200b' undeclared (first use in this function)
+   76 |         ​{
+      |          
+../Core/Src/main.c:76:9: note: each undeclared identifier is reported only once for each function it appears in
+../Core/Src/main.c:76:9: error: expected ';' before '{' token
+   76 |         ​{
+      |         ^
+      |         ;
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+19:00:49 **** Incremental Build of configuration Debug for project tarning ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'put_die_dots':
+../Core/Src/main.c:76:9: error: '\U0000200b' undeclared (first use in this function)
+   76 |         ​{
+      |          
+../Core/Src/main.c:76:9: note: each undeclared identifier is reported only once for each function it appears in
+../Core/Src/main.c:76:9: error: expected ';' before '{' token
+   76 |         ​{
+      |         ^
+      |         ;
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+19:01:06 **** Incremental Build of configuration Debug for project tarning ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'put_die_dots':
+../Core/Src/main.c:76:9: error: '\U0000200b' undeclared (first use in this function)
+   76 |         ​{
+      |          
+../Core/Src/main.c:76:9: note: each undeclared identifier is reported only once for each function it appears in
+../Core/Src/main.c:76:9: error: expected ';' before '{' token
+   76 |         ​{
+      |         ^
+      |         ;
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+19:02:17 **** Incremental Build of configuration Debug for project tarning ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'put_die_dots':
+../Core/Src/main.c:76:9: error: '\U0000200b' undeclared (first use in this function)
+   76 |         ​{
+      |          
+../Core/Src/main.c:76:9: note: each undeclared identifier is reported only once for each function it appears in
+../Core/Src/main.c:76:9: error: expected ';' before '{' token
+   76 |         ​{
+      |         ^
+      |         ;
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+19:06:40 **** Incremental Build of configuration Debug for project tarning ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "tarning.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab1\tarning\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="tarning.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: tarning.elf
+ 
+arm-none-eabi-size   tarning.elf 
+arm-none-eabi-objdump -h -S  tarning.elf  > "tarning.list"
+   text	   data	    bss	    dec	    hex	filename
+   8492	     20	   1636	  10148	   27a4	tarning.elf
+Finished building: default.size.stdout
+ 
+Finished building: tarning.list
+ 
+19:08:38 **** Incremental Build of configuration Debug for project tarning ****
+make -j8 all 
+arm-none-eabi-size   tarning.elf 
+   text	   data	    bss	    dec	    hex	filename
+   8492	     20	   1636	  10148	   27a4	tarning.elf
+Finished building: default.size.stdout
+ 
+19:09:46 **** Incremental Build of configuration Debug for project tarning ****
+make -j8 all 
+arm-none-eabi-size   tarning.elf 
+   text	   data	    bss	    dec	    hex	filename
+   8492	     20	   1636	  10148	   27a4	tarning.elf
+Finished building: default.size.stdout
+ 
+21:19:51 **** Incremental Build of configuration Debug for project tarning ****
+make -j8 all 
+arm-none-eabi-size   tarning.elf 
+   text	   data	    bss	    dec	    hex	filename
+   8492	     20	   1636	  10148	   27a4	tarning.elf
+Finished building: default.size.stdout
+ 
+21:24:02 **** Incremental Build of configuration Debug for project tarning ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "tarning.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab1\tarning\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="tarning.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: tarning.elf
+ 
+arm-none-eabi-size   tarning.elf 
+arm-none-eabi-objdump -h -S  tarning.elf  > "tarning.list"
+   text	   data	    bss	    dec	    hex	filename
+   8492	     20	   1636	  10148	   27a4	tarning.elf
+Finished building: default.size.stdout
+ 
+Finished building: tarning.list
+ 
+21:24:08 **** Incremental Build of configuration Debug for project tarning ****
+make -j8 all 
+arm-none-eabi-size   tarning.elf 
+   text	   data	    bss	    dec	    hex	filename
+   8492	     20	   1636	  10148	   27a4	tarning.elf
+Finished building: default.size.stdout
+ 
+21:25:10 **** Incremental Build of configuration Debug for project tarning ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "tarning.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab1\tarning\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="tarning.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: tarning.elf
+ 
+arm-none-eabi-size   tarning.elf 
+arm-none-eabi-objdump -h -S  tarning.elf  > "tarning.list"
+   text	   data	    bss	    dec	    hex	filename
+   8492	     20	   1636	  10148	   27a4	tarning.elf
+Finished building: default.size.stdout
+ 
+Finished building: tarning.list
+ 
+21:35:22 **** Incremental Build of configuration Debug for project tarning ****
+make -j8 all 
+arm-none-eabi-size   tarning.elf 
+   text	   data	    bss	    dec	    hex	filename
+   8492	     20	   1636	  10148	   27a4	tarning.elf
+Finished building: default.size.stdout
+ 

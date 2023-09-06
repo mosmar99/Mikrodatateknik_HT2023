@@ -71,78 +71,49 @@ int is_blue_button_pressed() {
 }
 
 void put_die_dots(uint8_t die_nbr) {
-    // die can only be between 1 and 6
-    switch (die_nbr)
-    {
+	// die can only be between 1 and 6
+	switch (die_nbr)
+	​{
 	    case 1:
-			HAL_GPIO_WritePin(DI_A_GPIO_Port, DI_A_Pin, GPIO_PIN_RESET);
-			HAL_GPIO_WritePin(DI_B_GPIO_Port, DI_B_Pin, GPIO_PIN_RESET);
-			HAL_GPIO_WritePin(DI_C_GPIO_Port, DI_C_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(DI_A_GPIO_Port, DI_D_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(DI_B_GPIO_Port, DI_D_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(DI_C_GPIO_Port, DI_D_Pin, GPIO_PIN_RESET);
 			HAL_GPIO_WritePin(DI_D_GPIO_Port, DI_D_Pin, GPIO_PIN_SET);
-			HAL_GPIO_WritePin(DI_E_GPIO_Port, DI_E_Pin, GPIO_PIN_RESET);
-			HAL_GPIO_WritePin(DI_F_GPIO_Port, DI_F_Pin, GPIO_PIN_RESET);
-			HAL_GPIO_WritePin(DI_G_GPIO_Port, DI_G_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(DI_E_GPIO_Port, DI_D_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(DI_F_GPIO_Port, DI_D_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(DI_G_GPIO_Port, DI_D_Pin, GPIO_PIN_RESET);
 	      break;
 
 	    case 2:
-			HAL_GPIO_WritePin(DI_A_GPIO_Port, DI_A_Pin, GPIO_PIN_SET);
-			HAL_GPIO_WritePin(DI_B_GPIO_Port, DI_B_Pin, GPIO_PIN_RESET);
-			HAL_GPIO_WritePin(DI_C_GPIO_Port, DI_C_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(DI_A_GPIO_Port, DI_D_Pin, GPIO_PIN_SET);
+			HAL_GPIO_WritePin(DI_B_GPIO_Port, DI_D_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(DI_C_GPIO_Port, DI_D_Pin, GPIO_PIN_RESET);
 			HAL_GPIO_WritePin(DI_D_GPIO_Port, DI_D_Pin, GPIO_PIN_RESET);
-			HAL_GPIO_WritePin(DI_E_GPIO_Port, DI_E_Pin, GPIO_PIN_RESET);
-			HAL_GPIO_WritePin(DI_F_GPIO_Port, DI_F_Pin, GPIO_PIN_RESET);
-			HAL_GPIO_WritePin(DI_G_GPIO_Port, DI_G_Pin, GPIO_PIN_SET);
+			HAL_GPIO_WritePin(DI_E_GPIO_Port, DI_D_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(DI_F_GPIO_Port, DI_D_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(DI_G_GPIO_Port, DI_D_Pin, GPIO_PIN_SET);
 	      break;
 
 	    case 3:
-			HAL_GPIO_WritePin(DI_A_GPIO_Port, DI_A_Pin, GPIO_PIN_SET);
-			HAL_GPIO_WritePin(DI_B_GPIO_Port, DI_B_Pin, GPIO_PIN_RESET);
-			HAL_GPIO_WritePin(DI_C_GPIO_Port, DI_C_Pin, GPIO_PIN_RESET);
-			HAL_GPIO_WritePin(DI_D_GPIO_Port, DI_D_Pin, GPIO_PIN_SET);
-			HAL_GPIO_WritePin(DI_E_GPIO_Port, DI_E_Pin, GPIO_PIN_RESET);
-			HAL_GPIO_WritePin(DI_F_GPIO_Port, DI_F_Pin, GPIO_PIN_RESET);
-			HAL_GPIO_WritePin(DI_G_GPIO_Port, DI_G_Pin, GPIO_PIN_SET);
+	      // statements
 	      break;
 
 	    case 4:
-			HAL_GPIO_WritePin(DI_A_GPIO_Port, DI_A_Pin, GPIO_PIN_SET);
-			HAL_GPIO_WritePin(DI_B_GPIO_Port, DI_B_Pin, GPIO_PIN_RESET);
-			HAL_GPIO_WritePin(DI_C_GPIO_Port, DI_C_Pin, GPIO_PIN_SET);
-			HAL_GPIO_WritePin(DI_D_GPIO_Port, DI_D_Pin, GPIO_PIN_RESET);
-			HAL_GPIO_WritePin(DI_E_GPIO_Port, DI_E_Pin, GPIO_PIN_SET);
-			HAL_GPIO_WritePin(DI_F_GPIO_Port, DI_F_Pin, GPIO_PIN_RESET);
-			HAL_GPIO_WritePin(DI_G_GPIO_Port, DI_G_Pin, GPIO_PIN_SET);
+	      // statements
 	      break;
 
 	    case 5:
-			HAL_GPIO_WritePin(DI_A_GPIO_Port, DI_A_Pin, GPIO_PIN_SET);
-			HAL_GPIO_WritePin(DI_B_GPIO_Port, DI_B_Pin, GPIO_PIN_RESET);
-			HAL_GPIO_WritePin(DI_C_GPIO_Port, DI_C_Pin, GPIO_PIN_SET);
-			HAL_GPIO_WritePin(DI_D_GPIO_Port, DI_D_Pin, GPIO_PIN_SET);
-			HAL_GPIO_WritePin(DI_E_GPIO_Port, DI_E_Pin, GPIO_PIN_SET);
-			HAL_GPIO_WritePin(DI_F_GPIO_Port, DI_F_Pin, GPIO_PIN_RESET);
-			HAL_GPIO_WritePin(DI_G_GPIO_Port, DI_G_Pin, GPIO_PIN_SET);
+	      // statements
 	      break;
 
 	    case 6:
-			HAL_GPIO_WritePin(DI_A_GPIO_Port, DI_A_Pin, GPIO_PIN_SET);
-			HAL_GPIO_WritePin(DI_B_GPIO_Port, DI_B_Pin, GPIO_PIN_SET);
-			HAL_GPIO_WritePin(DI_C_GPIO_Port, DI_C_Pin, GPIO_PIN_SET);
-			HAL_GPIO_WritePin(DI_D_GPIO_Port, DI_D_Pin, GPIO_PIN_RESET);
-			HAL_GPIO_WritePin(DI_E_GPIO_Port, DI_E_Pin, GPIO_PIN_SET);
-			HAL_GPIO_WritePin(DI_F_GPIO_Port, DI_F_Pin, GPIO_PIN_SET);
-			HAL_GPIO_WritePin(DI_G_GPIO_Port, DI_G_Pin, GPIO_PIN_SET);
+	      // statements
 	      break;
 
 	    default:
-			HAL_GPIO_WritePin(DI_A_GPIO_Port, DI_A_Pin, GPIO_PIN_SET);
-			HAL_GPIO_WritePin(DI_B_GPIO_Port, DI_B_Pin, GPIO_PIN_SET);
-			HAL_GPIO_WritePin(DI_C_GPIO_Port, DI_C_Pin, GPIO_PIN_SET);
-			HAL_GPIO_WritePin(DI_D_GPIO_Port, DI_D_Pin, GPIO_PIN_SET);
-			HAL_GPIO_WritePin(DI_E_GPIO_Port, DI_E_Pin, GPIO_PIN_SET);
-			HAL_GPIO_WritePin(DI_F_GPIO_Port, DI_F_Pin, GPIO_PIN_SET);
-			HAL_GPIO_WritePin(DI_G_GPIO_Port, DI_G_Pin, GPIO_PIN_SET);
+	      // default statements
 	}
+
 }
 /* USER CODE END 0 */
 
@@ -182,21 +153,27 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   int pressed = 0;
   uint8_t die_value = 1; // 1 <= die_value <= 6
+  char str[50] = { '\0' };
+  uint16_t str_len = 0;
   while (1)
   {
+	  HAL_Delay(3000);
+	  str_len = sprintf(str, "Dice: %u \r\n", die_value);
+	  HAL_UART_Transmit(&huart2, (uint8_t*) str, str_len, HAL_MAX_DELAY);
 
+	  if(die_value < 6) {
+		  die_value++;
+	  }
+	  else
+	  {
+		  die_value = 1;
+	  }
+
+	  //pressed = HAL_GPIO_ReadPin(B1_GPIO_Port, B1_Pin);
 	  pressed = is_blue_button_pressed();
 	  if (pressed)
 	  {
 		  HAL_GPIO_WritePin(LD2_GPIO_Port, LD2_Pin, GPIO_PIN_SET);
-
-		  if(die_value < 6) {
-			  die_value++;
-		  }
-		  else
-		  {
-			  die_value = 1;
-		  }
 	  }
 	  else
 	  {
@@ -205,9 +182,6 @@ int main(void)
 		  uint16_t      ld2_pin     = 0x01 << ld2_pin_nbr;
 		  HAL_GPIO_WritePin(ld2_gpio, ld2_pin, GPIO_PIN_RESET);
 	  }
-
-	  put_die_dots(die_value);
-	  HAL_Delay(100);
 
     /* USER CODE END WHILE */
     /* USER CODE BEGIN 3 */
