@@ -51,9 +51,6 @@ void SystemClock_Config(void);
 static void MX_GPIO_Init(void);
 static void MX_USART2_UART_Init(void);
 /* USER CODE BEGIN PFP */
-const uint8_t sseg[10] = {0x3F, 0x06, 0x5B, 0x4F, 0x66, 0x6D, 0x7D, 0x07, 0x7F, 0x6F};
-const uint8_t sseg_err = 0xDC;
-
 int is_blue_button_pressed();
 void put_die_dots(uint8_t die_nbr);
 void put_on_sseg(uint8_t dec_nbr);
@@ -157,12 +154,42 @@ void put_on_sseg(uint8_t dec_nbr)
 { // can display segs 0-9, (in the die, only 1-6 is relevant, not(1-9) is error)
   if (dec_nbr >= 0 && dec_nbr <= 9)
   {
-	  GPIOC->ODR = sseg[dec_nbr];
+	  uint8_t hexValue = sseg[dec_nbr];
+	  if (hexValue == sseg[0]) {
+
+	  }
+	  else if (hexValue == sseg[1]) {
+
+	  }
+	  else if (hexValue == sseg[2]) {
+
+	  }
+	  else if (hexValue == sseg[3]) {
+
+	  }
+	  else if (hexValue == sseg[4]) {
+
+	  }
+	  else if (hexValue == sseg[5]) {
+
+	  }
+	  else if (hexValue == sseg[6]) {
+
+	  }
+	  else if (hexValue == sseg[7]) {
+
+	  }
+	  else if (hexValue == sseg[8]) {
+
+	  }
+	  else if (hexValue == sseg[9]) {
+
+	  }
   }
   else
   { // error
       // Handle the case where the input dec_nbr is not in the range 0 to 9.
-	  GPIOC->ODR = sseg_err;
+	  uint8_t hexValue = sseg[dec_nbr];
   }
 }
 /* USER CODE END 0 */
@@ -203,6 +230,8 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   int pressed = 0;
   uint8_t die_value = 1; // 1 <= die_value <= 6
+  const uint8_t sseg[10] = {0x3F, 0x06, 0x5B, 0x4F, 0x66, 0x6D, 0x7D, 0x07, 0x7F, 0x6F};
+  const uint8_t sseg_err = 0xDC;
   while (1)
   {
 
@@ -225,11 +254,11 @@ int main(void)
 		  uint16_t      ld2_pin_nbr = 5; // wrong! - fixed
 		  uint16_t      ld2_pin     = 0x01 << ld2_pin_nbr;
 		  HAL_GPIO_WritePin(ld2_gpio, ld2_pin, GPIO_PIN_RESET);
-		  put_die_dots(die_value);
-		  put_on_sseg(die_value);
-		  HAL_Delay(100);
 	  }
 
+	  put_die_dots(die_value);
+	  put_on_sseg(die_value);
+	  HAL_Delay(100);
 
     /* USER CODE END WHILE */
 

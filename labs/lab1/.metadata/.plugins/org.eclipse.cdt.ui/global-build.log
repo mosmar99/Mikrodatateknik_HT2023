@@ -329,3 +329,124 @@ arm-none-eabi-size   tarning.elf
    8492	     20	   1636	  10148	   27a4	tarning.elf
 Finished building: default.size.stdout
  
+12:23:50 **** Incremental Build of configuration Debug for project tarning ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Core/Src/stm32f4xx_hal_msp.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32f4xx_hal_msp.d" -MT"Core/Src/stm32f4xx_hal_msp.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32f4xx_hal_msp.o"
+arm-none-eabi-gcc "../Core/Src/stm32f4xx_it.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32f4xx_it.d" -MT"Core/Src/stm32f4xx_it.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32f4xx_it.o"
+../Core/Src/main.c: In function 'put_on_sseg':
+../Core/Src/main.c:157:24: error: 'sseg' undeclared (first use in this function)
+  157 |           GPIOC->ODR = sseg[dec_nbr];
+      |                        ^~~~
+../Core/Src/main.c:157:24: note: each undeclared identifier is reported only once for each function it appears in
+../Core/Src/main.c:162:24: error: 'sseg_err' undeclared (first use in this function)
+  162 |           GPIOC->ODR = sseg_err;
+      |                        ^~~~~~~~
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:204:17: warning: unused variable 'sseg_err' [-Wunused-variable]
+  204 |   const uint8_t sseg_err = 0xDC;
+      |                 ^~~~~~~~
+../Core/Src/main.c:203:17: warning: unused variable 'sseg' [-Wunused-variable]
+  203 |   const uint8_t sseg[10] = {0x3F, 0x06, 0x5B, 0x4F, 0x66, 0x6D, 0x7D, 0x07, 0x7F, 0x6F};
+      |                 ^~~~
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+make: *** Waiting for unfinished jobs....
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+12:26:07 **** Incremental Build of configuration Debug for project tarning ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "tarning.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab1\tarning\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="tarning.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: tarning.elf
+ 
+arm-none-eabi-size   tarning.elf 
+arm-none-eabi-objdump -h -S  tarning.elf  > "tarning.list"
+   text	   data	    bss	    dec	    hex	filename
+   8608	     20	   1636	  10264	   2818	tarning.elf
+Finished building: default.size.stdout
+ 
+Finished building: tarning.list
+ 
+12:32:13 **** Incremental Build of configuration Debug for project tarning ****
+make -j8 all 
+arm-none-eabi-size   tarning.elf 
+   text	   data	    bss	    dec	    hex	filename
+   8608	     20	   1636	  10264	   2818	tarning.elf
+Finished building: default.size.stdout
+ 
+12:35:43 **** Incremental Build of configuration Debug for project tarning ****
+make -j8 all 
+arm-none-eabi-size   tarning.elf 
+   text	   data	    bss	    dec	    hex	filename
+   8608	     20	   1636	  10264	   2818	tarning.elf
+Finished building: default.size.stdout
+ 
+12:43:56 **** Incremental Build of configuration Debug for project tarning ****
+make -j8 all 
+arm-none-eabi-size   tarning.elf 
+   text	   data	    bss	    dec	    hex	filename
+   8608	     20	   1636	  10264	   2818	tarning.elf
+Finished building: default.size.stdout
+ 
+12:54:46 **** Incremental Build of configuration Debug for project tarning ****
+make -j8 all 
+arm-none-eabi-size   tarning.elf 
+   text	   data	    bss	    dec	    hex	filename
+   8608	     20	   1636	  10264	   2818	tarning.elf
+Finished building: default.size.stdout
+ 
+13:01:00 **** Incremental Build of configuration Debug for project tarning ****
+make -j8 all 
+arm-none-eabi-size   tarning.elf 
+   text	   data	    bss	    dec	    hex	filename
+   8608	     20	   1636	  10264	   2818	tarning.elf
+Finished building: default.size.stdout
+ 
+13:32:03 **** Incremental Build of configuration Debug for project tarning ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "tarning.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab1\tarning\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="tarning.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: tarning.elf
+ 
+arm-none-eabi-size   tarning.elf 
+arm-none-eabi-objdump -h -S  tarning.elf  > "tarning.list"
+   text	   data	    bss	    dec	    hex	filename
+   8608	     20	   1636	  10264	   2818	tarning.elf
+Finished building: default.size.stdout
+ 
+Finished building: tarning.list
+ 
+13:35:08 **** Incremental Build of configuration Debug for project tarning ****
+make -j8 all 
+arm-none-eabi-size   tarning.elf 
+   text	   data	    bss	    dec	    hex	filename
+   8608	     20	   1636	  10264	   2818	tarning.elf
+Finished building: default.size.stdout
+ 
+13:48:14 **** Incremental Build of configuration Debug for project tarning ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "tarning.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab1\tarning\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="tarning.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: tarning.elf
+ 
+arm-none-eabi-size   tarning.elf 
+arm-none-eabi-objdump -h -S  tarning.elf  > "tarning.list"
+   text	   data	    bss	    dec	    hex	filename
+   8608	     20	   1636	  10264	   2818	tarning.elf
+Finished building: default.size.stdout
+ 
+Finished building: tarning.list
+ 
+13:52:49 **** Incremental Build of configuration Debug for project tarning ****
+make -j8 all 
+arm-none-eabi-size   tarning.elf 
+   text	   data	    bss	    dec	    hex	filename
+   8608	     20	   1636	  10264	   2818	tarning.elf
+Finished building: default.size.stdout
+ 
+13:58:42 **** Incremental Build of configuration Debug for project tarning ****
+make -j8 all 
+arm-none-eabi-size   tarning.elf 
+   text	   data	    bss	    dec	    hex	filename
+   8608	     20	   1636	  10264	   2818	tarning.elf
+Finished building: default.size.stdout
+ 

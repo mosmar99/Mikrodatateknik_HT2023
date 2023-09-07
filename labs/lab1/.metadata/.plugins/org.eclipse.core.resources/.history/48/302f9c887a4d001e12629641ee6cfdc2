@@ -225,11 +225,11 @@ int main(void)
 		  uint16_t      ld2_pin_nbr = 5; // wrong! - fixed
 		  uint16_t      ld2_pin     = 0x01 << ld2_pin_nbr;
 		  HAL_GPIO_WritePin(ld2_gpio, ld2_pin, GPIO_PIN_RESET);
-		  put_die_dots(die_value);
-		  put_on_sseg(die_value);
-		  HAL_Delay(100);
 	  }
 
+	  put_die_dots(die_value);
+	  put_on_sseg(die_value);
+	  HAL_Delay(100);
 
     /* USER CODE END WHILE */
 

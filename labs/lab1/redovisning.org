@@ -12,7 +12,7 @@
 *     över UART och då användes
 *     enheten USART2. Vad heter den
 *     buss som USART2 ligger på?
-** AFB1
+** APB1
 
 * (3) Vilken adress börjar GPIOC på?
 ** 0x4002 0800
@@ -21,7 +21,7 @@
 ** 0x4002 0BFF
 
 * (5) Vad betyder förkortningen IDR?
-** Independent data register
+** Input data register
 
 * (6) Vad betyder förkortningen ODR?
 ** Output data register
