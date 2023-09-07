@@ -52,7 +52,7 @@
 * du hitta som hör till GPIOD (de
 * som börjar PD)? Hur många hittar
 * du som hör till GPIOE?
-** 0 som börjar på PD
+** 1 som börjar på PD
 ** 0 som börjar på PE
 
 * (11)  Har du någon gissning om varför
@@ -84,9 +84,7 @@
 * (2) Titta på Memory Map i databladet.
 * Vad heter den region av
 * adressrymden som PC (program counter) pekar på?
-** När programmet exekverar HAL_Init() i en STM32-mikrokontrollerapplikation, 
-** pekar PC (Program Counter) på instruktionen i minnesområdet där HAL_Init()-funktionen är lagrad.
-** Eftersom toppen på reserved är från 0x60000000 0xBFFFFFF, därimellan ligger HAL_Init, alltså i "Reserved".
+** Flash-minnet
 
 * Är den blå knappen aktivt hög
 * eller aktivt låg?
