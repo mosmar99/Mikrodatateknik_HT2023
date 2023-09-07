@@ -10,7 +10,7 @@
 - Type: STM32F411RE (datasheets and reference manuals are available in the repository)
 
 # Lab0 - Blinky (intro)
-- Displays a blinking LED on the STM32 Nucleo Board. For each time the lamp blinks, keep track of how many times it blinked so far and serially transmit that information through a print statement to PuTTy.
+- Displays a blinking LED on the STM32 Nucleo Board. For each time the lamp blinks, keep track of how many times it blinked so far and serially transmit that information through a print statement to PuTTY.
 
 # Lab1 (Die roll)
 - A die is rolled by clicking at the blue button located on the Nucleo Board. When the button is clicked, the die is rolled. When the button is released, the die result is displayed on the 7 green LED lamps (placed in a die looking structure) and then outputed on the 7-segment display.
