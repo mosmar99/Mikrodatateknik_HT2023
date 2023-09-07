@@ -1,0 +1,36 @@
+2023-09-07 00:11:50,701 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 355519040 Bytes (623902720)
+2023-09-07 00:11:57,326 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 460902976 Bytes (623902720)
+2023-09-07 00:11:59,421 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 242517720 Bytes (623902720)
+2023-09-07 00:11:59,767 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: NVIC
+2023-09-07 00:11:59,767 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: USART
+2023-09-07 00:11:59,767 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: SYS
+2023-09-07 00:11:59,768 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: GPIO
+2023-09-07 00:11:59,768 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: RCC
+2023-09-07 00:11:59,769 [INFO] CodeGenerator:799 - code generatio: config db path: C:\ST\STM32CubeIDE_1.13.1\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.9.1.202307191849\\db\
+2023-09-07 00:11:59,958 [INFO] CodeEngine:255 - oldGeneratedFile, D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab1\tarning\MXTmpFiles\license.tmp_save
+2023-09-07 00:12:00,253 [INFO] CodeEngine:279 - Generated code: D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab1\tarning\MXTmpFiles\license.tmp
+2023-09-07 00:12:00,345 [INFO] CodeEngine:255 - oldGeneratedFile, D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab1\tarning\MXTmpFiles\gpio.tmp_save
+2023-09-07 00:12:00,508 [INFO] CodeEngine:279 - Generated code: D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab1\tarning\MXTmpFiles\gpio.tmp
+2023-09-07 00:12:00,632 [INFO] CodeEngine:255 - oldGeneratedFile, D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab1\tarning\Core\Src\stm32f4xx_it.c_save
+2023-09-07 00:12:00,770 [INFO] CodeEngine:279 - Generated code: D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab1\tarning\Core\Src\stm32f4xx_it.c
+2023-09-07 00:12:00,784 [INFO] CodeEngine:255 - oldGeneratedFile, D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab1\tarning\Core\Inc\stm32f4xx_it.h_save
+2023-09-07 00:12:00,867 [INFO] CodeEngine:279 - Generated code: D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab1\tarning\Core\Inc\stm32f4xx_it.h
+2023-09-07 00:12:00,901 [INFO] CodeEngine:255 - oldGeneratedFile, D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab1\tarning\Core\Src\stm32f4xx_hal_msp.c_save
+2023-09-07 00:12:01,017 [INFO] CodeEngine:279 - Generated code: D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab1\tarning\Core\Src\stm32f4xx_hal_msp.c
+2023-09-07 00:12:01,027 [INFO] CodeEngine:255 - oldGeneratedFile, D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab1\tarning\MXTmpFiles\system.tmp_save
+2023-09-07 00:12:01,089 [INFO] CodeEngine:279 - Generated code: D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab1\tarning\MXTmpFiles\system.tmp
+2023-09-07 00:12:01,110 [INFO] CodeEngine:311 - oldGeneratedFile, D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab1\tarning\Core\Inc\stm32f4xx_hal_conf.h_save
+2023-09-07 00:12:01,216 [INFO] CodeEngine:335 - Generated code: D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab1\tarning\Core\Inc\stm32f4xx_hal_conf.h
+2023-09-07 00:12:01,332 [INFO] CodeEngine:255 - oldGeneratedFile, D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab1\tarning\Core\Inc\main.h_save
+2023-09-07 00:12:01,446 [INFO] CodeEngine:279 - Generated code: D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab1\tarning\Core\Inc\main.h
+2023-09-07 00:12:01,467 [INFO] CodeEngine:255 - oldGeneratedFile, D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab1\tarning\Core\Src\main.c_save
+2023-09-07 00:12:01,608 [INFO] CodeEngine:279 - Generated code: D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab1\tarning\Core\Src\main.c
+2023-09-07 00:12:01,963 [INFO] ProjectBuilder:3064 - Time for Copy HAL[1] : 131mS.
+2023-09-07 00:12:01,967 [INFO] ProjectBuilder:4404 - Project Generator version: 4.1.0
+2023-09-07 00:12:02,262 [INFO] ConfigFileManager:1457 - The Die is : DIE431
+2023-09-07 00:12:02,291 [INFO] ApiDbMcu:507 - Load IP Config File for FATFS
+2023-09-07 00:12:02,311 [INFO] ApiDbMcu:507 - Load IP Config File for FREERTOS
+2023-09-07 00:12:02,324 [INFO] ApiDbMcu:507 - Load IP Config File for LIBJPEG
+2023-09-07 00:12:02,345 [INFO] ApiDbMcu:507 - Load IP Config File for MBEDTLS
+2023-09-07 00:12:02,366 [INFO] ApiDbMcu:507 - Load IP Config File for USB_DEVICE
+2023-09-07 00:12:02,380 [INFO] ApiDbMcu:507 - Load IP Config File for USB_HOST

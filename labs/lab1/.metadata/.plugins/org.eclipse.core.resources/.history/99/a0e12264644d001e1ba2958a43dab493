@@ -155,7 +155,7 @@ void put_on_sseg(uint8_t dec_nbr)
   if (dec_nbr >= 0 && dec_nbr <= 9)
   {
       uint8_t hexValue = sseg[dec_nbr];
-
+      GPIOC->
       // Display the hexValue using your 7-segment display
   }
   else

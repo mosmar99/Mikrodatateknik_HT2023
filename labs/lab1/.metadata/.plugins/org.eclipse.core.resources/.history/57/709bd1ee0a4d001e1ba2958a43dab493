@@ -53,7 +53,6 @@ static void MX_USART2_UART_Init(void);
 /* USER CODE BEGIN PFP */
 int is_blue_button_pressed();
 void put_die_dots(uint8_t die_nbr);
-void put_on_sseg(uint8_t dec_nbr);
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
@@ -71,8 +70,6 @@ int is_blue_button_pressed() {
 	}
 }
 
-// inputs: current die number
-// lights up led-lamps PC7-12 according to current die number
 void put_die_dots(uint8_t die_nbr) {
     // die can only be between 1 and 6
     switch (die_nbr)
@@ -147,23 +144,6 @@ void put_die_dots(uint8_t die_nbr) {
 			HAL_GPIO_WritePin(DI_G_GPIO_Port, DI_G_Pin, GPIO_PIN_SET);
 	}
 }
-
-// input: current die number
-// output: 7seg display corrosponding to current die number
-void put_on_sseg(uint8_t dec_nbr)
-{ // can display segs 0-9, (in the die, only 1-6 is relevant, not(1-9) is error)
-  if (dec_nbr >= 0 && dec_nbr <= 9)
-  {
-      uint8_t hexValue = sseg[dec_nbr];
-
-      // Display the hexValue using your 7-segment display
-  }
-  else
-  {
-      // Handle the case where the input dec_nbr is not in the range 0 to 9.
-      // Display the error
-  }
-}
 /* USER CODE END 0 */
 
 /**
@@ -229,7 +209,6 @@ int main(void)
 	  }
 
 	  put_die_dots(die_value);
-    put_on_sseg(die_value);
 	  HAL_Delay(100);
 
     /* USER CODE END WHILE */
@@ -406,4 +385,3 @@ void assert_failed(uint8_t *file, uint32_t line)
   /* USER CODE END 6 */
 }
 #endif /* USE_FULL_ASSERT */
-
