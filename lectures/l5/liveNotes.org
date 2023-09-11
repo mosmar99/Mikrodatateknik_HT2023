@@ -1,0 +1,75 @@
+* Repition from last lecture
+** MCU = Microcontroller Unit
+
+* New
+
+* MCU, start counting pins from little physical notch
+* NVIC = nested vector interrupt controller, hanterar IRQ's
+* NMI = non-masked interrupt
+
+* System exceptions, processorn skickar, något har gått fel, exempelvis, 
+** (1) MEMMANAGE - läsa av minnet av fel.
+** (2) USAGEFAULT(?) - division med noll, 
+** (3) HARDFAULT - vill köra ett program där det inte ligger något program (läser in nonsensdata), 
+**    kan inte tyda 1orna och 0orna till någon giltig instruktion 
+
+* EXTI
+** Begränsning på hur många externa interrupt vi kan ha på en EXTII pinne, cirka 15 st totalt
+** endast en i taget
+** multiplexer, välj en av PA0-PE0 för EXTI0, osv, samma för EXTI0-EXTI15
+** EXTI0-EXTI4 (var för sig)
+** EXTI5-9 ihop (ihop-or:ade)
+** EXTI10-15 ihop (ihop-or:ade)
+** begränsing på EXTII output beror på att den endast kan använda 256 funktioner
+
+* Interrupts måste AKTIVERAS
+* SystemCore -> NVIC -> Där listas alla interrupts man kan aktivera/avaktivera
+
+* RaiseCondition(?) - försöka ändra data från två håll, lås tillfälligt
+
+* startup_stm32f401xe.s alla funktionnamn finns deklarerade i den, processern kör den allra först
+** void EXTI10_IRQHandler(void)
+** {
+
+** }
+
+* HAL = Hardware Abstraction layer (funktioner, skicka data via serial uart, etc)
+
+* "weak" funktion, en funktion vi kan skriva om i exempelvis main
+** den kommer kompileras och lägga in i vårt program
+** finns det en annan som heter samma sak och inte är weak, så kommer den gälla
+
+* contact bounce
+** knappen råkar bounca när du trycker så flera singler reggas, lös mha kondensator, 
+** gör den smooth, och sen timer, sätt hysteres, hysteresgränsarna är inte standardiserade
+** beror på komponenterna i kretsen
+
+* pullup - stadigt hög mha grundspänning, kommer inte ändra sig på små störningar
+
+* 8N1 (standard-bit-format)
+** 8 bitar
+** N (none) - ingen checksumma (paritetsbit, summar dom, checkar så att data är korrekt skickad)
+** 1 - en start/stop-bit, den är hög åtminstone en stopbit innan nästa byte kommer
+
+* Serieportar på Gamla Datorer
+** gammal dator, ofta gammal serieport, ser ut som ett D, då är elektriska nivåerna på RX/TX som vi förväntar oss
+** vanligtvis förväntar vi oss typ 3.3V, 0V
+** dator följer andra nivåer, standard RS-232: "0": 3-V15V (space), "1"=-3 to -15V (mark)
+** har kanske med telegrafi att göra, space, mark (punch cards)
+
+* CubeMx: 
+** Connectivity -> USART2: Asynchronous 
+** Baud Rate: vanlig standard: 115200 Bits/s
+** Oversampling: Hur många klockcyklar som den kommer dela upp varje bit i, 
+**      16 Samples = dela upp varje bit i 16 delar
+
+* Röd Cirkel på säg SPI1: funktionen är avstängd, pinnarna används redan av funnktioner
+* Röd triangel: en del av pinnarna används redan
+
+* timeout: du får max hålla på att jobba under "timeout" tiden
+
+* idle-condition: efter startbiten, kommer inte ny data in efter en viss tid, sluta läsa ny data
+* break-condition: man kan skicka start och stopbit på ett visst sätt så kan man säga till en break condition
+
+* stm32f4xx_hal_uart.c
+** förklara hur funktionerna funkar

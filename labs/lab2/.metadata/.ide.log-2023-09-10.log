@@ -1,0 +1,3 @@
+2023-09-10 13:59:15,218 [INFO] Gpio:273 - dependency for GPIO [RCC, SYS, USART2]
+2023-09-10 14:00:24,079 [INFO] DmaTabbedPanel:205 - Cannot restore the selected Tab for DMA
+2023-09-10 14:00:24,750 [INFO] Gpio:273 - dependency for GPIO [RCC, SYS, USART2]

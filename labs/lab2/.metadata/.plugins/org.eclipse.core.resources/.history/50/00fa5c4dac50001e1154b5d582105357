@@ -215,8 +215,8 @@ int main(void)
   int last_press = curr_press;
 
   uint32_t ticks_left_in_state = 0;
-  //uint32_t curr_tick = 0;
-  //uint32_t last_tick = 0;
+  uint32_t curr_tick = 0;
+  uint32_t last_tick = 0;
   while (1)
   {
 
@@ -232,7 +232,7 @@ int main(void)
     }
 
     // Kontrollera om det är dags att generera en ev_state_timeout
-    if (ticks_left_in_state == 0 && current_state != s_init && current_state != s_cars_go) {
+    if (curr_tick >= ticks_left_in_state && current_state != s_init && current_state != s_cars_go) {
         current_event = ev_state_timeout;
     }
 
@@ -272,7 +272,7 @@ int main(void)
                 current_state = s_pedestrian_walk;
                 set_traffic_lights(current_state);
                 // Sätt timeout för nästa tillstånd
-                ticks_left_in_state = 5000;
+                ticks_left_in_state = 15000;
             }
             break;
 
@@ -294,7 +294,7 @@ int main(void)
                 current_state = s_cars_ready;
                 set_traffic_lights(current_state);
                 // Sätt timeout för nästa tillstånd
-                ticks_left_in_state = 2000;
+                ticks_left_in_state = 3000;
             }
             break;
 
@@ -315,8 +315,6 @@ int main(void)
                 // Gå till nästa tillstånd
                 current_state = s_pushed_wait;
                 set_traffic_lights(current_state);
-                // Sätt timeout för nästa tillstånd
-                ticks_left_in_state = 2000;
             }
             else
             {
@@ -342,11 +340,8 @@ int main(void)
     }
 
     // Uppdatera tick-värden
-    if (current_state != s_init && current_state != s_cars_go)
-    {
-        ticks_left_in_state -= 1;
-    }
-    HAL_Delay(1);
+    ticks_left_in_state -= 1;
+    
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */

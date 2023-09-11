@@ -245,7 +245,7 @@ int main(void)
                 current_state = s_cars_stopped;
                 set_traffic_lights(current_state);
                 // Sätt timeout för nästa tillstånd
-                ticks_left_in_state = 3000;
+                ticks_left_in_state = 3;
             }
             else
             {
@@ -260,7 +260,7 @@ int main(void)
                 current_state = s_cars_stopped;
                 set_traffic_lights(current_state);
                 // Sätt timeout för nästa tillstånd
-                ticks_left_in_state = 3000;
+                ticks_left_in_state = 3;
 
             }
             break;
@@ -272,7 +272,7 @@ int main(void)
                 current_state = s_pedestrian_walk;
                 set_traffic_lights(current_state);
                 // Sätt timeout för nästa tillstånd
-                ticks_left_in_state = 5000;
+                ticks_left_in_state = 5;
             }
             break;
 
@@ -283,7 +283,7 @@ int main(void)
                 current_state = s_pedestrian_stop;
                 set_traffic_lights(current_state);
                 // Sätt timeout för nästa tillstånd
-                ticks_left_in_state = 3000;
+                ticks_left_in_state = 3;
             }
             break;
 
@@ -294,7 +294,7 @@ int main(void)
                 current_state = s_cars_ready;
                 set_traffic_lights(current_state);
                 // Sätt timeout för nästa tillstånd
-                ticks_left_in_state = 2000;
+                ticks_left_in_state = 2;
             }
             break;
 
@@ -316,7 +316,7 @@ int main(void)
                 current_state = s_pushed_wait;
                 set_traffic_lights(current_state);
                 // Sätt timeout för nästa tillstånd
-                ticks_left_in_state = 2000;
+                ticks_left_in_state = 2;
             }
             else
             {
@@ -346,7 +346,7 @@ int main(void)
     {
         ticks_left_in_state -= 1;
     }
-    HAL_Delay(1);
+    
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */

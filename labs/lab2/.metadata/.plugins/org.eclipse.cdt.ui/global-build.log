@@ -118,3 +118,298 @@ Finished building: default.size.stdout
  
 Finished building: trafikljus.list
  
+11:17:37 **** Incremental Build of configuration Debug for project trafikljus ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:212:7: warning: unused variable 'last_press' [-Wunused-variable]
+  212 |   int last_press = curr_press;
+      |       ^~~~~~~~~~
+arm-none-eabi-gcc -o "trafikljus.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab2\trafikljus\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="trafikljus.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: trafikljus.elf
+ 
+arm-none-eabi-size   trafikljus.elf 
+arm-none-eabi-objdump -h -S  trafikljus.elf  > "trafikljus.list"
+   text	   data	    bss	    dec	    hex	filename
+   8264	     20	   1636	   9920	   26c0	trafikljus.elf
+Finished building: default.size.stdout
+ 
+Finished building: trafikljus.list
+ 
+11:24:20 **** Incremental Build of configuration Debug for project trafikljus ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "trafikljus.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab2\trafikljus\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="trafikljus.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: trafikljus.elf
+ 
+arm-none-eabi-size   trafikljus.elf 
+arm-none-eabi-objdump -h -S  trafikljus.elf  > "trafikljus.list"
+   text	   data	    bss	    dec	    hex	filename
+   8292	     20	   1636	   9948	   26dc	trafikljus.elf
+Finished building: default.size.stdout
+ 
+Finished building: trafikljus.list
+ 
+12:44:19 **** Incremental Build of configuration Debug for project trafikljus ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:231:25: error: 'ev_button_press' undeclared (first use in this function); did you mean 'ev_button_push'?
+  231 |         current_event = ev_button_press;
+      |                         ^~~~~~~~~~~~~~~
+      |                         ev_button_push
+../Core/Src/main.c:231:25: note: each undeclared identifier is reported only once for each function it appears in
+../Core/Src/main.c:218:12: warning: unused variable 'curr_tick' [-Wunused-variable]
+  218 |   uint32_t curr_tick = 0;
+      |            ^~~~~~~~~
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+12:47:33 **** Incremental Build of configuration Debug for project trafikljus ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:218:12: warning: unused variable 'curr_tick' [-Wunused-variable]
+  218 |   uint32_t curr_tick = 0;
+      |            ^~~~~~~~~
+arm-none-eabi-gcc -o "trafikljus.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab2\trafikljus\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="trafikljus.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: trafikljus.elf
+ 
+arm-none-eabi-size   trafikljus.elf 
+arm-none-eabi-objdump -h -S  trafikljus.elf  > "trafikljus.list"
+   text	   data	    bss	    dec	    hex	filename
+   8128	     20	   1636	   9784	   2638	trafikljus.elf
+Finished building: default.size.stdout
+ 
+Finished building: trafikljus.list
+ 
+13:48:20 **** Incremental Build of configuration Debug for project trafikljus ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c:354:1: error: expected identifier or '(' before '}' token
+  354 | }
+      | ^
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+13:49:36 **** Incremental Build of configuration Debug for project trafikljus ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:218:12: warning: unused variable 'curr_tick' [-Wunused-variable]
+  218 |   uint32_t curr_tick = 0;
+      |            ^~~~~~~~~
+arm-none-eabi-gcc -o "trafikljus.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab2\trafikljus\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="trafikljus.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: trafikljus.elf
+ 
+arm-none-eabi-size   trafikljus.elf 
+arm-none-eabi-objdump -h -S  trafikljus.elf  > "trafikljus.list"
+   text	   data	    bss	    dec	    hex	filename
+   8612	     20	   1636	  10268	   281c	trafikljus.elf
+Finished building: default.size.stdout
+ 
+Finished building: trafikljus.list
+ 
+13:56:01 **** Incremental Build of configuration Debug for project trafikljus ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "trafikljus.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab2\trafikljus\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="trafikljus.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: trafikljus.elf
+ 
+arm-none-eabi-size   trafikljus.elf 
+arm-none-eabi-objdump -h -S  trafikljus.elf  > "trafikljus.list"
+   text	   data	    bss	    dec	    hex	filename
+   8608	     20	   1636	  10264	   2818	trafikljus.elf
+Finished building: default.size.stdout
+ 
+Finished building: trafikljus.list
+ 
+14:27:26 **** Incremental Build of configuration Debug for project trafikljus ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "trafikljus.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab2\trafikljus\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="trafikljus.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: trafikljus.elf
+ 
+arm-none-eabi-size   trafikljus.elf 
+arm-none-eabi-objdump -h -S  trafikljus.elf  > "trafikljus.list"
+   text	   data	    bss	    dec	    hex	filename
+   8608	     20	   1636	  10264	   2818	trafikljus.elf
+Finished building: default.size.stdout
+ 
+Finished building: trafikljus.list
+ 
+14:40:30 **** Incremental Build of configuration Debug for project trafikljus ****
+make -j8 all 
+arm-none-eabi-gcc -o "trafikljus.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab2\trafikljus\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="trafikljus.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: trafikljus.elf
+ 
+arm-none-eabi-size   trafikljus.elf 
+arm-none-eabi-objdump -h -S  trafikljus.elf  > "trafikljus.list"
+   text	   data	    bss	    dec	    hex	filename
+   8608	     20	   1636	  10264	   2818	trafikljus.elf
+Finished building: default.size.stdout
+ 
+Finished building: trafikljus.list
+ 
+14:48:43 **** Incremental Build of configuration Debug for project trafikljus ****
+make -j8 all 
+arm-none-eabi-gcc -o "trafikljus.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab2\trafikljus\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="trafikljus.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: trafikljus.elf
+ 
+arm-none-eabi-size   trafikljus.elf 
+arm-none-eabi-objdump -h -S  trafikljus.elf  > "trafikljus.list"
+   text	   data	    bss	    dec	    hex	filename
+   8608	     20	   1636	  10264	   2818	trafikljus.elf
+Finished building: default.size.stdout
+ 
+Finished building: trafikljus.list
+ 
+14:55:49 **** Incremental Build of configuration Debug for project trafikljus ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/system_stm32f4xx.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/system_stm32f4xx.d" -MT"Core/Src/system_stm32f4xx.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/system_stm32f4xx.o"
+arm-none-eabi-gcc -o "trafikljus.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab2\trafikljus\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="trafikljus.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: trafikljus.elf
+ 
+arm-none-eabi-size   trafikljus.elf 
+arm-none-eabi-objdump -h -S  trafikljus.elf  > "trafikljus.list"
+   text	   data	    bss	    dec	    hex	filename
+   8608	     20	   1636	  10264	   2818	trafikljus.elf
+Finished building: default.size.stdout
+ 
+Finished building: trafikljus.list
+ 
+14:57:04 **** Incremental Build of configuration Debug for project trafikljus ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/system_stm32f4xx.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/system_stm32f4xx.d" -MT"Core/Src/system_stm32f4xx.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/system_stm32f4xx.o"
+arm-none-eabi-gcc -o "trafikljus.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab2\trafikljus\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="trafikljus.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: trafikljus.elf
+ 
+arm-none-eabi-size   trafikljus.elf 
+arm-none-eabi-objdump -h -S  trafikljus.elf  > "trafikljus.list"
+   text	   data	    bss	    dec	    hex	filename
+   8608	     20	   1636	  10264	   2818	trafikljus.elf
+Finished building: default.size.stdout
+ 
+Finished building: trafikljus.list
+ 
+15:03:29 **** Incremental Build of configuration Debug for project trafikljus ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:219:12: warning: unused variable 'last_tick' [-Wunused-variable]
+  219 |   uint32_t last_tick = 0;
+      |            ^~~~~~~~~
+arm-none-eabi-gcc -o "trafikljus.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab2\trafikljus\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="trafikljus.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: trafikljus.elf
+ 
+arm-none-eabi-size   trafikljus.elf 
+arm-none-eabi-objdump -h -S  trafikljus.elf  > "trafikljus.list"
+   text	   data	    bss	    dec	    hex	filename
+   8592	     20	   1636	  10248	   2808	trafikljus.elf
+Finished building: default.size.stdout
+ 
+Finished building: trafikljus.list
+ 
+15:05:49 **** Incremental Build of configuration Debug for project trafikljus ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:219:12: warning: unused variable 'last_tick' [-Wunused-variable]
+  219 |   uint32_t last_tick = 0;
+      |            ^~~~~~~~~
+../Core/Src/main.c:218:12: warning: unused variable 'curr_tick' [-Wunused-variable]
+  218 |   uint32_t curr_tick = 0;
+      |            ^~~~~~~~~
+arm-none-eabi-gcc -o "trafikljus.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab2\trafikljus\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="trafikljus.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: trafikljus.elf
+ 
+arm-none-eabi-size   trafikljus.elf 
+arm-none-eabi-objdump -h -S  trafikljus.elf  > "trafikljus.list"
+   text	   data	    bss	    dec	    hex	filename
+   8588	     20	   1636	  10244	   2804	trafikljus.elf
+Finished building: default.size.stdout
+ 
+Finished building: trafikljus.list
+ 
+15:06:30 **** Incremental Build of configuration Debug for project trafikljus ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "trafikljus.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab2\trafikljus\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="trafikljus.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: trafikljus.elf
+ 
+arm-none-eabi-size   trafikljus.elf 
+arm-none-eabi-objdump -h -S  trafikljus.elf  > "trafikljus.list"
+   text	   data	    bss	    dec	    hex	filename
+   8580	     20	   1636	  10236	   27fc	trafikljus.elf
+Finished building: default.size.stdout
+ 
+Finished building: trafikljus.list
+ 
+15:09:27 **** Incremental Build of configuration Debug for project trafikljus ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "trafikljus.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab2\trafikljus\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="trafikljus.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: trafikljus.elf
+ 
+arm-none-eabi-size   trafikljus.elf 
+arm-none-eabi-objdump -h -S  trafikljus.elf  > "trafikljus.list"
+   text	   data	    bss	    dec	    hex	filename
+   8596	     20	   1636	  10252	   280c	trafikljus.elf
+Finished building: default.size.stdout
+ 
+Finished building: trafikljus.list
+ 
+15:13:39 **** Incremental Build of configuration Debug for project trafikljus ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "trafikljus.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab2\trafikljus\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="trafikljus.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: trafikljus.elf
+ 
+arm-none-eabi-size   trafikljus.elf 
+arm-none-eabi-objdump -h -S  trafikljus.elf  > "trafikljus.list"
+   text	   data	    bss	    dec	    hex	filename
+   8588	     20	   1636	  10244	   2804	trafikljus.elf
+Finished building: default.size.stdout
+ 
+Finished building: trafikljus.list
+ 
+15:20:10 **** Incremental Build of configuration Debug for project trafikljus ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "trafikljus.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab2\trafikljus\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="trafikljus.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: trafikljus.elf
+ 
+arm-none-eabi-size   trafikljus.elf 
+arm-none-eabi-objdump -h -S  trafikljus.elf  > "trafikljus.list"
+   text	   data	    bss	    dec	    hex	filename
+   8588	     20	   1636	  10244	   2804	trafikljus.elf
+Finished building: default.size.stdout
+ 
+Finished building: trafikljus.list
+ 
+15:22:27 **** Incremental Build of configuration Debug for project trafikljus ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "trafikljus.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab2\trafikljus\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="trafikljus.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: trafikljus.elf
+ 
+arm-none-eabi-size   trafikljus.elf 
+arm-none-eabi-objdump -h -S  trafikljus.elf  > "trafikljus.list"
+   text	   data	    bss	    dec	    hex	filename
+   8600	     20	   1636	  10256	   2810	trafikljus.elf
+Finished building: default.size.stdout
+ 
+Finished building: trafikljus.list
+ 
+15:23:15 **** Incremental Build of configuration Debug for project trafikljus ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "trafikljus.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab2\trafikljus\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="trafikljus.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: trafikljus.elf
+ 
+arm-none-eabi-size   trafikljus.elf 
+arm-none-eabi-objdump -h -S  trafikljus.elf  > "trafikljus.list"
+   text	   data	    bss	    dec	    hex	filename
+   8676	     20	   1636	  10332	   285c	trafikljus.elf
+Finished building: default.size.stdout
+ 
+Finished building: trafikljus.list
+ 
