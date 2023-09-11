@@ -222,25 +222,7 @@ int main(void)
 
     // Uppdatera nuvarande och föregående knapptryckningsstatus
     last_press = curr_press;
-    // Knapptryckning enbart av intresse vid tillstånden: s_init och s_cars_go
-    if (current_state == s_init || current_state == s_cars_go)
-    {
-        curr_press = is_button_pressed();
-    }
-    else
-    {
-        curr_press = 0;
-    }
-
-    // Lys upp en diod vid knapptryckning
-    if (is_button_pressed())
-    {
-        HAL_GPIO_WritePin(LD2_GPIO_Port, LD2_Pin, GPIO_PIN_SET);
-    }
-    else
-    {
-        HAL_GPIO_WritePin(LD2_GPIO_Port, LD2_Pin, GPIO_PIN_RESET);
-    }
+    curr_press = is_button_pressed();
 
     // Kontrollera om det har skett en positiv flank på knappen
     if (curr_press && !last_press) {

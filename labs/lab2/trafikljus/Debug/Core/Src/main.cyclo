@@ -1,7 +1,7 @@
 ../Core/Src/main.c:83:5:is_button_pressed	2
 ../Core/Src/main.c:94:6:set_traffic_lights	9
-../Core/Src/main.c:180:5:main	24
-../Core/Src/main.c:361:6:SystemClock_Config	3
-../Core/Src/main.c:408:13:MX_USART2_UART_Init	2
-../Core/Src/main.c:441:13:MX_GPIO_Init	1
-../Core/Src/main.c:494:6:Error_Handler	1
+../Core/Src/main.c:180:5:main	27
+../Core/Src/main.c:379:6:SystemClock_Config	3
+../Core/Src/main.c:426:13:MX_USART2_UART_Init	2
+../Core/Src/main.c:459:13:MX_GPIO_Init	1
+../Core/Src/main.c:512:6:Error_Handler	1
