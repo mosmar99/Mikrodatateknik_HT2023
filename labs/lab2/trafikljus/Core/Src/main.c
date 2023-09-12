@@ -73,6 +73,10 @@ enum state
 void set_traffic_lights(enum state s);
 int is_button_pressed();
 
+uint32_t ticks_left_in_state = 0;
+uint32_t curr_tick = 0;
+uint32_t last_tick = 0;
+
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
@@ -214,9 +218,9 @@ int main(void)
   int curr_press = is_button_pressed();
   int last_press = curr_press;
 
-  uint32_t ticks_left_in_state = 0;
-  //uint32_t curr_tick = 0;
-  //uint32_t last_tick = 0;
+  // uint32_t ticks_left_in_state = 0;
+  // uint32_t curr_tick = 0;
+  // uint32_t last_tick = 0;
   while (1)
   {
 
@@ -360,11 +364,24 @@ int main(void)
     }
 
     // Uppdatera tick-värden
+    last_tick = curr_tick;
+    curr_tick = HAL_GetTick();
+    // Tickvärden är inte relevanta om vi inte räknar ner tiden
     if (current_state != s_init && current_state != s_cars_go)
     {
-        ticks_left_in_state -= 1;
+
+      if (ticks_left_in_state - (curr_tick - last_tick) < 0)
+      {
+          ticks_left_in_state = 0;
+      }
+      else
+      {
+          ticks_left_in_state -= (curr_tick - last_tick);
+      }
     }
-    HAL_Delay(1);
+
+    //HAL_Delay(1);
+
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
