@@ -73,10 +73,6 @@ enum state
 void set_traffic_lights(enum state s);
 int is_button_pressed();
 
-uint32_t ticks_left_in_state = 0;
-uint32_t curr_tick = 0;
-uint32_t last_tick = 0;
-
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
@@ -214,6 +210,10 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   enum state current_state = s_init;
   enum event current_event = ev_none;
+
+  uint32_t ticks_left_in_state = 0;
+  uint32_t curr_tick = 0;
+  uint32_t last_tick = 0;
 
   int curr_press = is_button_pressed();
   int last_press = curr_press;
