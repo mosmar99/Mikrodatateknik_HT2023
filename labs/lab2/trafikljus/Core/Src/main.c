@@ -51,11 +51,14 @@ void SystemClock_Config(void);
 static void MX_GPIO_Init(void);
 static void MX_USART2_UART_Init(void);
 /* USER CODE BEGIN PFP */
+#define EVQ_SIZE 10
+
 enum event
 {
   ev_none = 0,
-  ev_button_press,
-  ev_state_timeout
+  ev_button_press = 1,
+  ev_state_timeout = 2,
+  ev_error = -99
 };
 
 enum state
@@ -70,13 +73,66 @@ enum state
   s_cars_ready
 };
 
+enum event evq[ EVQ_SIZE ];
+
+int evq_count = 0;
+int evq_front_ix = 0;
+int evq_rear_ix = 0;
+
 void set_traffic_lights(enum state s);
 int is_button_pressed();
+void evq_push_back(enum event e);
+enum event evq_pop_front();
+void my_systick_handler();
+void evq_init();
 
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
+
+void evq_init() {
+  for (int i = 0; i < EVQ_SIZE; i++) {
+    evq[i] = ev_error;
+  }
+}
+
+int systick_count = 0;
+void my_systick_handler()
+{
+  systick_count++;
+  if (systick_count == 1000)
+  {
+    HAL_GPIO_TogglePin(LD2_GPIO_Port, LD2_Pin);
+    systick_count = 0;
+  }
+}
+
+void evq_push_back(enum event e)
+{
+  // if queue is full, ignore e
+  if ( evq_count < EVQ_SIZE )
+  {
+    evq[evq_rear_ix] = e;
+    evq_rear_ix++;
+    evq_rear_ix %= EVQ_SIZE;
+    evq_count++;
+  }
+}
+
+enum event evq_pop_front()
+{
+  enum event e = ev_none;
+  if ( evq_count > 0 )
+  {
+    e = evq[evq_front_ix];
+    evq[evq_front_ix] = ev_error; // detect stupidity
+    evq_front_ix++;
+    evq_front_ix %= EVQ_SIZE;
+    evq_count--;
+  }
+  return e;
+}
 
 // returns 1 if blue button is pressed
 // return 0 if blue button isn't pressed
@@ -209,7 +265,7 @@ int main(void)
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   enum state current_state = s_init;
-  enum event current_event = ev_none;
+  evq_init();
 
   uint32_t ticks_left_in_state = 0;
   uint32_t curr_tick = 0;
@@ -218,9 +274,6 @@ int main(void)
   int curr_press = is_button_pressed();
   int last_press = curr_press;
 
-  // uint32_t ticks_left_in_state = 0;
-  // uint32_t curr_tick = 0;
-  // uint32_t last_tick = 0;
   while (1)
   {
 
@@ -233,10 +286,13 @@ int main(void)
     }
     else
     {
+        // Garanterar att knapptryckning inte är aktiv om nuvarande tillstånd inte är s_init eller s_cars_go
         curr_press = 0;
     }
 
     // Lys upp en diod vid knapptryckning
+    // Lampan kommer alltid lysa när vi trycker
+    // Knappen kommer enbart ha inverkan vid aktuella tillstånd
     if (is_button_pressed())
     {
         HAL_GPIO_WritePin(LD2_GPIO_Port, LD2_Pin, GPIO_PIN_SET);
@@ -248,21 +304,19 @@ int main(void)
 
     // Kontrollera om det har skett en positiv flank på knappen
     if (curr_press && !last_press) {
-        current_event = ev_button_press;
-    } else {
-        current_event = ev_none;
-    }
+        evq_push_back(ev_button_press);
+    } 
 
     // Kontrollera om det är dags att generera en ev_state_timeout
     if (ticks_left_in_state == 0 && current_state != s_init && current_state != s_cars_go) {
-        current_event = ev_state_timeout;
+        evq_push_back(ev_state_timeout);
     }
 
     // Hantera nästa tillstånd baserat på nuvarande tillstånd och händelse
     switch (current_state) {
         case s_init:
             // Hantera händelser i s_init-tillståndet
-            if (current_event == ev_button_press) {
+            if (evq_pop_front() == ev_button_press) {
                 // Gå till nästa tillstånd
                 current_state = s_cars_stopped;
                 set_traffic_lights(current_state);
@@ -277,19 +331,18 @@ int main(void)
 
         case s_cars_stopping:
             // Hantera händelser i s_cars_stopping-tillståndet
-            if (current_event == ev_state_timeout) {
+            if (evq_pop_front() == ev_state_timeout) {
                 // Gå till nästa tillstånd
                 current_state = s_cars_stopped;
                 set_traffic_lights(current_state);
                 // Sätt timeout för nästa tillstånd
                 ticks_left_in_state = 3000;
-
             }
             break;
 
         case s_cars_stopped:
             // Hantera händelser i s_cars_stopped-tillståndet
-            if (current_event == ev_state_timeout) {
+            if (evq_pop_front() == ev_state_timeout) {
                 // Gå till nästa tillstånd
                 current_state = s_pedestrian_walk;
                 set_traffic_lights(current_state);
@@ -300,7 +353,7 @@ int main(void)
 
         case s_pedestrian_walk:
             // Hantera händelser i s_pedestrian_walk-tillståndet
-            if (current_event == ev_state_timeout) {
+            if (evq_pop_front() == ev_state_timeout) {
                 // Gå till nästa tillstånd
                 current_state = s_pedestrian_stop;
                 set_traffic_lights(current_state);
@@ -311,7 +364,7 @@ int main(void)
 
         case s_pedestrian_stop:
             // Hantera händelser i s_pedestrian_stop-tillståndet
-            if (current_event == ev_state_timeout) {
+            if (evq_pop_front() == ev_state_timeout) {
                 // Gå till nästa tillstånd
                 current_state = s_cars_ready;
                 set_traffic_lights(current_state);
@@ -322,7 +375,7 @@ int main(void)
 
         case s_cars_ready:
             // Hantera händelser i s_cars_ready-tillståndet
-            if (current_event == ev_state_timeout) {
+            if (evq_pop_front() == ev_state_timeout) {
                 // Gå till nästa tillstånd
                 current_state = s_cars_go;
                 set_traffic_lights(current_state);
@@ -333,7 +386,7 @@ int main(void)
 
         case s_cars_go:
             // Hantera händelser i s_cars_go-tillståndet
-            if (current_event == ev_button_press) {
+            if (evq_pop_front() == ev_button_press) {
                 // Gå till nästa tillstånd
                 current_state = s_pushed_wait;
                 set_traffic_lights(current_state);
@@ -348,7 +401,7 @@ int main(void)
 
         case s_pushed_wait:
             // Hantera händelser i s_pushed_wait-tillståndet
-            if (current_event == ev_state_timeout) {
+            if (evq_pop_front() == ev_state_timeout) {
                 // Gå till nästa tillstånd
                 current_state = s_cars_stopping;
                 // Sätt timeout för nästa tillstånd
