@@ -268,24 +268,8 @@ int main(void)
   uint32_t curr_tick = 0;
   uint32_t last_tick = 0;
 
-  int curr_press = is_button_pressed();
-  int last_press;
-
   while (1)
   {
-
-    // Uppdatera nuvarande och föregående knapptryckningsstatus
-    last_press = curr_press;
-    // Knapptryckning enbart av intresse vid tillstånden: s_init och s_cars_go
-    if (current_state == s_init || current_state == s_cars_go)
-    {
-        curr_press = is_button_pressed();
-    }
-    else
-    {
-        // Garanterar att knapptryckning inte är aktiv om nuvarande tillstånd inte är s_init eller s_cars_go
-        curr_press = 0;
-    }
 
     // Lys upp en diod vid knapptryckning
     // Lampan kommer alltid lysa när vi trycker
@@ -298,11 +282,6 @@ int main(void)
     {
         HAL_GPIO_WritePin(LD2_GPIO_Port, LD2_Pin, GPIO_PIN_RESET);
     }
-
-    // Kontrollera om det har skett en positiv flank på knappen
-    if (curr_press && !last_press) {
-        evq_push_back(ev_button_press);
-    } 
 
     // Kontrollera om det är dags att generera en ev_state_timeout
     if (ticks_left_in_state == 0 && current_state != s_init && current_state != s_cars_go) {
@@ -405,11 +384,6 @@ int main(void)
                 ticks_left_in_state = 1000;
                 set_traffic_lights(current_state);
             }
-            break;
-
-        default:
-            
-            // Hantera okända tillstånd
             break;
     }
 
@@ -562,12 +536,18 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(LD2_GPIO_Port, &GPIO_InitStruct);
 
+  /* EXTI interrupt init*/
+  HAL_NVIC_SetPriority(EXTI15_10_IRQn, 0, 0);
+  HAL_NVIC_EnableIRQ(EXTI15_10_IRQn);
+
 /* USER CODE BEGIN MX_GPIO_Init_2 */
 /* USER CODE END MX_GPIO_Init_2 */
 }
 
 /* USER CODE BEGIN 4 */
-
+void HAL_GPIO_EXTI_Callback( uint16_t GPIO_Pin ) {
+    evq_push_back(ev_button_press);
+}
 /* USER CODE END 4 */
 
 /**
