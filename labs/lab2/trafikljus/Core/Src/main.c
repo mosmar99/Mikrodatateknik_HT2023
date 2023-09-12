@@ -149,6 +149,7 @@ int is_button_pressed() {
 
 void set_traffic_lights(enum state s) {
   switch (s) {
+    // OBS: Alla PINNAR ligger på PORT C, alltså GPIOC, använder pipe:ning s_init
     case s_cars_go:
       HAL_GPIO_WritePin(RED_CAR_GPIO_Port, RED_CAR_Pin, GPIO_PIN_RESET);
       HAL_GPIO_WritePin(YELLOW_CAR_GPIO_Port, YELLOW_CAR_Pin, GPIO_PIN_RESET);
@@ -177,12 +178,8 @@ void set_traffic_lights(enum state s) {
       break;
 
     case s_init:
-      HAL_GPIO_WritePin(RED_CAR_GPIO_Port, RED_CAR_Pin, GPIO_PIN_SET);
-      HAL_GPIO_WritePin(YELLOW_CAR_GPIO_Port, YELLOW_CAR_Pin, GPIO_PIN_SET);
-      HAL_GPIO_WritePin(GREEN_CAR_GPIO_Port, GREEN_CAR_Pin, GPIO_PIN_SET);
-
-      HAL_GPIO_WritePin(RED_WALK_GPIO_Port, RED_WALK_Pin, GPIO_PIN_SET);
-      HAL_GPIO_WritePin(GREEN_WALK_GPIO_Port, GREEN_WALK_Pin, GPIO_PIN_SET);
+      HAL_GPIO_WritePin(RED_CAR_GPIO_Port, RED_CAR_Pin | YELLOW_CAR_Pin | GREEN_CAR_Pin
+                        | RED_WALK_Pin | GREEN_WALK_Pin, GPIO_PIN_SET);
       break;
 
     case s_cars_stopped:
@@ -272,7 +269,7 @@ int main(void)
   uint32_t last_tick = 0;
 
   int curr_press = is_button_pressed();
-  int last_press = curr_press;
+  int last_press;
 
   while (1)
   {
