@@ -380,8 +380,6 @@ int main(void)
       }
     }
 
-    //HAL_Delay(1);
-
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
