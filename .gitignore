@@ -34,3 +34,6 @@
 *.map
 *.list
 */Debug/
+
+# CubeMX
+/.metadata
