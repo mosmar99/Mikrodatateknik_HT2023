@@ -1,0 +1,67 @@
+2023-09-11 14:27:06,716 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 464734536 Bytes (664797184)
+2023-09-11 14:40:10,957 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 351329280 Bytes (664797184)
+2023-09-11 14:40:12,160 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 371239832 Bytes (664797184)
+2023-09-11 14:40:13,606 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 405842840 Bytes (664797184)
+2023-09-11 14:40:13,768 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: NVIC
+2023-09-11 14:40:13,769 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: USART
+2023-09-11 14:40:13,769 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: SYS
+2023-09-11 14:40:13,769 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: GPIO
+2023-09-11 14:40:13,769 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: RCC
+2023-09-11 14:40:13,769 [INFO] CodeGenerator:799 - code generatio: config db path: C:\ST\STM32CubeIDE_1.13.1\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.9.1.202307191849\\db\
+2023-09-11 14:40:13,889 [INFO] CodeEngine:255 - oldGeneratedFile, D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab2\trafikljus\MXTmpFiles\license.tmp_save
+2023-09-11 14:40:13,997 [INFO] CodeEngine:279 - Generated code: D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab2\trafikljus\MXTmpFiles\license.tmp
+2023-09-11 14:40:14,030 [INFO] CodeEngine:255 - oldGeneratedFile, D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab2\trafikljus\MXTmpFiles\gpio.tmp_save
+2023-09-11 14:40:14,196 [INFO] CodeEngine:279 - Generated code: D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab2\trafikljus\MXTmpFiles\gpio.tmp
+2023-09-11 14:40:14,289 [INFO] CodeEngine:255 - oldGeneratedFile, D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab2\trafikljus\Core\Src\stm32f4xx_it.c_save
+2023-09-11 14:40:14,425 [INFO] CodeEngine:279 - Generated code: D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab2\trafikljus\Core\Src\stm32f4xx_it.c
+2023-09-11 14:40:14,433 [INFO] CodeEngine:255 - oldGeneratedFile, D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab2\trafikljus\Core\Inc\stm32f4xx_it.h_save
+2023-09-11 14:40:14,490 [INFO] CodeEngine:279 - Generated code: D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab2\trafikljus\Core\Inc\stm32f4xx_it.h
+2023-09-11 14:40:14,514 [INFO] CodeEngine:255 - oldGeneratedFile, D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab2\trafikljus\Core\Src\stm32f4xx_hal_msp.c_save
+2023-09-11 14:40:14,596 [INFO] CodeEngine:279 - Generated code: D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab2\trafikljus\Core\Src\stm32f4xx_hal_msp.c
+2023-09-11 14:40:14,606 [INFO] CodeEngine:255 - oldGeneratedFile, D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab2\trafikljus\MXTmpFiles\system.tmp_save
+2023-09-11 14:40:14,673 [INFO] CodeEngine:279 - Generated code: D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab2\trafikljus\MXTmpFiles\system.tmp
+2023-09-11 14:40:14,692 [INFO] CodeEngine:311 - oldGeneratedFile, D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab2\trafikljus\Core\Inc\stm32f4xx_hal_conf.h_save
+2023-09-11 14:40:14,761 [INFO] CodeEngine:335 - Generated code: D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab2\trafikljus\Core\Inc\stm32f4xx_hal_conf.h
+2023-09-11 14:40:14,800 [INFO] CodeEngine:255 - oldGeneratedFile, D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab2\trafikljus\Core\Inc\main.h_save
+2023-09-11 14:40:14,871 [INFO] CodeEngine:279 - Generated code: D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab2\trafikljus\Core\Inc\main.h
+2023-09-11 14:40:14,888 [INFO] CodeEngine:255 - oldGeneratedFile, D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab2\trafikljus\Core\Src\main.c_save
+2023-09-11 14:40:14,984 [INFO] CodeEngine:279 - Generated code: D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab2\trafikljus\Core\Src\main.c
+2023-09-11 14:40:15,419 [INFO] ProjectBuilder:3064 - Time for Copy HAL[1] : 91mS.
+2023-09-11 14:40:15,421 [INFO] ProjectBuilder:4404 - Project Generator version: 4.1.0
+2023-09-11 14:40:15,656 [INFO] ConfigFileManager:1457 - The Die is : DIE431
+2023-09-11 14:40:16,760 [INFO] ProjectBuilder:4626 - Time for Generating toolchain IDE Files: 1338mS.
+2023-09-11 14:40:16,760 [INFO] ProjectBuilder:2935 - Time for Copy CMSIS : 0mS.
+2023-09-11 14:40:16,764 [INFO] ProjectBuilder:2935 - Time for Copy CMSIS : 0mS.
+2023-09-11 14:47:18,744 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 596422320 Bytes (855638016)
+2023-09-11 14:47:20,124 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 276424296 Bytes (855638016)
+2023-09-11 14:47:21,227 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 310313784 Bytes (855638016)
+2023-09-11 14:47:21,381 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: NVIC
+2023-09-11 14:47:21,381 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: USART
+2023-09-11 14:47:21,383 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: SYS
+2023-09-11 14:47:21,383 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: GPIO
+2023-09-11 14:47:21,383 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: RCC
+2023-09-11 14:47:21,383 [INFO] CodeGenerator:799 - code generatio: config db path: C:\ST\STM32CubeIDE_1.13.1\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.9.1.202307191849\\db\
+2023-09-11 14:47:21,500 [INFO] CodeEngine:255 - oldGeneratedFile, D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab2\trafikljus\MXTmpFiles\license.tmp_save
+2023-09-11 14:47:21,574 [INFO] CodeEngine:279 - Generated code: D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab2\trafikljus\MXTmpFiles\license.tmp
+2023-09-11 14:47:21,588 [INFO] CodeEngine:255 - oldGeneratedFile, D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab2\trafikljus\MXTmpFiles\gpio.tmp_save
+2023-09-11 14:47:21,649 [INFO] CodeEngine:279 - Generated code: D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab2\trafikljus\MXTmpFiles\gpio.tmp
+2023-09-11 14:47:21,684 [INFO] CodeEngine:255 - oldGeneratedFile, D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab2\trafikljus\Core\Src\stm32f4xx_it.c_save
+2023-09-11 14:47:21,741 [INFO] CodeEngine:279 - Generated code: D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab2\trafikljus\Core\Src\stm32f4xx_it.c
+2023-09-11 14:47:21,744 [INFO] CodeEngine:255 - oldGeneratedFile, D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab2\trafikljus\Core\Inc\stm32f4xx_it.h_save
+2023-09-11 14:47:21,784 [INFO] CodeEngine:279 - Generated code: D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab2\trafikljus\Core\Inc\stm32f4xx_it.h
+2023-09-11 14:47:21,797 [INFO] CodeEngine:255 - oldGeneratedFile, D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab2\trafikljus\Core\Src\stm32f4xx_hal_msp.c_save
+2023-09-11 14:47:21,855 [INFO] CodeEngine:279 - Generated code: D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab2\trafikljus\Core\Src\stm32f4xx_hal_msp.c
+2023-09-11 14:47:21,857 [INFO] CodeEngine:255 - oldGeneratedFile, D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab2\trafikljus\MXTmpFiles\system.tmp_save
+2023-09-11 14:47:21,896 [INFO] CodeEngine:279 - Generated code: D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab2\trafikljus\MXTmpFiles\system.tmp
+2023-09-11 14:47:21,907 [INFO] CodeEngine:311 - oldGeneratedFile, D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab2\trafikljus\Core\Inc\stm32f4xx_hal_conf.h_save
+2023-09-11 14:47:21,977 [INFO] CodeEngine:335 - Generated code: D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab2\trafikljus\Core\Inc\stm32f4xx_hal_conf.h
+2023-09-11 14:47:22,004 [INFO] CodeEngine:255 - oldGeneratedFile, D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab2\trafikljus\Core\Inc\main.h_save
+2023-09-11 14:47:22,059 [INFO] CodeEngine:279 - Generated code: D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab2\trafikljus\Core\Inc\main.h
+2023-09-11 14:47:22,072 [INFO] CodeEngine:255 - oldGeneratedFile, D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab2\trafikljus\Core\Src\main.c_save
+2023-09-11 14:47:22,140 [INFO] CodeEngine:279 - Generated code: D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab2\trafikljus\Core\Src\main.c
+2023-09-11 14:47:22,414 [INFO] ProjectBuilder:3064 - Time for Copy HAL[1] : 82mS.
+2023-09-11 14:47:22,416 [INFO] ProjectBuilder:4404 - Project Generator version: 4.1.0
+2023-09-11 14:47:22,720 [INFO] ConfigFileManager:1457 - The Die is : DIE431
+2023-09-11 14:47:23,673 [INFO] ProjectBuilder:4626 - Time for Generating toolchain IDE Files: 1257mS.
+2023-09-11 14:47:23,674 [INFO] ProjectBuilder:2935 - Time for Copy CMSIS : 0mS.
+2023-09-11 14:47:23,675 [INFO] ProjectBuilder:2935 - Time for Copy CMSIS : 0mS.

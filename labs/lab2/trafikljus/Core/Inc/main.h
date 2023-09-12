@@ -31,7 +31,7 @@ extern "C" {
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
+void my_systick_handler();
 /* USER CODE END Includes */
 
 /* Exported types ------------------------------------------------------------*/
@@ -59,6 +59,7 @@ void Error_Handler(void);
 /* Private defines -----------------------------------------------------------*/
 #define B1_Pin GPIO_PIN_13
 #define B1_GPIO_Port GPIOC
+#define B1_EXTI_IRQn EXTI15_10_IRQn
 #define RED_CAR_Pin GPIO_PIN_1
 #define RED_CAR_GPIO_Port GPIOC
 #define YELLOW_CAR_Pin GPIO_PIN_2

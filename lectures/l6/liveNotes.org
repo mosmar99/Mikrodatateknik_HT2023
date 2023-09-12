@@ -1,0 +1,31 @@
+* Timers och Git
+
+* Blockande, funktionen körs, blockar allt förutom interrupts, ex: HAL_Delay()
+
+* Round Robin Scheduling, alternate between processing tasks in queue
+
+* SysTick 
+** räknar från max frekvensen till min, reset:as av interrupts
+
+* PLL 
+** Voltage Controlled Oscillator (VCO)
+*** A VCO, or Voltage-Controlled Oscillator, is an electronic component that 
+*** generates an output signal, typically a continuous waveform like a sine
+*** wave or a square wave, and its frequency can be controlled by applying a
+*** voltage to it. In simpler terms, it's a device that produces signals whose 
+*** frequency can be adjusted using an electrical voltage.
+
+* Kristall
+** En komponent som kan hamna i resonans, alla andra signaler kommer ignoreras
+** Kristallen kan styra vilken frekvens krtsen kommer att svänga med
+
+* 10 ppm: 0.00001
+
+* RTC = Real Time Clock 
+** Håller koll på kalendertid osv
+
+
+
+
+
+
