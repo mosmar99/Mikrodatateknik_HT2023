@@ -73,6 +73,8 @@ enum state
   s_cars_ready
 };
 
+uint32_t ticks_left_in_state = 0;
+
 enum event evq[ EVQ_SIZE ];
 
 int evq_count = 0;
@@ -85,26 +87,32 @@ void evq_push_back(enum event e);
 enum event evq_pop_front();
 void my_systick_handler();
 void evq_init();
+void my_systick_handler();
 
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
 
+uint32_t systick_count = 0;
+void my_systick_handler()
+{
+  // Kontrollera om det är dags att generera en ev_state_timeout
+  if (ticks_left_in_state != 0)
+  {
+	  ticks_left_in_state -= (HAL_GetTick()-systick_count);
+	  if (ticks_left_in_state == 0)
+	  {
+	      evq_push_back(ev_state_timeout);
+	  }
+  }
+  
+  systick_count++;
+}
+
 void evq_init() {
   for (int i = 0; i < EVQ_SIZE; i++) {
     evq[i] = ev_error;
-  }
-}
-
-int systick_count = 0;
-void my_systick_handler()
-{
-  systick_count++;
-  if (systick_count == 1000)
-  {
-    HAL_GPIO_TogglePin(LD2_GPIO_Port, LD2_Pin);
-    systick_count = 0;
   }
 }
 
@@ -264,30 +272,8 @@ int main(void)
   enum state current_state = s_init;
   evq_init();
 
-  uint32_t ticks_left_in_state = 0;
-  uint32_t curr_tick = 0;
-  uint32_t last_tick = 0;
-
   while (1)
   {
-
-    // Lys upp en diod vid knapptryckning
-    // Lampan kommer alltid lysa när vi trycker
-    // Knappen kommer enbart ha inverkan vid aktuella tillstånd
-    if (is_button_pressed())
-    {
-        HAL_GPIO_WritePin(LD2_GPIO_Port, LD2_Pin, GPIO_PIN_SET);
-    }
-    else
-    {
-        HAL_GPIO_WritePin(LD2_GPIO_Port, LD2_Pin, GPIO_PIN_RESET);
-    }
-
-    // Kontrollera om det är dags att generera en ev_state_timeout
-    if (ticks_left_in_state == 0 && current_state != s_init && current_state != s_cars_go) {
-        evq_push_back(ev_state_timeout);
-    }
-
     // Hantera nästa tillstånd baserat på nuvarande tillstånd och händelse
     switch (current_state) {
         case s_init:
@@ -387,23 +373,7 @@ int main(void)
             break;
     }
 
-    // Uppdatera tick-värden
-    last_tick = curr_tick;
-    curr_tick = HAL_GetTick();
-    // Tickvärden är inte relevanta om vi inte räknar ner tiden
-    if (current_state != s_init && current_state != s_cars_go)
-    {
-
-      if (ticks_left_in_state - (curr_tick - last_tick) < 0)
-      {
-          ticks_left_in_state = 0;
-      }
-      else
-      {
-          ticks_left_in_state -= (curr_tick - last_tick);
-      }
-    }
-
+    HAL_Delay(1);
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
