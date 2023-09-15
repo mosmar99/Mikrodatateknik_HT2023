@@ -6,8 +6,14 @@
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
-		<item key="selection" value=""/>
+		<item key="selection" value="button"/>
 		<list key="findhistory">
+			<item value="button"/>
+			<item value="is_button_pressed§"/>
+			<item value="is_button_pressed"/>
+			<item value="MX_TIM3_Init()"/>
+			<item value="l MX_TIM3_Init()"/>
+			<item value="EX"/>
 			<item value="VECT_TAB_OFFSET"/>
 			<item value="VECT_"/>
 			<item value="VECT"/>

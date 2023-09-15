@@ -40,6 +40,8 @@
 /* USER CODE END PM */
 
 /* Private variables ---------------------------------------------------------*/
+TIM_HandleTypeDef htim3;
+
 UART_HandleTypeDef huart2;
 
 /* USER CODE BEGIN PV */
@@ -50,6 +52,7 @@ UART_HandleTypeDef huart2;
 void SystemClock_Config(void);
 static void MX_GPIO_Init(void);
 static void MX_USART2_UART_Init(void);
+static void MX_TIM3_Init(void);
 /* USER CODE BEGIN PFP */
 #define EVQ_SIZE 10
 
@@ -88,11 +91,21 @@ enum event evq_pop_front();
 void my_systick_handler();
 void evq_init();
 void my_systick_handler();
+void push_button_light_on();
+void push_button_light_off();
 
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
+
+void push_button_light_off() {
+	HAL_GPIO_WritePin(GPIOC, BTN_LAMP_Pin, GPIO_PIN_RESET);
+}
+
+void push_button_light_on() {
+    HAL_GPIO_WritePin(GPIOC, BTN_LAMP_Pin, GPIO_PIN_SET);
+}
 
 uint32_t systick_count = 0;
 void my_systick_handler()
@@ -140,19 +153,6 @@ enum event evq_pop_front()
     evq_count--;
   }
   return e;
-}
-
-// returns 1 if blue button is pressed
-// return 0 if blue button isn't pressed
-int is_button_pressed() {
-
-	if ((GPIOC->IDR & GPIO_PIN_13) == 0) {
-		return 1; // button is pressed
-	}
-	else
-	{
-		return 0; // button is not pressed
-	}
 }
 
 void set_traffic_lights(enum state s) {
@@ -263,6 +263,8 @@ int main(void)
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
   MX_USART2_UART_Init();
+  MX_TIM3_Init();
+  HAL_TIM_PWM_Start(&htim3, TIM_CHANNEL_1);
   /* USER CODE BEGIN 2 */
 
   /* USER CODE END 2 */
@@ -270,15 +272,16 @@ int main(void)
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   enum state current_state = s_init;
+  enum event curr_event;
   evq_init();
-
   while (1)
   {
+	curr_event = evq_pop_front();
     // Hantera nästa tillstånd baserat på nuvarande tillstånd och händelse
     switch (current_state) {
         case s_init:
             // Hantera händelser i s_init-tillståndet
-            if (evq_pop_front() == ev_button_press) {
+            if (curr_event == ev_button_press) {
                 // Gå till nästa tillstånd
                 current_state = s_cars_stopped;
                 set_traffic_lights(current_state);
@@ -293,7 +296,7 @@ int main(void)
 
         case s_cars_stopping:
             // Hantera händelser i s_cars_stopping-tillståndet
-            if (evq_pop_front() == ev_state_timeout) {
+            if (curr_event == ev_state_timeout) {
                 // Gå till nästa tillstånd
                 current_state = s_cars_stopped;
                 set_traffic_lights(current_state);
@@ -304,7 +307,7 @@ int main(void)
 
         case s_cars_stopped:
             // Hantera händelser i s_cars_stopped-tillståndet
-            if (evq_pop_front() == ev_state_timeout) {
+            if (curr_event == ev_state_timeout) {
                 // Gå till nästa tillstånd
                 current_state = s_pedestrian_walk;
                 set_traffic_lights(current_state);
@@ -315,7 +318,7 @@ int main(void)
 
         case s_pedestrian_walk:
             // Hantera händelser i s_pedestrian_walk-tillståndet
-            if (evq_pop_front() == ev_state_timeout) {
+            if (curr_event == ev_state_timeout) {
                 // Gå till nästa tillstånd
                 current_state = s_pedestrian_stop;
                 set_traffic_lights(current_state);
@@ -326,7 +329,7 @@ int main(void)
 
         case s_pedestrian_stop:
             // Hantera händelser i s_pedestrian_stop-tillståndet
-            if (evq_pop_front() == ev_state_timeout) {
+            if (curr_event == ev_state_timeout) {
                 // Gå till nästa tillstånd
                 current_state = s_cars_ready;
                 set_traffic_lights(current_state);
@@ -337,7 +340,7 @@ int main(void)
 
         case s_cars_ready:
             // Hantera händelser i s_cars_ready-tillståndet
-            if (evq_pop_front() == ev_state_timeout) {
+            if (curr_event == ev_state_timeout) {
                 // Gå till nästa tillstånd
                 current_state = s_cars_go;
                 set_traffic_lights(current_state);
@@ -348,10 +351,13 @@ int main(void)
 
         case s_cars_go:
             // Hantera händelser i s_cars_go-tillståndet
-            if (evq_pop_front() == ev_button_press) {
+            if (curr_event == ev_button_press) {
+
                 // Gå till nästa tillstånd
                 current_state = s_pushed_wait;
                 set_traffic_lights(current_state);
+                // Sätt på lampan
+                push_button_light_on();
                 // Sätt timeout för nästa tillstånd
                 ticks_left_in_state = 2000;
             }
@@ -363,7 +369,9 @@ int main(void)
 
         case s_pushed_wait:
             // Hantera händelser i s_pushed_wait-tillståndet
-            if (evq_pop_front() == ev_state_timeout) {
+            if (curr_event == ev_state_timeout) {
+                // Stäng av lampan
+                push_button_light_off();
                 // Gå till nästa tillstånd
                 current_state = s_cars_stopping;
                 // Sätt timeout för nästa tillstånd
@@ -428,6 +436,65 @@ void SystemClock_Config(void)
 }
 
 /**
+  * @brief TIM3 Initialization Function
+  * @param None
+  * @retval None
+  */
+static void MX_TIM3_Init(void)
+{
+
+  /* USER CODE BEGIN TIM3_Init 0 */
+
+  /* USER CODE END TIM3_Init 0 */
+
+  TIM_ClockConfigTypeDef sClockSourceConfig = {0};
+  TIM_MasterConfigTypeDef sMasterConfig = {0};
+  TIM_OC_InitTypeDef sConfigOC = {0};
+
+  /* USER CODE BEGIN TIM3_Init 1 */
+
+  /* USER CODE END TIM3_Init 1 */
+  htim3.Instance = TIM3;
+  htim3.Init.Prescaler = 0;
+  htim3.Init.CounterMode = TIM_COUNTERMODE_UP;
+  htim3.Init.Period = 65535;
+  htim3.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
+  htim3.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
+  if (HAL_TIM_Base_Init(&htim3) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  sClockSourceConfig.ClockSource = TIM_CLOCKSOURCE_INTERNAL;
+  if (HAL_TIM_ConfigClockSource(&htim3, &sClockSourceConfig) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  if (HAL_TIM_PWM_Init(&htim3) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  sMasterConfig.MasterOutputTrigger = TIM_TRGO_RESET;
+  sMasterConfig.MasterSlaveMode = TIM_MASTERSLAVEMODE_DISABLE;
+  if (HAL_TIMEx_MasterConfigSynchronization(&htim3, &sMasterConfig) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  sConfigOC.OCMode = TIM_OCMODE_PWM1;
+  sConfigOC.Pulse = 0;
+  sConfigOC.OCPolarity = TIM_OCPOLARITY_HIGH;
+  sConfigOC.OCFastMode = TIM_OCFAST_DISABLE;
+  if (HAL_TIM_PWM_ConfigChannel(&htim3, &sConfigOC, TIM_CHANNEL_1) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  /* USER CODE BEGIN TIM3_Init 2 */
+
+  /* USER CODE END TIM3_Init 2 */
+  HAL_TIM_MspPostInit(&htim3);
+
+}
+
+/**
   * @brief USART2 Initialization Function
   * @param None
   * @retval None
@@ -478,8 +545,8 @@ static void MX_GPIO_Init(void)
   __HAL_RCC_GPIOB_CLK_ENABLE();
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOC, RED_CAR_Pin|YELLOW_CAR_Pin|GREEN_CAR_Pin|RED_WALK_Pin
-                          |GREEN_WALK_Pin, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GPIOC, BTN_LAMP_Pin|RED_CAR_Pin|YELLOW_CAR_Pin|GREEN_CAR_Pin
+                          |RED_WALK_Pin|GREEN_WALK_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(LD2_GPIO_Port, LD2_Pin, GPIO_PIN_RESET);
@@ -490,10 +557,10 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   HAL_GPIO_Init(B1_GPIO_Port, &GPIO_InitStruct);
 
-  /*Configure GPIO pins : RED_CAR_Pin YELLOW_CAR_Pin GREEN_CAR_Pin RED_WALK_Pin
-                           GREEN_WALK_Pin */
-  GPIO_InitStruct.Pin = RED_CAR_Pin|YELLOW_CAR_Pin|GREEN_CAR_Pin|RED_WALK_Pin
-                          |GREEN_WALK_Pin;
+  /*Configure GPIO pins : BTN_LAMP_Pin RED_CAR_Pin YELLOW_CAR_Pin GREEN_CAR_Pin
+                           RED_WALK_Pin GREEN_WALK_Pin */
+  GPIO_InitStruct.Pin = BTN_LAMP_Pin|RED_CAR_Pin|YELLOW_CAR_Pin|GREEN_CAR_Pin
+                          |RED_WALK_Pin|GREEN_WALK_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
@@ -516,7 +583,10 @@ static void MX_GPIO_Init(void)
 
 /* USER CODE BEGIN 4 */
 void HAL_GPIO_EXTI_Callback( uint16_t GPIO_Pin ) {
-    evq_push_back(ev_button_press);
+    if(GPIO_Pin == B1_Pin)
+    {
+    	evq_push_back(ev_button_press);
+    }
 }
 /* USER CODE END 4 */
 

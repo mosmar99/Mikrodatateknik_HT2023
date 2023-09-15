@@ -1,2 +1,2 @@
-curr_tick
-uwTick
+ticks_left_in_state
+systick_count

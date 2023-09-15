@@ -49,6 +49,8 @@ void my_systick_handler();
 
 /* USER CODE END EM */
 
+void HAL_TIM_MspPostInit(TIM_HandleTypeDef *htim);
+
 /* Exported functions prototypes ---------------------------------------------*/
 void Error_Handler(void);
 
@@ -60,6 +62,8 @@ void Error_Handler(void);
 #define B1_Pin GPIO_PIN_13
 #define B1_GPIO_Port GPIOC
 #define B1_EXTI_IRQn EXTI15_10_IRQn
+#define BTN_LAMP_Pin GPIO_PIN_0
+#define BTN_LAMP_GPIO_Port GPIOC
 #define RED_CAR_Pin GPIO_PIN_1
 #define RED_CAR_GPIO_Port GPIOC
 #define YELLOW_CAR_Pin GPIO_PIN_2
