@@ -83,10 +83,7 @@ static int uart_get_menu_choice()
 }
 
 static void uart_print_bad_choice() {
-  char str[100] = { '\0' };
-  uint16_t str_len = 0;
-  str_len = sprintf(str, "\r\nYou entered an invalid choice.\r\n");
-  HAL_UART_Transmit(&huart2, (uint8_t*) str, str_len, HAL_MAX_DELAY);
+
 }
 
 void clock_mode()
@@ -145,27 +142,28 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-  int menu_choice = -1;
+  uart_print_menu();
+  int menu_choice = 5;
   while (1)
   {
-      uart_print_menu();
       menu_choice = uart_get_menu_choice();
-      {
-        switch (menu_choice)
-        {
-          case 1:
-            clock_mode(); 
-            break;
+      HAL_Delay(20000);
+    //   {
+    //     switch (menu_choice)
+    //     {
+    //       case 1:
+    //         clock_mode(); 
+    //         break;
           
-          case 2: 
-            button_mode(); 
-            break;
+    //       case 2: 
+    //         button_mode(); 
+    //         break;
           
-          default: 
-            uart_print_bad_choice(); 
-            break;
-       }
-    }
+    //       default: 
+    //         uart_print_bad_choice(); 
+    //         break;
+    //    }
+    // }
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */

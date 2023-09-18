@@ -1,0 +1,31 @@
+* Vilken buss är det som styr över hur
+* snabbt input-värden kan ändras?
+** The data present on the I/O pin is sampled into the input data register. 
+** This means that the value on the I/O pin is read or captured at the rising 
+** or falling edge of the AHB clock signal, depending on the specific system's 
+** configuration. This sampled data is then processed or stored as needed.
+** Den ansvariga klockan för AHB bussen är HCLK. 
+
+* Vad är högsta läckströmmen in i en
+* input-port?
+** I normala fall: +-1 mA
+** I Functional Testing: 3 mA
+
+* Vad är det typiska värdet på en ports
+* interna pull-up-motstånd?
+** För alla Pins utom PA10: 40k Ohm
+** För Pin PA10: 10k Ohm
+
+* Vad är det typiska värdet på en ports
+* interna pull-down-motstånd?
+** För alla Pins utom PA10: 40k Ohm
+** För Pin PA10: 10k Ohm
+
+
+
+
+
+
+
+
+
