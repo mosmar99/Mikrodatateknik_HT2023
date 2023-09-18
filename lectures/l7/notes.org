@@ -1,0 +1,36 @@
+* Cube MX genererar en skelettkod för att nå vissa register
+** Detta sker mha (GPIO_TypeDef *), en struktpekare
+** GPIO_A_BASE, pekar på registret
+** Det finns en define på detta:
+**     #define GPIOA    ((GPIO_TypeDef *) GPIOA_BASE)
+
+* LD2_Port is a define generated when alias is set through generate code
+
+* Raise-condition: skriver över någon som något annat har skrivit (i minnet)
+
+* Capture, 
+** ett värdet kommer in på en av TIMx, Counter kan "latcha" (låsa) det värdet, 
+** låsa tiden, vad var det just då, kan göra det igen, sen räkna tiden i mellan
+
+* Compare
+** vill generarea en signal ut, exempelvis en fyrkantsvåg i output genom räknaren
+
+* TIM_TypeDef
+
+* __IO:
+** säg till kompilator, detta är värden som kan ändra på sig, använd inte dom
+
+* Vår QuadSeg display har som hjälp quadseg filerna som vi fått
+
+* Fördel med drivkrets:
+** behöver bara en klocka och en dator
+
+* LCD 16x2 Display (Lab4)
+** Använder oss av I2C, slipper koppla upp på alla pins D0-D7
+** I2C standardinterface, för att kommunicera med LCD-Displayen
+
+* I2C
+** Data: SDA
+** Klocka: SLL
+
+* Processorn skickar via SDA och SLL till en Interface-Krets som i sin tur använder 
