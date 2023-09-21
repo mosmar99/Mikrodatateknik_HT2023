@@ -21,11 +21,35 @@
 ** För alla Pins utom PA10: 40k Ohm
 ** För Pin PA10: 10k Ohm
 
+* Sätt horisontell SCALE till 400 ns. Vad är
+* högsta antalet flanker du kan
+* observera från första till ett stabilt
+* värde är uppnått?
+* 
+* Sätt horisontell SCALE till 4 ms. Vilken
+* är den längsta tiden från första 
+* flanken till sista flanken, innan stabilt
+* värde infinns?
+* 
+* Uppkommer kontaktstuds vid fler
+* tillfällen än när du trycker ner
+* knappen?
 
+* Vilken timer valde du?
+** TIM1
 
+* Vad är dess högsta värden för
+* räknaren (Counter resolution) samt
+* för Prescalern?
 
+** Counter Resolution är 16-bitar, 2^16 = 65536
+** Prescaler factor: "Any integer between 1 and 65536", alltså 65536 (från 0-65535)
 
+* Vilken buss driver den TIM-enhet som
+* du valde?
+** APB2
 
-
-
-
+* Vad för klockfrekvens (för timers)
+* rapporterar CubeMX att denna buss
+* har?
+** 84 MHz
