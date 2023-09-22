@@ -1806,3 +1806,45 @@ Finished building: default.size.stdout
  
 Finished building: klocka_och_knapp.list
  
+12:00:40 **** Incremental Build of configuration Debug for project klocka_och_knapp ****
+make -j8 all 
+arm-none-eabi-size   klocka_och_knapp.elf 
+   text	   data	    bss	    dec	    hex	filename
+  18620	    124	   2060	  20804	   5144	klocka_och_knapp.elf
+Finished building: default.size.stdout
+ 
+13:04:49 **** Incremental Build of configuration Debug for project klocka_och_knapp ****
+make -j8 all 
+arm-none-eabi-size   klocka_och_knapp.elf 
+   text	   data	    bss	    dec	    hex	filename
+  18620	    124	   2060	  20804	   5144	klocka_och_knapp.elf
+Finished building: default.size.stdout
+ 
+13:05:30 **** Incremental Build of configuration Debug for project klocka_och_knapp ****
+make -j8 all 
+arm-none-eabi-size   klocka_och_knapp.elf 
+   text	   data	    bss	    dec	    hex	filename
+  18620	    124	   2060	  20804	   5144	klocka_och_knapp.elf
+Finished building: default.size.stdout
+ 
+13:27:01 **** Incremental Build of configuration Debug for project klocka_och_knapp ****
+make -j8 all 
+arm-none-eabi-size   klocka_och_knapp.elf 
+   text	   data	    bss	    dec	    hex	filename
+  18620	    124	   2060	  20804	   5144	klocka_och_knapp.elf
+Finished building: default.size.stdout
+ 
+13:27:39 **** Incremental Build of configuration Debug for project klocka_och_knapp ****
+make -j8 all 
+arm-none-eabi-size   klocka_och_knapp.elf 
+   text	   data	    bss	    dec	    hex	filename
+  18620	    124	   2060	  20804	   5144	klocka_och_knapp.elf
+Finished building: default.size.stdout
+ 
+13:41:11 **** Incremental Build of configuration Debug for project klocka_och_knapp ****
+make -j8 all 
+arm-none-eabi-size   klocka_och_knapp.elf 
+   text	   data	    bss	    dec	    hex	filename
+  18620	    124	   2060	  20804	   5144	klocka_och_knapp.elf
+Finished building: default.size.stdout
+ 

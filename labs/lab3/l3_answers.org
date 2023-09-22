@@ -4,7 +4,12 @@
 ** This means that the value on the I/O pin is read or captured at the rising 
 ** or falling edge of the AHB clock signal, depending on the specific system's 
 ** configuration. This sampled data is then processed or stored as needed.
+
 ** Den ansvariga klockan för AHB bussen är HCLK. 
+
+* Med vilken klockfrekvens kan din
+* MCU märka förändringar i inputvärden?
+** 84 MHz
 
 * Vad är högsta läckströmmen in i en
 * input-port?
@@ -25,15 +30,18 @@
 * högsta antalet flanker du kan
 * observera från första till ett stabilt
 * värde är uppnått?
-* 
+** Oftast noll, ibland någon enstaka (2-5 st)
+
 * Sätt horisontell SCALE till 4 ms. Vilken
 * är den längsta tiden från första 
 * flanken till sista flanken, innan stabilt
 * värde infinns?
-* 
+** 4 st (se bild) (600 microsekunder)
+
 * Uppkommer kontaktstuds vid fler
 * tillfällen än när du trycker ner
 * knappen?
+** början o sluete
 
 * Vilken timer valde du?
 ** TIM1

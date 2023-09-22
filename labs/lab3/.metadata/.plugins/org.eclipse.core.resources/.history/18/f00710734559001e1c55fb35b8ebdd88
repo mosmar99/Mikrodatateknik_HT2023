@@ -32,7 +32,7 @@
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
-#define BOUNCE_DELAY_MS 20
+#define BOUNCE_DELAY_MS 100
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -47,6 +47,8 @@ UART_HandleTypeDef huart2;
 /* USER CODE BEGIN PV */
 uint32_t time = 0;
 uint32_t has_managed_curr_time_exti = 0;
+// uint16_t button_exti_count;
+// uint16_t button_debounced_count;
 uint16_t button_click_count = 0;
 uint16_t last_flank_causing_exti = 0;
 uint16_t last_managed_exti = 0;
