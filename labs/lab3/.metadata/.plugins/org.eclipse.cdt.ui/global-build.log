@@ -1138,3 +1138,540 @@ Finished building: default.size.stdout
  
 Finished building: klocka_och_knapp.list
  
+21:27:41 **** Incremental Build of configuration Debug for project klocka_och_knapp ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'clock_mode':
+../Core/Src/main.c:102:14: error: invalid operands to binary % (have 'float' and 'int')
+  102 |     if (time % 1 == 0)
+      |              ^
+make: *** [Core/Src/subdir.mk:37: Core/Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+21:32:40 **** Incremental Build of configuration Debug for project klocka_och_knapp ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "klocka_och_knapp.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab3\klocka_och_knapp\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="klocka_och_knapp.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: klocka_och_knapp.elf
+ 
+arm-none-eabi-size   klocka_och_knapp.elf 
+arm-none-eabi-objdump -h -S  klocka_och_knapp.elf  > "klocka_och_knapp.list"
+   text	   data	    bss	    dec	    hex	filename
+  18156	    120	   2056	  20332	   4f6c	klocka_och_knapp.elf
+Finished building: default.size.stdout
+ 
+Finished building: klocka_och_knapp.list
+ 
+21:33:58 **** Incremental Build of configuration Debug for project klocka_och_knapp ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "klocka_och_knapp.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab3\klocka_och_knapp\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="klocka_och_knapp.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: klocka_och_knapp.elf
+ 
+arm-none-eabi-size   klocka_och_knapp.elf 
+arm-none-eabi-objdump -h -S  klocka_och_knapp.elf  > "klocka_och_knapp.list"
+   text	   data	    bss	    dec	    hex	filename
+  18192	    120	   2056	  20368	   4f90	klocka_och_knapp.elf
+Finished building: default.size.stdout
+ 
+Finished building: klocka_och_knapp.list
+ 
+21:34:54 **** Incremental Build of configuration Debug for project klocka_och_knapp ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "klocka_och_knapp.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab3\klocka_och_knapp\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="klocka_och_knapp.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: klocka_och_knapp.elf
+ 
+arm-none-eabi-size   klocka_och_knapp.elf 
+arm-none-eabi-objdump -h -S  klocka_och_knapp.elf  > "klocka_och_knapp.list"
+   text	   data	    bss	    dec	    hex	filename
+  18272	    120	   2056	  20448	   4fe0	klocka_och_knapp.elf
+Finished building: default.size.stdout
+ 
+Finished building: klocka_och_knapp.list
+ 
+21:37:34 **** Incremental Build of configuration Debug for project klocka_och_knapp ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "klocka_och_knapp.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab3\klocka_och_knapp\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="klocka_och_knapp.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: klocka_och_knapp.elf
+ 
+arm-none-eabi-size   klocka_och_knapp.elf 
+arm-none-eabi-objdump -h -S  klocka_och_knapp.elf  > "klocka_och_knapp.list"
+   text	   data	    bss	    dec	    hex	filename
+  18192	    120	   2056	  20368	   4f90	klocka_och_knapp.elf
+Finished building: default.size.stdout
+ 
+Finished building: klocka_och_knapp.list
+ 
+21:41:59 **** Incremental Build of configuration Debug for project klocka_och_knapp ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "klocka_och_knapp.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab3\klocka_och_knapp\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="klocka_och_knapp.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: klocka_och_knapp.elf
+ 
+arm-none-eabi-size   klocka_och_knapp.elf 
+arm-none-eabi-objdump -h -S  klocka_och_knapp.elf  > "klocka_och_knapp.list"
+   text	   data	    bss	    dec	    hex	filename
+  18200	    120	   2056	  20376	   4f98	klocka_och_knapp.elf
+Finished building: default.size.stdout
+ 
+Finished building: klocka_och_knapp.list
+ 
+21:58:42 **** Incremental Build of configuration Debug for project klocka_och_knapp ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'clock_mode':
+../Core/Src/main.c:114:12: warning: statement with no effect [-Wunused-value]
+  114 |         S1 == 0;
+      |         ~~~^~~~
+arm-none-eabi-gcc -o "klocka_och_knapp.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab3\klocka_och_knapp\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="klocka_och_knapp.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: klocka_och_knapp.elf
+ 
+arm-none-eabi-size   klocka_och_knapp.elf 
+arm-none-eabi-objdump -h -S  klocka_och_knapp.elf  > "klocka_och_knapp.list"
+   text	   data	    bss	    dec	    hex	filename
+  18220	    120	   2056	  20396	   4fac	klocka_och_knapp.elf
+Finished building: default.size.stdout
+ 
+Finished building: klocka_och_knapp.list
+ 
+21:59:53 **** Incremental Build of configuration Debug for project klocka_och_knapp ****
+make -j8 all 
+arm-none-eabi-size   klocka_och_knapp.elf 
+   text	   data	    bss	    dec	    hex	filename
+  18220	    120	   2056	  20396	   4fac	klocka_och_knapp.elf
+Finished building: default.size.stdout
+ 
+22:00:05 **** Incremental Build of configuration Debug for project klocka_och_knapp ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "klocka_och_knapp.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab3\klocka_och_knapp\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="klocka_och_knapp.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: klocka_och_knapp.elf
+ 
+arm-none-eabi-size   klocka_och_knapp.elf 
+arm-none-eabi-objdump -h -S  klocka_och_knapp.elf  > "klocka_och_knapp.list"
+   text	   data	    bss	    dec	    hex	filename
+  18224	    120	   2056	  20400	   4fb0	klocka_och_knapp.elf
+Finished building: default.size.stdout
+ 
+Finished building: klocka_och_knapp.list
+ 
+22:01:57 **** Incremental Build of configuration Debug for project klocka_och_knapp ****
+make -j8 all 
+arm-none-eabi-size   klocka_och_knapp.elf 
+   text	   data	    bss	    dec	    hex	filename
+  18224	    120	   2056	  20400	   4fb0	klocka_och_knapp.elf
+Finished building: default.size.stdout
+ 
+08:39:32 **** Incremental Build of configuration Debug for project klocka_och_knapp ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "klocka_och_knapp.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab3\klocka_och_knapp\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="klocka_och_knapp.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: klocka_och_knapp.elf
+ 
+arm-none-eabi-size   klocka_och_knapp.elf 
+arm-none-eabi-objdump -h -S  klocka_och_knapp.elf  > "klocka_och_knapp.list"
+   text	   data	    bss	    dec	    hex	filename
+  18304	    120	   2056	  20480	   5000	klocka_och_knapp.elf
+Finished building: default.size.stdout
+ 
+Finished building: klocka_och_knapp.list
+ 
+08:40:16 **** Incremental Build of configuration Debug for project klocka_och_knapp ****
+make -j8 all 
+arm-none-eabi-size   klocka_och_knapp.elf 
+   text	   data	    bss	    dec	    hex	filename
+  18304	    120	   2056	  20480	   5000	klocka_och_knapp.elf
+Finished building: default.size.stdout
+ 
+08:44:40 **** Incremental Build of configuration Debug for project klocka_och_knapp ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "klocka_och_knapp.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab3\klocka_och_knapp\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="klocka_och_knapp.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: klocka_och_knapp.elf
+ 
+arm-none-eabi-size   klocka_och_knapp.elf 
+arm-none-eabi-objdump -h -S  klocka_och_knapp.elf  > "klocka_och_knapp.list"
+   text	   data	    bss	    dec	    hex	filename
+  18312	    120	   2056	  20488	   5008	klocka_och_knapp.elf
+Finished building: default.size.stdout
+ 
+Finished building: klocka_och_knapp.list
+ 
+08:47:06 **** Incremental Build of configuration Debug for project klocka_och_knapp ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "klocka_och_knapp.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab3\klocka_och_knapp\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="klocka_och_knapp.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: klocka_och_knapp.elf
+ 
+arm-none-eabi-size   klocka_och_knapp.elf 
+arm-none-eabi-objdump -h -S  klocka_och_knapp.elf  > "klocka_och_knapp.list"
+   text	   data	    bss	    dec	    hex	filename
+  18332	    120	   2056	  20508	   501c	klocka_och_knapp.elf
+Finished building: default.size.stdout
+ 
+Finished building: klocka_och_knapp.list
+ 
+08:52:40 **** Incremental Build of configuration Debug for project klocka_och_knapp ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "klocka_och_knapp.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab3\klocka_och_knapp\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="klocka_och_knapp.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: klocka_och_knapp.elf
+ 
+arm-none-eabi-size   klocka_och_knapp.elf 
+arm-none-eabi-objdump -h -S  klocka_och_knapp.elf  > "klocka_och_knapp.list"
+   text	   data	    bss	    dec	    hex	filename
+  18388	    120	   2056	  20564	   5054	klocka_och_knapp.elf
+Finished building: default.size.stdout
+ 
+Finished building: klocka_och_knapp.list
+ 
+08:57:35 **** Incremental Build of configuration Debug for project klocka_och_knapp ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "klocka_och_knapp.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab3\klocka_och_knapp\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="klocka_och_knapp.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: klocka_och_knapp.elf
+ 
+arm-none-eabi-size   klocka_och_knapp.elf 
+arm-none-eabi-objdump -h -S  klocka_och_knapp.elf  > "klocka_och_knapp.list"
+   text	   data	    bss	    dec	    hex	filename
+  18388	    120	   2056	  20564	   5054	klocka_och_knapp.elf
+Finished building: default.size.stdout
+ 
+Finished building: klocka_och_knapp.list
+ 
+08:58:18 **** Incremental Build of configuration Debug for project klocka_och_knapp ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "klocka_och_knapp.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab3\klocka_och_knapp\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="klocka_och_knapp.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: klocka_och_knapp.elf
+ 
+arm-none-eabi-size   klocka_och_knapp.elf 
+arm-none-eabi-objdump -h -S  klocka_och_knapp.elf  > "klocka_och_knapp.list"
+   text	   data	    bss	    dec	    hex	filename
+  18396	    120	   2056	  20572	   505c	klocka_och_knapp.elf
+Finished building: default.size.stdout
+ 
+Finished building: klocka_och_knapp.list
+ 
+08:59:08 **** Incremental Build of configuration Debug for project klocka_och_knapp ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "klocka_och_knapp.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab3\klocka_och_knapp\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="klocka_och_knapp.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: klocka_och_knapp.elf
+ 
+arm-none-eabi-size   klocka_och_knapp.elf 
+arm-none-eabi-objdump -h -S  klocka_och_knapp.elf  > "klocka_och_knapp.list"
+   text	   data	    bss	    dec	    hex	filename
+  18396	    120	   2056	  20572	   505c	klocka_och_knapp.elf
+Finished building: default.size.stdout
+ 
+Finished building: klocka_och_knapp.list
+ 
+09:00:49 **** Incremental Build of configuration Debug for project klocka_och_knapp ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "klocka_och_knapp.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab3\klocka_och_knapp\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="klocka_och_knapp.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: klocka_och_knapp.elf
+ 
+arm-none-eabi-size   klocka_och_knapp.elf 
+arm-none-eabi-objdump -h -S  klocka_och_knapp.elf  > "klocka_och_knapp.list"
+   text	   data	    bss	    dec	    hex	filename
+  18384	    120	   2056	  20560	   5050	klocka_och_knapp.elf
+Finished building: default.size.stdout
+ 
+Finished building: klocka_och_knapp.list
+ 
+09:01:56 **** Incremental Build of configuration Debug for project klocka_och_knapp ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "klocka_och_knapp.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab3\klocka_och_knapp\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="klocka_och_knapp.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: klocka_och_knapp.elf
+ 
+arm-none-eabi-size   klocka_och_knapp.elf 
+arm-none-eabi-objdump -h -S  klocka_och_knapp.elf  > "klocka_och_knapp.list"
+   text	   data	    bss	    dec	    hex	filename
+  18384	    120	   2056	  20560	   5050	klocka_och_knapp.elf
+Finished building: default.size.stdout
+ 
+Finished building: klocka_och_knapp.list
+ 
+09:03:16 **** Incremental Build of configuration Debug for project klocka_och_knapp ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "klocka_och_knapp.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab3\klocka_och_knapp\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="klocka_och_knapp.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: klocka_och_knapp.elf
+ 
+arm-none-eabi-size   klocka_och_knapp.elf 
+arm-none-eabi-objdump -h -S  klocka_och_knapp.elf  > "klocka_och_knapp.list"
+   text	   data	    bss	    dec	    hex	filename
+  18384	    120	   2056	  20560	   5050	klocka_och_knapp.elf
+Finished building: default.size.stdout
+ 
+Finished building: klocka_och_knapp.list
+ 
+09:04:13 **** Incremental Build of configuration Debug for project klocka_och_knapp ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "klocka_och_knapp.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab3\klocka_och_knapp\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="klocka_och_knapp.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: klocka_och_knapp.elf
+ 
+arm-none-eabi-size   klocka_och_knapp.elf 
+arm-none-eabi-objdump -h -S  klocka_och_knapp.elf  > "klocka_och_knapp.list"
+   text	   data	    bss	    dec	    hex	filename
+  18384	    120	   2056	  20560	   5050	klocka_och_knapp.elf
+Finished building: default.size.stdout
+ 
+Finished building: klocka_och_knapp.list
+ 
+09:11:34 **** Incremental Build of configuration Debug for project klocka_och_knapp ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'increment_MM_SS':
+../Core/Src/main.c:99:9: warning: value computed is not used [-Wunused-value]
+   99 |         *(S1)++;
+      |         ^~~~~~~
+../Core/Src/main.c:106:11: warning: value computed is not used [-Wunused-value]
+  106 |           *(S2)++;
+      |           ^~~~~~~
+../Core/Src/main.c:113:13: warning: value computed is not used [-Wunused-value]
+  113 |             *(M1)++;
+      |             ^~~~~~~
+../Core/Src/main.c:120:15: warning: value computed is not used [-Wunused-value]
+  120 |               *(M2)++;
+      |               ^~~~~~~
+../Core/Src/main.c: In function 'clock_mode':
+../Core/Src/main.c:143:42: error: expected ';' before '}' token
+  143 |       increment_MM_SS(&M2, &M1, &S2, &S1)
+      |                                          ^
+      |                                          ;
+  144 |     }
+      |     ~                                     
+make: *** [Core/Src/subdir.mk:37: Core/Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+09:12:33 **** Incremental Build of configuration Debug for project klocka_och_knapp ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'increment_MM_SS':
+../Core/Src/main.c:99:9: warning: value computed is not used [-Wunused-value]
+   99 |         *(S1)++;
+      |         ^~~~~~~
+../Core/Src/main.c:106:11: warning: value computed is not used [-Wunused-value]
+  106 |           *(S2)++;
+      |           ^~~~~~~
+../Core/Src/main.c:113:13: warning: value computed is not used [-Wunused-value]
+  113 |             *(M1)++;
+      |             ^~~~~~~
+../Core/Src/main.c:120:15: warning: value computed is not used [-Wunused-value]
+  120 |               *(M2)++;
+      |               ^~~~~~~
+arm-none-eabi-gcc -o "klocka_och_knapp.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab3\klocka_och_knapp\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="klocka_och_knapp.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: klocka_och_knapp.elf
+ 
+arm-none-eabi-size   klocka_och_knapp.elf 
+arm-none-eabi-objdump -h -S  klocka_och_knapp.elf  > "klocka_och_knapp.list"
+   text	   data	    bss	    dec	    hex	filename
+  18440	    120	   2056	  20616	   5088	klocka_och_knapp.elf
+Finished building: default.size.stdout
+ 
+Finished building: klocka_och_knapp.list
+ 
+09:25:03 **** Incremental Build of configuration Debug for project klocka_och_knapp ****
+make -j8 all 
+arm-none-eabi-size   klocka_och_knapp.elf 
+   text	   data	    bss	    dec	    hex	filename
+  18440	    120	   2056	  20616	   5088	klocka_och_knapp.elf
+Finished building: default.size.stdout
+ 
+09:29:00 **** Incremental Build of configuration Debug for project klocka_och_knapp ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'uart_get_menu_choice':
+../Core/Src/main.c:78:21: warning: implicit declaration of function 'huart' [-Wimplicit-function-declaration]
+   78 |   HAL_UART_Receive(&huart(2
+      |                     ^~~~~
+../Core/Src/main.c:79:20: error: expected expression before 'uint8_t'
+   79 |                   (uint8_t *) str,
+      |                    ^~~~~~~
+../Core/Src/main.c:78:27: error: called object is not a function or function pointer
+   78 |   HAL_UART_Receive(&huart(2
+      |                           ^
+../Core/Src/main.c:79:30: error: expected ')' before 'str'
+   79 |                   (uint8_t *) str,
+      |                              ^~~~
+      |                              )
+../Core/Src/main.c:78:26: note: to match this '('
+   78 |   HAL_UART_Receive(&huart(2
+      |                          ^
+../Core/Src/main.c:81:33: error: expected ')' before ';' token
+   81 |                   HAL_MAX_DELAY);
+      |                                 ^
+      |                                 )
+../Core/Src/main.c:78:19: note: to match this '('
+   78 |   HAL_UART_Receive(&huart(2
+      |                   ^
+../Core/Src/main.c:78:3: error: too few arguments to function 'HAL_UART_Receive'
+   78 |   HAL_UART_Receive(&huart(2
+      |   ^~~~~~~~~~~~~~~~
+In file included from ../Core/Inc/stm32f4xx_hal_conf.h:411,
+                 from ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:29,
+                 from ../Core/Inc/main.h:30,
+                 from ../Core/Src/main.c:20:
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h:723:19: note: declared here
+  723 | HAL_StatusTypeDef HAL_UART_Receive(UART_HandleTypeDef *huart, uint8_t *pData, uint16_t Size, uint32_t Timeout);
+      |                   ^~~~~~~~~~~~~~~~
+../Core/Src/main.c:86:14: error: expected ';' before '}' token
+   86 |   return ret;
+      |              ^
+      |              ;
+   87 | }
+      | ~             
+../Core/Src/main.c:77:12: warning: unused variable 'str_len' [-Wunused-variable]
+   77 |   uint16_t str_len = 1;
+      |            ^~~~~~~
+../Core/Src/main.c:76:8: warning: unused variable 'str' [-Wunused-variable]
+   76 |   char str[1] = { '\0' };
+      |        ^~~
+../Core/Src/main.c:87:1: warning: no return statement in function returning non-void [-Wreturn-type]
+   87 | }
+      | ^
+make: *** [Core/Src/subdir.mk:37: Core/Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+09:29:30 **** Incremental Build of configuration Debug for project klocka_och_knapp ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'uart_get_menu_choice':
+../Core/Src/main.c:78:21: warning: implicit declaration of function 'huart' [-Wimplicit-function-declaration]
+   78 |   HAL_UART_Receive(&huart(2
+      |                     ^~~~~
+../Core/Src/main.c:79:20: error: expected expression before 'uint8_t'
+   79 |                   (uint8_t *) str,
+      |                    ^~~~~~~
+../Core/Src/main.c:78:27: error: called object is not a function or function pointer
+   78 |   HAL_UART_Receive(&huart(2
+      |                           ^
+../Core/Src/main.c:79:30: error: expected ')' before 'str'
+   79 |                   (uint8_t *) str,
+      |                              ^~~~
+      |                              )
+../Core/Src/main.c:78:26: note: to match this '('
+   78 |   HAL_UART_Receive(&huart(2
+      |                          ^
+../Core/Src/main.c:81:33: error: expected ')' before ';' token
+   81 |                   HAL_MAX_DELAY);
+      |                                 ^
+      |                                 )
+../Core/Src/main.c:78:19: note: to match this '('
+   78 |   HAL_UART_Receive(&huart(2
+      |                   ^
+../Core/Src/main.c:78:3: error: too few arguments to function 'HAL_UART_Receive'
+   78 |   HAL_UART_Receive(&huart(2
+      |   ^~~~~~~~~~~~~~~~
+In file included from ../Core/Inc/stm32f4xx_hal_conf.h:411,
+                 from ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:29,
+                 from ../Core/Inc/main.h:30,
+                 from ../Core/Src/main.c:20:
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h:723:19: note: declared here
+  723 | HAL_StatusTypeDef HAL_UART_Receive(UART_HandleTypeDef *huart, uint8_t *pData, uint16_t Size, uint32_t Timeout);
+      |                   ^~~~~~~~~~~~~~~~
+../Core/Src/main.c:86:14: error: expected ';' before '}' token
+   86 |   return ret;
+      |              ^
+      |              ;
+   87 | }
+      | ~             
+../Core/Src/main.c:77:12: warning: unused variable 'str_len' [-Wunused-variable]
+   77 |   uint16_t str_len = 1;
+      |            ^~~~~~~
+../Core/Src/main.c:76:8: warning: unused variable 'str' [-Wunused-variable]
+   76 |   char str[1] = { '\0' };
+      |        ^~~
+../Core/Src/main.c:87:1: warning: no return statement in function returning non-void [-Wreturn-type]
+   87 | }
+      | ^
+make: *** [Core/Src/subdir.mk:37: Core/Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+09:31:33 **** Incremental Build of configuration Debug for project klocka_och_knapp ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "klocka_och_knapp.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab3\klocka_och_knapp\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="klocka_och_knapp.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: klocka_och_knapp.elf
+ 
+arm-none-eabi-size   klocka_och_knapp.elf 
+arm-none-eabi-objdump -h -S  klocka_och_knapp.elf  > "klocka_och_knapp.list"
+   text	   data	    bss	    dec	    hex	filename
+  18464	    120	   2056	  20640	   50a0	klocka_och_knapp.elf
+Finished building: default.size.stdout
+ 
+Finished building: klocka_och_knapp.list
+ 
+09:41:14 **** Incremental Build of configuration Debug for project klocka_och_knapp ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "klocka_och_knapp.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab3\klocka_och_knapp\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="klocka_och_knapp.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: klocka_och_knapp.elf
+ 
+arm-none-eabi-size   klocka_och_knapp.elf 
+arm-none-eabi-objdump -h -S  klocka_och_knapp.elf  > "klocka_och_knapp.list"
+   text	   data	    bss	    dec	    hex	filename
+  18544	    120	   2056	  20720	   50f0	klocka_och_knapp.elf
+Finished building: default.size.stdout
+ 
+Finished building: klocka_och_knapp.list
+ 
+09:41:45 **** Incremental Build of configuration Debug for project klocka_och_knapp ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "klocka_och_knapp.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab3\klocka_och_knapp\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="klocka_och_knapp.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: klocka_och_knapp.elf
+ 
+arm-none-eabi-size   klocka_och_knapp.elf 
+arm-none-eabi-objdump -h -S  klocka_och_knapp.elf  > "klocka_och_knapp.list"
+   text	   data	    bss	    dec	    hex	filename
+  18544	    120	   2056	  20720	   50f0	klocka_och_knapp.elf
+Finished building: default.size.stdout
+ 
+Finished building: klocka_och_knapp.list
+ 
+09:42:27 **** Incremental Build of configuration Debug for project klocka_och_knapp ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "klocka_och_knapp.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab3\klocka_och_knapp\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="klocka_och_knapp.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: klocka_och_knapp.elf
+ 
+arm-none-eabi-size   klocka_och_knapp.elf 
+arm-none-eabi-objdump -h -S  klocka_och_knapp.elf  > "klocka_och_knapp.list"
+   text	   data	    bss	    dec	    hex	filename
+  18544	    120	   2056	  20720	   50f0	klocka_och_knapp.elf
+Finished building: default.size.stdout
+ 
+Finished building: klocka_och_knapp.list
+ 
+09:42:54 **** Incremental Build of configuration Debug for project klocka_och_knapp ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "klocka_och_knapp.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab3\klocka_och_knapp\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="klocka_och_knapp.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: klocka_och_knapp.elf
+ 
+arm-none-eabi-size   klocka_och_knapp.elf 
+arm-none-eabi-objdump -h -S  klocka_och_knapp.elf  > "klocka_och_knapp.list"
+   text	   data	    bss	    dec	    hex	filename
+  18544	    120	   2056	  20720	   50f0	klocka_och_knapp.elf
+Finished building: default.size.stdout
+ 
+Finished building: klocka_och_knapp.list
+ 
+09:43:57 **** Incremental Build of configuration Debug for project klocka_och_knapp ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "klocka_och_knapp.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab3\klocka_och_knapp\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="klocka_och_knapp.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: klocka_och_knapp.elf
+ 
+arm-none-eabi-size   klocka_och_knapp.elf 
+arm-none-eabi-objdump -h -S  klocka_och_knapp.elf  > "klocka_och_knapp.list"
+   text	   data	    bss	    dec	    hex	filename
+  18544	    120	   2056	  20720	   50f0	klocka_och_knapp.elf
+Finished building: default.size.stdout
+ 
+Finished building: klocka_och_knapp.list
+ 

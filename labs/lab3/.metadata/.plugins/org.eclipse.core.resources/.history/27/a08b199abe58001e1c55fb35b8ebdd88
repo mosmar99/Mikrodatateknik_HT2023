@@ -51,11 +51,6 @@ uint16_t button_debounced_count;
 uint16_t button_click_count = 0;
 uint16_t last_flank_causing_exti = 0;
 uint16_t last_managed_exti = 0;
-
-enum state {
-  HH_MM = 0,
-  MM_SS = 1
-};
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -98,70 +93,21 @@ static void uart_print_bad_choice() {
   HAL_UART_Transmit(&huart2, (uint8_t*) str, str_len, HAL_MAX_DELAY);
 }
 
-void increment(uint16_t *H2, uint16_t *H1, uint16_t *M2, uint16_t *M1, uint16_t *S2, uint16_t *S1) {
-    if (*S1 < 9)
-    {
-      (*S1)++;
-    }
-    else
-    {
-      *S1 = 0;
-      if (*S2 < 5)
-      {
-        (*S2)++;
-      }
-      else
-      {
-        *S2 = 0;
-        if (*M1 < 9)
-        {
-          (*M1)++;
-        }
-        else
-        {
-          *M1 = 0;
-          if (*M2 < 5)
-          {
-            (*M2)++;
-          }
-          else
-          {
-            *M2 = 0;
-            if (*H1 < 3) {
-              (*H1)++;
-            }
-            else {
-              *H1 = 0;
-              if (*H2 < 2) {
-                (*H2)++;
-              }
-              else {
-                *H2 = 0;
-              }
-            }
-          }
-        }          
-      }
-    }
-}
-
 void clock_mode()
 {
-  uint16_t H2=2, H1=3, M2=5, M1=9, S2=5, S1=7;
+  /*** init segment ***/
+  /*** main loop ***/
   while (1)
   {
     if (time % 2 == 0)
     {
-      // qs_put_digits(M2, M1, S2, S1, 1);
-      qs_put_digits(H2, H1, M2, M1, 1);
+      qs_put_digits(0, 0, 0, 1, 1);
     }
     else
     {
-      // qs_put_digits(M2, M1, S2, S1, 0); 
-      qs_put_digits(H2, H1, M2, M1, 0);
-      increment(&H2, &H1, &M2, &M1, &S2, &S1);
+      qs_put_digits(0, 0, 0, 1, 0); 
     }
-    HAL_Delay(500);
+    HAL_Delay(520);
   }
 }
   
@@ -171,6 +117,7 @@ static int is_there_unhandled_exti()
 }
 
 static int has_enough_time_passed(uint32_t bounce_delay) {
+  //HAL_Delay(144);
   uint32_t now = HAL_GetTick();
   return (now - last_flank_causing_exti) > bounce_delay;
 }
@@ -181,6 +128,8 @@ static int read_button() {
 
 void button_mode()
 {
+  /*** init segment ***/
+  /*** main loop ***/
   int my_btn_pressed = 0;
   int _bool_answer = 0;
   qs_put_big_num(button_click_count);
@@ -246,7 +195,6 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-  qs_put_big_num(2023);
   int menu_choice = -1;
   while (1)
   {

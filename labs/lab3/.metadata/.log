@@ -124,3 +124,39 @@ Command-line arguments:  -os win32 -ws win32 -arch x86_64
 
 !ENTRY com.st.stm32cube.ide.mcu.debug 4 0 2023-09-21 20:19:47.182
 !MESSAGE Existing sessions are:
+
+!ENTRY com.st.stm32cube.ide.mcu.debug 4 0 2023-09-21 22:00:15.417
+!MESSAGE Error - No active DSF-Session. tmpSessionId = 27 (contextManager row 121)
+
+!ENTRY com.st.stm32cube.ide.mcu.debug 4 0 2023-09-21 22:00:15.417
+!MESSAGE Existing sessions are:
+
+!ENTRY com.st.stm32cube.ide.mcu.debug 4 0 2023-09-21 22:00:15.418
+!MESSAGE Error - No active DSF-Session. tmpSessionId = 27 (contextManager row 121)
+
+!ENTRY com.st.stm32cube.ide.mcu.debug 4 0 2023-09-21 22:00:15.418
+!MESSAGE Existing sessions are:
+
+!ENTRY com.st.stm32cube.ide.mcu.debug 4 0 2023-09-22 09:03:27.472
+!MESSAGE Error - No active DSF-Session. tmpSessionId = 39 (contextManager row 121)
+
+!ENTRY com.st.stm32cube.ide.mcu.debug 4 0 2023-09-22 09:03:27.472
+!MESSAGE Existing sessions are:
+
+!ENTRY com.st.stm32cube.ide.mcu.debug 4 0 2023-09-22 09:03:27.472
+!MESSAGE Error - No active DSF-Session. tmpSessionId = 39 (contextManager row 121)
+
+!ENTRY com.st.stm32cube.ide.mcu.debug 4 0 2023-09-22 09:03:27.473
+!MESSAGE Existing sessions are:
+
+!ENTRY com.st.stm32cube.ide.mcu.debug 4 0 2023-09-22 09:41:26.472
+!MESSAGE Error - No active DSF-Session. tmpSessionId = 47 (contextManager row 121)
+
+!ENTRY com.st.stm32cube.ide.mcu.debug 4 0 2023-09-22 09:41:26.472
+!MESSAGE Existing sessions are:
+
+!ENTRY com.st.stm32cube.ide.mcu.debug 4 0 2023-09-22 09:41:26.473
+!MESSAGE Error - No active DSF-Session. tmpSessionId = 47 (contextManager row 121)
+
+!ENTRY com.st.stm32cube.ide.mcu.debug 4 0 2023-09-22 09:41:26.473
+!MESSAGE Existing sessions are:
