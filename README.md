@@ -22,4 +22,8 @@ https://github.com/mosmar99/Mikrodatateknik_HT2023/assets/47375043/1626080e-5c8b
 
 https://github.com/mosmar99/Mikrodatateknik_HT2023/assets/47375043/9e80a8cc-e756-4568-ace0-6e7ff2ff6178
 
+# Lab 3 (Clock & Button counter)
+- The clock is implemented using one of the internal clocks, TIM1. It is set to generate an interrupt every half a second. A 24 hour clock is then implemented on a 4 segment display. The clock has two states HH:MM (hours:minutes) and MM:SS (hours:minutes). You can switch between which state you want to be displayed using a button. Upon clicking on the button an interrupt is generated.
+- The button counter counts the amount of times you click on the button. However, it takes into account bounces. Often when one clicks on a button (if its a cheaper version), it takes some time until the button signal becomes stable. I measured the usual time it take for the button input signal to become stable using an oscilloscope. The button then only registers clicks which from its last flank has been stable for a constant amount of time (previously measured by the oscilloscope). Total button count is lastly displayed on the four segment display.
+
 
