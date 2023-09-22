@@ -56,8 +56,6 @@ enum state {
   HH_MM = 0,
   MM_SS = 1
 };
-
-enum state curr_st = MM_SS;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -149,9 +147,23 @@ void increment(uint16_t *H2, uint16_t *H1, uint16_t *M2, uint16_t *M1, uint16_t 
 
 void clock_mode()
 {
-  uint16_t H2=1, H1=0, M2=5, M1=9, S2=3, S1=9;
+  uint16_t H2=2, H1=3, M2=5, M1=9, S2=5, S1=7;
+  enum state curr_st;
   while (1)
   {
+    if (GPIO_PIN_RESET == HAL_GPIO_ReadPin(B1_GPIO_Port, B1_Pin)) {
+      switch (curr_st)
+      {
+        case HH_MM:
+          curr_st = MM_SS;
+          break;
+
+        case MM_SS:
+          curr_st = HH_MM;
+          break;
+      }
+    }
+
     if (time % 2 == 0)
     {
 
@@ -491,20 +503,6 @@ void HAL_GPIO_EXTI_Callback( uint16_t GPIO_Pin ) {
     if(GPIO_Pin == MY_BTN_Pin)
     {
       last_flank_causing_exti = HAL_GetTick();
-    }
-
-    if(GPIO_Pin == B1_Pin)
-    {
-      switch (curr_st)
-      {
-        case HH_MM:
-          curr_st = MM_SS;
-          break;
-
-        case MM_SS:
-          curr_st = HH_MM;
-          break;
-      }
     }
 }
 /* USER CODE END 4 */
