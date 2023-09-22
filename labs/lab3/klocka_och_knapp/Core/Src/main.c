@@ -46,8 +46,9 @@ UART_HandleTypeDef huart2;
 
 /* USER CODE BEGIN PV */
 uint32_t time = 0;
-uint16_t button_exti_count;
-uint16_t button_debounced_count;
+uint32_t has_managed_curr_time_exti = 0;
+// uint16_t button_exti_count;
+// uint16_t button_debounced_count;
 uint16_t button_click_count = 0;
 uint16_t last_flank_causing_exti = 0;
 uint16_t last_managed_exti = 0;
@@ -147,49 +148,60 @@ void increment(uint16_t *H2, uint16_t *H1, uint16_t *M2, uint16_t *M1, uint16_t 
     }
 }
 
+void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
+{
+	if (htim->Instance == TIM1)
+	{
+		time += 1;
+    has_managed_curr_time_exti = 0;
+	}
+}
+
 void clock_mode()
 {
   uint16_t H2=1, H1=0, M2=5, M1=9, S2=3, S1=9;
+  HAL_TIM_Base_Start_IT(&htim1);
   while (1)
   {
-    if (time % 2 == 0)
+    if (has_managed_curr_time_exti == 0)
     {
-
-      switch (curr_st)
+      if (time % 2 == 0)
       {
-      case HH_MM:
-        qs_put_digits(H2, H1, M2, M1, 1);
-        break;
-      case MM_SS:
-        qs_put_digits(M2, M1, S2, S1, 1);
-        break;
-      
-      default:
-        break;
+
+        switch (curr_st)
+        {
+        case HH_MM:
+          qs_put_digits(H2, H1, M2, M1, 1);
+          break;
+        case MM_SS:
+          qs_put_digits(M2, M1, S2, S1, 1);
+          break;
+        
+        default:
+          break;
+        }
       }
-
-    }
-    else
-    {
-
-      switch (curr_st)
+      else
       {
-      case HH_MM:
-        qs_put_digits(H2, H1, M2, M1, 0);
-        break;
-      case MM_SS:
-        qs_put_digits(M2, M1, S2, S1, 0);
-        break;
-      
-      default:
-        break;
+
+        switch (curr_st)
+        {
+        case HH_MM:
+          qs_put_digits(H2, H1, M2, M1, 0);
+          break;
+        case MM_SS:
+          qs_put_digits(M2, M1, S2, S1, 0);
+          break;
+        
+        default:
+          break;
+        }
+
+        // increment timer
+        increment(&H2, &H1, &M2, &M1, &S2, &S1);
+        has_managed_curr_time_exti = 1;
       }
-
-      // increment timer
-      increment(&H2, &H1, &M2, &M1, &S2, &S1);
     }
-
-    HAL_Delay(500);
   }
 }
   
@@ -228,14 +240,6 @@ void button_mode()
   }
 }
 
-void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
-{
-	if (htim->Instance == TIM1)
-	{
-		time += 1;
-	}
-
-}
 /* USER CODE END 0 */
 
 /**
@@ -269,7 +273,6 @@ int main(void)
   MX_USART2_UART_Init();
   MX_TIM1_Init();
   /* USER CODE BEGIN 2 */
-  HAL_TIM_Base_Start_IT(&htim1);
   /* USER CODE END 2 */
 
   /* Infinite loop */
