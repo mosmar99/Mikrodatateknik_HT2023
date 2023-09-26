@@ -5,3 +5,4 @@
 2023-09-22 13:05:30,743 [ERROR] ConfigurationRetriever:142 - IOException on connection: sw-center.st.com
 2023-09-22 13:05:30,744 [ERROR] ConfigurationRetriever:142 - IOException on connection: sw-center.st.com
 2023-09-22 13:43:09,182 [INFO] Gpio:273 - dependency for GPIO [RCC, SYS, USART2]
+2023-09-22 13:53:22,098 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 

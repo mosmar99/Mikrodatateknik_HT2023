@@ -1,0 +1,71 @@
+* Nyquist teoremet
+** fs > 2 * f_max
+
+* filter
+** filter RC filter, tar bort höga signaler, blir mindre kvar, skapar en smooth signal
+
+* OP amp - comparator 
+** jämför två signaler, beroende på vilken som är högst, ger ut en 1 eller 0
+
+* Integrator
+** skickar en konstant ström in till en kondensator
+
+* Sök efter U_in mha binärsökning inom en toleransnivå
+** FS bestäms av? Bestäms av D/A:s spänningsnivån
+** Toleransnivå bestäms av antalet bitar man vill använda, vår STM32 har 12 bitar, 2^12 = 4096 möjliga jämförelsesteg
+
+* Pararell flash converter! (häftiga grejer)
+** Pararell flash converter (effektslukande, dyra, tar mkt värme), kan kombinera flera komparatorer (kan kosta 10000kr)
+
+* ADC1 
+** 16 analog inputs (telefon växel, klarar några megahertz omvandligahastighet)
+
+* CD ljud (44.1kHz)
+
+* watchdog (komparatorer, om en inspänning är högre eller lägre än en viss nivå)
+
+* finns bara en plats i sample, om en interrupt sker som fyller den så måste man sampla igen för föregående channel
+
+* ADC - VRef and Temperature
+** går att beräkna temperatur
+
+* Hal Driver usage - ADC
+** HAL_ADC_Start(), börjar konvertera
+** HAL_ADC_PollForConversion(), läser av flagga "endOfConversion", när den är satt hög är den klar
+**     man kan sätta en flagga så att det inte tar för lång tid
+**     man kan läsa från registertet genom funktionen HAL_ADC_GetValue()
+** Om man vill stoppa den så kan man köra HAL_ADC_Stop()
+
+** finns motsvarande för ADC mha interrupt
+** HAL_ADC_Start_IT()
+** HAL_ADC_IRQHandler() called under ADC_IRQHandler()
+** HAL_ADC_ConvCpltCallback()
+** HAL_ADC_Stop_IT()
+
+* Antalet cycklar varierar? När vill man ha hög resp låg? Man kanske har hög input resistans, vill ha större steg i inputen
+
+* Using Polling for ADC
+** continous conversion is off
+while (1) {
+    HAL_ADC_Start(&hadc1);
+    if (HAL_ADC_PollForConversion(&hadc1, 10) == HAL_OK) {
+        uint16_t adc_value = HAL_ADC_GetValue(&hadc1);
+        uint8_t plotval = adc_value >> 4;
+        HAL_UART_Transmit(&huart2, &plotval, 1, 1000); // uart, data, length in bytes, timeout in ms
+    }
+    HAL_ADC_Stop(&hadc1);
+    HAL_Delay(1);
+}
+
+* Using Interrupt for ADC
+** continous conversion is on
+HAL_ADC_Start(&hadc1);
+while (1) {
+    if (__HAL_GET_ADC_FLAG(&hadc1, ADC_FLAG_EOC)) {
+        uint16_t adc_value = HAL_ADC_GetValue(&hadc1);
+        uint8_t plotval = adc_value >> 4;
+        HAL_UART_Transmit(&huart2, &plotval, 1, 1000); // uart, data, length in bytes, timeout in ms
+        HAL_ADC_Start(&hadc1);
+    }
+    HAL_Delay(1);
+}
