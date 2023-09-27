@@ -1,0 +1,72 @@
+* tal spara som binära
+
+* hexadecimalt: 
+** 16^[0] = 1,
+** 16^[1] = 16, 
+** 16^[2] = 256,
+** 16^[3] = 4096,
+
+* hårvara
+** micro architecture
+** från programming language to assembly (assembler), från assembly to maskinkod (kompilator)
+
+* Minnesarkitekturer
+** hur cpu hanterar data
+** normalt läser cpu data, gör grejer, sen lagrar i minnet
+** von-nueman vs harvard-cpu
+
+* von-veuman
+** von-neuman delar adressbuss för instruktioner och data
+** ofta multiclockcykel
+
+* hardvard-cpu
+** harvard-cpu har seperata för adressbussar för intruktioner och data
+** ofta snabbare, man hinner gör mer, kan göra saker pararellt, saker från minnet och instruktioner
+
+* CISC processor - Von Nuemann (Complex Instruction Set Computer)
+** gör komplexa grejer, tar längre tid men får dom gjort i få instruktioner
+** varje instruktioner tar mycket plats och tar ganska mycket tid
+
+* RISC - Harvard architecture (Reduced Instruction Set Computer)
+** alla instruktioner ska kunna utföras på få klockcyklar, dom görs snabbt
+** nackdel: vill du göra något mer komplext, kräver fler instruktioner för att göra någonting
+** enstaka instruktioner går att alltså att skriva snabbare
+
+* Memory Protection Unit
+** skyddar så att vissa program inte kan skriva eller läsa i vissa delar av minnet
+
+* FPU (Floating point unit)
+** ex: 32 bitars tal, dela upp den i 4 delar, säg att delarna har unika funnktioner
+**     0.1.... varje tal efter 2^(-1), 2^(-2) ..
+** mantissa - (2/4), exponent (2-4/-4/4)
+** 1/4 sisn: ... es (3/4) 
+** es (exponeontial sign)
+** sign (tecken på hela talet (+/-)) 
+
+* DSP (Väldigt enkelt pararell process) 
+** kan läsa in 32 bitars tal men kan operara på enksilda bitar
+
+* ETM trace
+** kan följa vad processorn gör för något, kan kolla vilka instruktioner professorn jobbar i realtid
+
+* Data watchdag
+** kan kolla när den läser eller skriver från minnet, gör vissa saker om.. osv
+
+* Breakpoint unit
+** kommer den till breakpointen, generara expection, hoppa dit
+** processorn pausas, flaggor sätts, när vi vill fortsätta så kolla den på flaggan vart den pausade
+
+* Fake brakepoint skapas i mjukvara, man kan göra många många fler.. 
+** (def. är hårdvara, gör vi för många bli dom mjukvara)
+
+* JTAG
+** mer komplext interface för att skriva till processorn osv
+** den vi har använt i VHDL, den skickar ner kod till FPGA korten, används mindre och mindre, serial wire används mer
+
+* Serial Wire
+** behöver klocka och dator, från debugger till processor och fram och tillbaka
+
+* Mnemonics
+** ADD, ADC, NOP (waste time), osv
+
+* Sample Program

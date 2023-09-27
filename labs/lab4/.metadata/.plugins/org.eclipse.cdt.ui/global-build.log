@@ -1185,3 +1185,17 @@ arm-none-eabi-size   lcd_screen.elf
   13820	    100	   2044	  15964	   3e5c	lcd_screen.elf
 Finished building: default.size.stdout
  
+11:54:36 **** Incremental Build of configuration Debug for project lcd_screen ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "lcd_screen.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab4\lcd_screen\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="lcd_screen.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: lcd_screen.elf
+ 
+arm-none-eabi-size   lcd_screen.elf 
+arm-none-eabi-objdump -h -S  lcd_screen.elf  > "lcd_screen.list"
+   text	   data	    bss	    dec	    hex	filename
+  13820	    100	   2044	  15964	   3e5c	lcd_screen.elf
+Finished building: default.size.stdout
+ 
+Finished building: lcd_screen.list
+ 
