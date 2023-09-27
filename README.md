@@ -28,4 +28,5 @@ https://github.com/mosmar99/Mikrodatateknik_HT2023/assets/47375043/9e80a8cc-e756
 
 https://github.com/mosmar99/Mikrodatateknik_HT2023/assets/47375043/2d590cac-f38b-4def-85e2-374833d47b9e
 
+# Lab 4 (LCD display using I2C protocol)
 
