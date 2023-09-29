@@ -29,4 +29,13 @@ https://github.com/mosmar99/Mikrodatateknik_HT2023/assets/47375043/9e80a8cc-e756
 https://github.com/mosmar99/Mikrodatateknik_HT2023/assets/47375043/2d590cac-f38b-4def-85e2-374833d47b9e
 
 # Lab 4 (LCD display using I2C protocol)
+Displayed accurately ticking clock on liquid crystal display (LCD: hd44780) with mountained I2C port (id: pcf8574). Used TIM2, a 32 bit timer in order to count a clock signal on microsecond level to achieve desired delay. Implemented several functions that directly manipulate internal DDRAM memory slots. Following functions were implemented:
+
+- TextLCD_Clear (TextLCDType * hlcd)
+- TextLCD_Home (TextLCDType * hlcd)
+- TextLCD_SetDDRAMAdr(TextLCDType * hlcd, uint8_t adr)
+- TextLCD_SetPos (TextLCDType * hlcd, int col, int row)
+- TextLCD_PutChar (TextLCDType * hlcd, char c)
+- TextLCD_PutStr (TextLCDType * hlcd, char * str)
+- My_Delay(uint32_t mysec) (microsecond delay)
 
