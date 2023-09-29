@@ -1,0 +1,92 @@
+2023-09-29 01:05:58,482 [INFO] NvicIntPanel:101 - NVIC parent = com.st.microxplorer.plugins.ip.nvic.MultiNvicIntPanel[,0,0,0x0,invalid,layout=javax.swing.BoxLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=9,maximumSize=,minimumSize=,preferredSize=]
+2023-09-29 01:06:46,147 [INFO] NvicIntPanel:101 - NVIC parent = com.st.microxplorer.plugins.ip.nvic.MultiNvicIntPanel[,0,0,0x0,invalid,layout=javax.swing.BoxLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=9,maximumSize=,minimumSize=,preferredSize=]
+2023-09-29 01:16:27,904 [WARN] IP:2114 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2023-09-29 01:16:27,904 [WARN] IP:2114 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2023-09-29 01:16:27,904 [WARN] IP:2114 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2023-09-29 01:16:27,904 [WARN] IP:2114 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2023-09-29 01:25:58,704 [INFO] NvicIntPanel:101 - NVIC parent = com.st.microxplorer.plugins.ip.nvic.MultiNvicIntPanel[,0,0,0x0,invalid,layout=javax.swing.BoxLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=9,maximumSize=,minimumSize=,preferredSize=]
+2023-09-29 01:26:08,013 [INFO] NvicIntPanel:101 - NVIC parent = com.st.microxplorer.plugins.ip.nvic.MultiNvicIntPanel[,0,0,0x0,invalid,layout=javax.swing.BoxLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=9,maximumSize=,minimumSize=,preferredSize=]
+2023-09-29 01:26:09,833 [INFO] NvicIntPanel:101 - NVIC parent = com.st.microxplorer.plugins.ip.nvic.MultiNvicIntPanel[,0,0,0x0,invalid,layout=javax.swing.BoxLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=9,maximumSize=,minimumSize=,preferredSize=]
+2023-09-29 01:27:06,725 [INFO] NvicIntPanel:101 - NVIC parent = com.st.microxplorer.plugins.ip.nvic.MultiNvicIntPanel[,0,0,0x0,invalid,layout=javax.swing.BoxLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=9,maximumSize=,minimumSize=,preferredSize=]
+2023-09-29 01:28:14,525 [INFO] NvicIntPanel:101 - NVIC parent = com.st.microxplorer.plugins.ip.nvic.MultiNvicIntPanel[,0,0,0x0,invalid,layout=javax.swing.BoxLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=9,maximumSize=,minimumSize=,preferredSize=]
+2023-09-29 01:28:22,690 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 958310880 Bytes (1073741824)
+2023-09-29 01:28:24,210 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 587122960 Bytes (1073741824)
+2023-09-29 01:28:28,682 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 582736656 Bytes (1073741824)
+2023-09-29 01:28:28,930 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: NVIC
+2023-09-29 01:28:28,930 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: USART
+2023-09-29 01:28:28,930 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: TIM1_8
+2023-09-29 01:28:28,930 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: TIM1_8
+2023-09-29 01:28:28,930 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: SYS
+2023-09-29 01:28:28,930 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: GPIO
+2023-09-29 01:28:28,931 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: RCC
+2023-09-29 01:28:28,931 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: I2C
+2023-09-29 01:28:28,931 [INFO] CodeGenerator:799 - code generatio: config db path: C:\ST\STM32CubeIDE_1.13.1\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.9.1.202307191849\\db\
+2023-09-29 01:28:28,933 [WARN] IP:2114 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2023-09-29 01:28:28,933 [WARN] IP:2114 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2023-09-29 01:28:29,173 [INFO] CodeEngine:255 - oldGeneratedFile, D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab4\lcd_screen\MXTmpFiles\license.tmp_save
+2023-09-29 01:28:29,314 [INFO] CodeEngine:279 - Generated code: D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab4\lcd_screen\MXTmpFiles\license.tmp
+2023-09-29 01:28:29,365 [INFO] CodeEngine:255 - oldGeneratedFile, D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab4\lcd_screen\MXTmpFiles\gpio.tmp_save
+2023-09-29 01:28:29,594 [INFO] CodeEngine:279 - Generated code: D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab4\lcd_screen\MXTmpFiles\gpio.tmp
+2023-09-29 01:28:29,944 [INFO] CodeEngine:255 - oldGeneratedFile, D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab4\lcd_screen\Core\Src\stm32f4xx_it.c_save
+2023-09-29 01:28:30,274 [INFO] CodeEngine:279 - Generated code: D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab4\lcd_screen\Core\Src\stm32f4xx_it.c
+2023-09-29 01:28:30,287 [INFO] CodeEngine:255 - oldGeneratedFile, D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab4\lcd_screen\Core\Inc\stm32f4xx_it.h_save
+2023-09-29 01:28:30,415 [INFO] CodeEngine:279 - Generated code: D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab4\lcd_screen\Core\Inc\stm32f4xx_it.h
+2023-09-29 01:28:30,531 [INFO] CodeEngine:255 - oldGeneratedFile, D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab4\lcd_screen\Core\Src\stm32f4xx_hal_msp.c_save
+2023-09-29 01:28:30,844 [INFO] CodeEngine:279 - Generated code: D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab4\lcd_screen\Core\Src\stm32f4xx_hal_msp.c
+2023-09-29 01:28:30,866 [INFO] CodeEngine:255 - oldGeneratedFile, D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab4\lcd_screen\MXTmpFiles\system.tmp_save
+2023-09-29 01:28:30,974 [INFO] CodeEngine:279 - Generated code: D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab4\lcd_screen\MXTmpFiles\system.tmp
+2023-09-29 01:28:31,059 [INFO] CodeEngine:311 - oldGeneratedFile, D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab4\lcd_screen\Core\Inc\stm32f4xx_hal_conf.h_save
+2023-09-29 01:28:31,261 [INFO] CodeEngine:335 - Generated code: D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab4\lcd_screen\Core\Inc\stm32f4xx_hal_conf.h
+2023-09-29 01:28:31,327 [WARN] IPConfigManager:3431 - IP not found : TIM
+2023-09-29 01:28:31,327 [WARN] CodeGenerator:3760 - IP not found : null
+2023-09-29 01:28:31,382 [INFO] CodeEngine:255 - oldGeneratedFile, D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab4\lcd_screen\Core\Inc\main.h_save
+2023-09-29 01:28:31,590 [INFO] CodeEngine:279 - Generated code: D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab4\lcd_screen\Core\Inc\main.h
+2023-09-29 01:28:31,633 [INFO] CodeEngine:255 - oldGeneratedFile, D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab4\lcd_screen\Core\Src\main.c_save
+2023-09-29 01:28:31,817 [INFO] CodeEngine:279 - Generated code: D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab4\lcd_screen\Core\Src\main.c
+2023-09-29 01:28:32,402 [INFO] ProjectBuilder:3064 - Time for Copy HAL[1] : 137mS.
+2023-09-29 01:28:32,406 [INFO] ProjectBuilder:4404 - Project Generator version: 4.1.0
+2023-09-29 01:28:32,717 [INFO] ConfigFileManager:1457 - The Die is : DIE431
+2023-09-29 01:28:34,226 [INFO] ProjectBuilder:4626 - Time for Generating toolchain IDE Files: 1820mS.
+2023-09-29 01:28:34,226 [INFO] ProjectBuilder:2935 - Time for Copy CMSIS : 0mS.
+2023-09-29 01:28:34,228 [INFO] ProjectBuilder:2935 - Time for Copy CMSIS : 0mS.
+2023-09-29 01:32:32,726 [INFO] NvicIntPanel:101 - NVIC parent = com.st.microxplorer.plugins.ip.nvic.MultiNvicIntPanel[,0,0,0x0,invalid,layout=javax.swing.BoxLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=9,maximumSize=,minimumSize=,preferredSize=]
+2023-09-29 01:32:35,303 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 690906360 Bytes (1073741824)
+2023-09-29 01:32:36,363 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 712367704 Bytes (1073741824)
+2023-09-29 01:32:38,027 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 776330840 Bytes (1073741824)
+2023-09-29 01:32:38,253 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: NVIC
+2023-09-29 01:32:38,253 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: USART
+2023-09-29 01:32:38,253 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: TIM1_8
+2023-09-29 01:32:38,253 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: TIM1_8
+2023-09-29 01:32:38,253 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: SYS
+2023-09-29 01:32:38,254 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: GPIO
+2023-09-29 01:32:38,254 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: RCC
+2023-09-29 01:32:38,254 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: I2C
+2023-09-29 01:32:38,255 [INFO] CodeGenerator:799 - code generatio: config db path: C:\ST\STM32CubeIDE_1.13.1\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.9.1.202307191849\\db\
+2023-09-29 01:32:38,258 [WARN] IP:2114 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2023-09-29 01:32:38,259 [WARN] IP:2114 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2023-09-29 01:32:38,459 [INFO] CodeEngine:255 - oldGeneratedFile, D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab4\lcd_screen\MXTmpFiles\license.tmp_save
+2023-09-29 01:32:38,597 [INFO] CodeEngine:279 - Generated code: D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab4\lcd_screen\MXTmpFiles\license.tmp
+2023-09-29 01:32:38,614 [INFO] CodeEngine:255 - oldGeneratedFile, D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab4\lcd_screen\MXTmpFiles\gpio.tmp_save
+2023-09-29 01:32:38,777 [INFO] CodeEngine:279 - Generated code: D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab4\lcd_screen\MXTmpFiles\gpio.tmp
+2023-09-29 01:32:38,942 [INFO] CodeEngine:255 - oldGeneratedFile, D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab4\lcd_screen\Core\Src\stm32f4xx_it.c_save
+2023-09-29 01:32:39,145 [INFO] CodeEngine:279 - Generated code: D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab4\lcd_screen\Core\Src\stm32f4xx_it.c
+2023-09-29 01:32:39,151 [INFO] CodeEngine:255 - oldGeneratedFile, D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab4\lcd_screen\Core\Inc\stm32f4xx_it.h_save
+2023-09-29 01:32:39,237 [INFO] CodeEngine:279 - Generated code: D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab4\lcd_screen\Core\Inc\stm32f4xx_it.h
+2023-09-29 01:32:39,284 [INFO] CodeEngine:255 - oldGeneratedFile, D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab4\lcd_screen\Core\Src\stm32f4xx_hal_msp.c_save
+2023-09-29 01:32:39,573 [INFO] CodeEngine:279 - Generated code: D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab4\lcd_screen\Core\Src\stm32f4xx_hal_msp.c
+2023-09-29 01:32:39,579 [INFO] CodeEngine:255 - oldGeneratedFile, D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab4\lcd_screen\MXTmpFiles\system.tmp_save
+2023-09-29 01:32:39,696 [INFO] CodeEngine:279 - Generated code: D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab4\lcd_screen\MXTmpFiles\system.tmp
+2023-09-29 01:32:39,736 [INFO] CodeEngine:311 - oldGeneratedFile, D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab4\lcd_screen\Core\Inc\stm32f4xx_hal_conf.h_save
+2023-09-29 01:32:40,054 [INFO] CodeEngine:335 - Generated code: D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab4\lcd_screen\Core\Inc\stm32f4xx_hal_conf.h
+2023-09-29 01:32:40,109 [WARN] IPConfigManager:3431 - IP not found : TIM
+2023-09-29 01:32:40,110 [WARN] CodeGenerator:3760 - IP not found : null
+2023-09-29 01:32:40,151 [INFO] CodeEngine:255 - oldGeneratedFile, D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab4\lcd_screen\Core\Inc\main.h_save
+2023-09-29 01:32:40,412 [INFO] CodeEngine:279 - Generated code: D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab4\lcd_screen\Core\Inc\main.h
+2023-09-29 01:32:40,452 [INFO] CodeEngine:255 - oldGeneratedFile, D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab4\lcd_screen\Core\Src\main.c_save
+2023-09-29 01:32:40,791 [INFO] CodeEngine:279 - Generated code: D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab4\lcd_screen\Core\Src\main.c
+2023-09-29 01:32:41,325 [INFO] ProjectBuilder:3064 - Time for Copy HAL[1] : 130mS.
+2023-09-29 01:32:41,328 [INFO] ProjectBuilder:4404 - Project Generator version: 4.1.0
+2023-09-29 01:32:41,597 [INFO] ConfigFileManager:1457 - The Die is : DIE431
+2023-09-29 01:32:44,673 [INFO] ProjectBuilder:4626 - Time for Generating toolchain IDE Files: 3345mS.
+2023-09-29 01:32:44,674 [INFO] ProjectBuilder:2935 - Time for Copy CMSIS : 0mS.
+2023-09-29 01:32:44,682 [INFO] ProjectBuilder:2935 - Time for Copy CMSIS : 2mS.

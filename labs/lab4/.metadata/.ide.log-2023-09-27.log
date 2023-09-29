@@ -1,0 +1,46 @@
+2023-09-28 11:00:14,305 [WARN] IP:2114 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2023-09-28 11:00:14,325 [WARN] IP:2114 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2023-09-28 11:00:14,325 [WARN] IP:2114 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2023-09-28 11:00:14,325 [WARN] IP:2114 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2023-09-28 11:14:11,965 [INFO] Gpio:273 - dependency for GPIO [I2C1, RCC, SYS, USART2]
+2023-09-28 11:17:24,118 [INFO] NvicIntPanel:101 - NVIC parent = com.st.microxplorer.plugins.ip.nvic.MultiNvicIntPanel[,2,46,522x686,layout=javax.swing.BoxLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=9,maximumSize=,minimumSize=,preferredSize=]
+2023-09-28 11:17:31,915 [INFO] Gpio:273 - dependency for GPIO [I2C1, RCC, SYS, USART2]
+2023-09-28 11:17:35,783 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 816380288 Bytes (1073741824)
+2023-09-28 11:17:36,724 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 674281104 Bytes (1073741824)
+2023-09-28 11:17:38,876 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 811302784 Bytes (1073741824)
+2023-09-28 11:17:39,114 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: NVIC
+2023-09-28 11:17:39,116 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: USART
+2023-09-28 11:17:39,116 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: TIM1_8
+2023-09-28 11:17:39,116 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: SYS
+2023-09-28 11:17:39,116 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: GPIO
+2023-09-28 11:17:39,116 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: RCC
+2023-09-28 11:17:39,116 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: I2C
+2023-09-28 11:17:39,117 [INFO] CodeGenerator:799 - code generatio: config db path: C:\ST\STM32CubeIDE_1.13.1\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.9.1.202307191849\\db\
+2023-09-28 11:17:39,117 [WARN] IP:2114 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2023-09-28 11:17:39,117 [WARN] IP:2114 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2023-09-28 11:17:39,321 [INFO] CodeEngine:255 - oldGeneratedFile, D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab4\lcd_screen\MXTmpFiles\license.tmp_save
+2023-09-28 11:17:39,462 [INFO] CodeEngine:279 - Generated code: D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab4\lcd_screen\MXTmpFiles\license.tmp
+2023-09-28 11:17:39,488 [INFO] CodeEngine:255 - oldGeneratedFile, D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab4\lcd_screen\MXTmpFiles\gpio.tmp_save
+2023-09-28 11:17:39,641 [INFO] CodeEngine:279 - Generated code: D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab4\lcd_screen\MXTmpFiles\gpio.tmp
+2023-09-28 11:17:39,792 [INFO] CodeEngine:255 - oldGeneratedFile, D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab4\lcd_screen\Core\Src\stm32f4xx_it.c_save
+2023-09-28 11:17:40,007 [INFO] CodeEngine:279 - Generated code: D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab4\lcd_screen\Core\Src\stm32f4xx_it.c
+2023-09-28 11:17:40,019 [INFO] CodeEngine:255 - oldGeneratedFile, D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab4\lcd_screen\Core\Inc\stm32f4xx_it.h_save
+2023-09-28 11:17:40,097 [INFO] CodeEngine:279 - Generated code: D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab4\lcd_screen\Core\Inc\stm32f4xx_it.h
+2023-09-28 11:17:40,125 [INFO] CodeEngine:255 - oldGeneratedFile, D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab4\lcd_screen\Core\Src\stm32f4xx_hal_msp.c_save
+2023-09-28 11:17:40,342 [INFO] CodeEngine:279 - Generated code: D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab4\lcd_screen\Core\Src\stm32f4xx_hal_msp.c
+2023-09-28 11:17:40,351 [INFO] CodeEngine:255 - oldGeneratedFile, D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab4\lcd_screen\MXTmpFiles\system.tmp_save
+2023-09-28 11:17:40,410 [INFO] CodeEngine:279 - Generated code: D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab4\lcd_screen\MXTmpFiles\system.tmp
+2023-09-28 11:17:40,438 [INFO] CodeEngine:311 - oldGeneratedFile, D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab4\lcd_screen\Core\Inc\stm32f4xx_hal_conf.h_save
+2023-09-28 11:17:40,569 [INFO] CodeEngine:335 - Generated code: D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab4\lcd_screen\Core\Inc\stm32f4xx_hal_conf.h
+2023-09-28 11:17:40,591 [WARN] IPConfigManager:3431 - IP not found : TIM
+2023-09-28 11:17:40,592 [WARN] CodeGenerator:3760 - IP not found : null
+2023-09-28 11:17:40,622 [INFO] CodeEngine:255 - oldGeneratedFile, D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab4\lcd_screen\Core\Inc\main.h_save
+2023-09-28 11:17:40,737 [INFO] CodeEngine:279 - Generated code: D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab4\lcd_screen\Core\Inc\main.h
+2023-09-28 11:17:40,755 [INFO] CodeEngine:255 - oldGeneratedFile, D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab4\lcd_screen\Core\Src\main.c_save
+2023-09-28 11:17:40,857 [INFO] CodeEngine:279 - Generated code: D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab4\lcd_screen\Core\Src\main.c
+2023-09-28 11:17:41,155 [INFO] ProjectBuilder:3064 - Time for Copy HAL[1] : 108mS.
+2023-09-28 11:17:41,156 [INFO] ProjectBuilder:4404 - Project Generator version: 4.1.0
+2023-09-28 11:17:41,435 [INFO] ConfigFileManager:1457 - The Die is : DIE431
+2023-09-28 11:17:42,845 [INFO] ProjectBuilder:4626 - Time for Generating toolchain IDE Files: 1689mS.
+2023-09-28 11:17:42,846 [INFO] ProjectBuilder:2935 - Time for Copy CMSIS : 1mS.
+2023-09-28 11:17:42,848 [INFO] ProjectBuilder:2935 - Time for Copy CMSIS : 0mS.

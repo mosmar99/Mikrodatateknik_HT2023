@@ -1,0 +1,27 @@
+* Vilka andra portar kan dessa signaler
+* använda?
+** I2C1_SDA: Antingen PB9 eller PB7
+** I2C1_SCL: Antingen PB8 eller PB6
+
+* Om räknaren är 16-bitars, hur många
+* millisekunder kan du som mest ha en
+* fördröjning?
+** Om en timer är 16-bitars kan den räkna upp till 65535 ((2^16)-1, börjar på 0)
+** För att beräkna hur många millisekunder en timer med en mikrosekunds upplösning kan räkna upp till,
+** behöver man omvandla mikrosekunder till millisekunder.
+** 1 millisekund = 1000 mikrosekunder
+** => 65535 mikrosekunder / 1000 = 65.535 millisekunder 
+
+* Om räknaren är 32-bitars, hur många
+* minuter kan du som mest ha en
+* fördröjning?
+** (2^32) - 1 = 4294967296 - 1 = 4294967295;
+** En 32-bitars räknare kan alltså räkna mellan [0, 1, 2,... ,4294967295]
+** Givet att den räknar en bit per mikrosekund så kan maximal fördröjning på:
+** 4294967295/(1000)/1000 = 4294.96... ≈ 4295 sekunder ≈ 71.6 minuter ≈ lite drygt över 70 minuter
+
+* Titta i databladet för MCU:n. Du kommer
+* att behöva ha en timer vars räknare är 32
+* bitar. Vilka timers kan du använda?
+** TIM2, TIM5
+** Jag valde TIM2 (Finns på APB1, 84MHz)
