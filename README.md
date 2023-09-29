@@ -39,3 +39,10 @@ Displayed accurately ticking clock on liquid crystal display (LCD: hd44780) with
 - TextLCD_PutStr (TextLCDType * hlcd, char * str)
 - My_Delay(uint32_t mysec) (microsecond delay)
 
+# Lab 5 (Analog Digital Convert - ADC)
+- Set up an ADC for reading a single value.
+- Configure an ADC to read multiple values in sequence.
+- Arrange an ADC for using interrupts.
+- Write code to adjust the values obtained from ADC readings.
+  
+
