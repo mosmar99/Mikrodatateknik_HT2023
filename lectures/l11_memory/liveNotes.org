@@ -1,0 +1,54 @@
+* Memory types
+** Volatile and Non-Volatile
+
+* Volatile (flyktigt)
+** DRAM: static, dynamic
+** Static: 
+**    - lagrar i en vippa, data in, data ut (vanligast i microprocessor)
+**    - CON: tar ganska mycket minne, oprakist, man får ganska lite minne per kapsel
+** Dynamic: Kan lagra en bit med en kondesator och en transistor, man kan lagra ofantligt mycket mer
+** ofta DDR4 man sätter in i minnet
+
+* Non Volatile:
+** fasta minnen som inte går att ändra på == ROM
+** programmerbara 1 enda GÅNG, går aldrig igen = PROM
+** använder transistorer på ett speciellt sätt, MOSFET transistorer, har en speciell design på dom i en sk. floating gate, man kan lagra en laddning i den, finns laddning = 1, annars 0 = FLASH
+** EEPROM nästan samma som FLASH fast lite annorlunda i programming
+** FRAM (ferroelektrisk kristall som påminner om ett dynamiskt minne), kan skriva till det snabbt att både skriva och läsa till
+** flash kan du läsa snabbt ifrån, tar längre tid att skriva till
+
+* Memory schematisk bild
+** se bild
+** antal minnesadresser på 10 bitar => 2^10 = 1024
+
+* Statiskt RAM 0-15 = 2^15 adresser
+* D0-D7: 2^8 bits, 8 bytes, i minne
+
+* DRAM, behövs en kondensator och transistor
+** refresh, kondesator släpper läckström, laddas ut snabbt iom att den är så liten, måste komma ihåg vad det var och ladda upp igen, kallas "refresh"
+** hos statiskt minne så tar varje cell massa minne, här tar refreshern minne men inte resten så mycket
+
+* ROM (read only memory)
+
+* Flash Memory
+** lägg spänning, skapar kanal, i mellan isoleringskitet ansamlas laddningar, 
+**      beroende på gatespänningen så är det 1 eller 0
+** multilevel chip (MLC) - mät mellan 1 och 0
+** multilayer -> mer info
+** CON med multilayer: det blir mycket mer känsligt om det ligger nära gränser, mkt mer vanligt med bitfel
+** hur länge kan laddning i en floating gate ligga kvar: i flera hundra år, med multilevel, avläsning blir mkt sämre med åren, avläsningen blir sämre
+** sclc, mlc
+
+* Ferroelectric RAM
+
+* Static Ram Memory IC
+** nackdel med pararellbus, blir ofta snabbt väldigt många pinnar
+
+* SO8 kapsel (2M-BIT): Har en serielbuss, man kan använda I2C bussen för att läsa och skriva
+** bra för att logga saker som temperatur
+** nackdel med alla flash, dom tar lång tid att skriva till
+** obs: om byte och en hel page har samma tid att skriva till: anledning, dom har lagt allt pararellt
+
+* VI har STM32F411RE:.. kan mha namnet räknat ut hur mycket minne vi har
+** 512 Kbytes av Flash memory
+
