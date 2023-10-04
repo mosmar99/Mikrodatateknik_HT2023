@@ -116,20 +116,20 @@ void lcd_print_adc(TextLCDType * lcd, float x, float y, float C, float L) {
 
 	// Convert float values to strings with signs
 	char x_str[6] = {0};
-	//char y_str[5] = {0};
+	char y_str[6] = {0};
 
 	// Format the strings with signs and two decimal places
 	snprintf(x_str, sizeof(x_str), "%+.2f", x);
-	//snprintf(y_str, sizeof(y_str), "%+.2f", y);
+	snprintf(y_str, sizeof(y_str), "%+.2f", y);
 
 	TextLCD_SetPos(lcd, row, col);
 
 	TextLCD_PutChar(lcd, x_str[0]); // Print the sign
 	TextLCD_PutChar(lcd, x_str[1]); // Print the first digit
-	TextLCD_PutChar(lcd, x_str[2]); // Print the decimal point
-	TextLCD_PutChar(lcd, x_str[3]); // Print the first decimal digit
-	TextLCD_PutChar(lcd, x_str[4]); // Print the second decimal digit
-	// note: null is at index 5
+	TextLCD_PutChar(lcd, x_str[2]); // Print the second digit
+	TextLCD_PutChar(lcd, x_str[3]); // Print the decimal point
+	TextLCD_PutChar(lcd, x_str[4]); // Print the first decimal digit
+	TextLCD_PutChar(lcd, x_str[5]); // Print the second decimal digit
 	TextLCD_PutChar(lcd, char_x);      // Print the 'x' character
 }
 /* USER CODE END 0 */
@@ -184,13 +184,14 @@ int main(void)
 
       //pos = normalize_12bit(adc_reading);
       x = normalize_12bit_posneg(adc_reading);
+
       // sprintf(buffer, "Normalized (0-1): %2.2f, Normalized (-1 to 1): %2.2f", pos, posneg);
       // HAL_UART_Transmit(&huart2, (uint8_t *)buffer, strlen(buffer), HAL_MAX_DELAY);
       // HAL_UART_Transmit(&huart2, (uint8_t *)"\r", 1, HAL_MAX_DELAY);
 
       lcd_print_adc(&lcd, x, 0, 0, 0);
 
-      HAL_Delay(300);
+      HAL_Delay(1000);
     
     /* USER CODE END WHILE */
 

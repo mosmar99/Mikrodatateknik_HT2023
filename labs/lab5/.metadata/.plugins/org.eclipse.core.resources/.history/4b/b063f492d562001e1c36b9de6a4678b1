@@ -183,14 +183,15 @@ int main(void)
       adc_reading = read_one_adc_value(&hadc1);
 
       //pos = normalize_12bit(adc_reading);
-      x = normalize_12bit_posneg(adc_reading);
+      //x = normalize_12bit_posneg(adc_reading);
+      x = -0.40;
       // sprintf(buffer, "Normalized (0-1): %2.2f, Normalized (-1 to 1): %2.2f", pos, posneg);
       // HAL_UART_Transmit(&huart2, (uint8_t *)buffer, strlen(buffer), HAL_MAX_DELAY);
       // HAL_UART_Transmit(&huart2, (uint8_t *)"\r", 1, HAL_MAX_DELAY);
 
       lcd_print_adc(&lcd, x, 0, 0, 0);
 
-      HAL_Delay(300);
+      HAL_Delay(1000);
     
     /* USER CODE END WHILE */
 

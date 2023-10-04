@@ -70,29 +70,6 @@ static void MX_ADC1_Init(void);
 static void MX_I2C1_Init(void);
 static void MX_TIM2_Init(void);
 /* USER CODE BEGIN PFP */
-uint16_t read_one_adc_value(ADC_HandleTypeDef * hadc);
-float normalize_12bit(uint16_t x);
-float normalize_12bit_posneg(uint16_t x);
-float lm35_to_celsius(uint16_t lm35_reading);
-/* USER CODE END PFP */
-
-/* Private user code ---------------------------------------------------------*/
-/* USER CODE BEGIN 0 */
-
-float normalize_12bit(uint16_t x) {
-  // transform to 0-4095 onto 0 to 1
-  float normalized = (float)x / 4095.0;
-  // round to two decimal points
-  return roundf(normalized * 100 + .5) / 100;
-}
-
-float normalize_12bit_posneg(uint16_t x) {
-  // transform to 0-4095 onto -1 to 1
-  float normalized = ((float)x - 2047.0) / 2047.0;
-  // round to two decimal points
-  return roundf(normalized * 100 + .5) / 100;
-}
-
 uint16_t read_one_adc_value(ADC_HandleTypeDef * hadc)
 {
 	HAL_ADC_Start(hadc);
@@ -106,32 +83,11 @@ float lm35_to_celsius(uint16_t lm35_reading) {
 
 	return 11.0;
 }
+/* USER CODE END PFP */
 
-void lcd_print_adc(TextLCDType * lcd, float x, float y, float C, float L) {
-	const char char_x = 'x';
-	//const char char_y = 'y';
+/* Private user code ---------------------------------------------------------*/
+/* USER CODE BEGIN 0 */
 
-	uint8_t row = 0; // Second row (0-based index)
-	uint8_t col = 0; // Rightmost column (0-based index)
-
-	// Convert float values to strings with signs
-	char x_str[6] = {0};
-	//char y_str[5] = {0};
-
-	// Format the strings with signs and two decimal places
-	snprintf(x_str, sizeof(x_str), "%+.2f", x);
-	//snprintf(y_str, sizeof(y_str), "%+.2f", y);
-
-	TextLCD_SetPos(lcd, row, col);
-
-	TextLCD_PutChar(lcd, x_str[0]); // Print the sign
-	TextLCD_PutChar(lcd, x_str[1]); // Print the first digit
-	TextLCD_PutChar(lcd, x_str[2]); // Print the decimal point
-	TextLCD_PutChar(lcd, x_str[3]); // Print the first decimal digit
-	TextLCD_PutChar(lcd, x_str[4]); // Print the second decimal digit
-	// note: null is at index 5
-	TextLCD_PutChar(lcd, char_x);      // Print the 'x' character
-}
 /* USER CODE END 0 */
 
 /**
@@ -167,35 +123,17 @@ int main(void)
   MX_I2C1_Init();
   MX_TIM2_Init();
   /* USER CODE BEGIN 2 */
+
   TextLCD_Init(&lcd, &hi2c1, 0x4E);
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-  uint16_t adc_reading = 0;
-  //float pos = 0;
-  //float posneg = 0;
-  //char buffer[100] = {0};
-  float x = 0;
-  HAL_UART_Transmit(&huart2, (uint8_t *)"\r", 1, HAL_MAX_DELAY);
   while (1)
   {
-      adc_reading = read_one_adc_value(&hadc1);
-
-      //pos = normalize_12bit(adc_reading);
-      x = normalize_12bit_posneg(adc_reading);
-      // sprintf(buffer, "Normalized (0-1): %2.2f, Normalized (-1 to 1): %2.2f", pos, posneg);
-      // HAL_UART_Transmit(&huart2, (uint8_t *)buffer, strlen(buffer), HAL_MAX_DELAY);
-      // HAL_UART_Transmit(&huart2, (uint8_t *)"\r", 1, HAL_MAX_DELAY);
-
-      lcd_print_adc(&lcd, x, 0, 0, 0);
-
-      HAL_Delay(300);
-    
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-    
   }
   /* USER CODE END 3 */
 }
