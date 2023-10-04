@@ -1,0 +1,20 @@
+* Debuggern är i sig bara en processor
+* Skicka info genom SWDIO (serial wire data inpout output), SWCLOCK
+* Pullup motstånd (när blir då en 1 och när blir en 0)
+* Kopplar du ej upp mot ground då vet den inte vad som är en 1a o 0a, behöver en gemensam reference (grounden)
+
+* Instrumentation Trace Macrocell
+** Mha: Debug port SWO pin kan den skicka om en pinne var hög eller låg osv
+* Finns en Embedded Trace Module, kräver en dyrare Trace Module, tracar mycket mer i detalj
+* There are 32 channels/kanals/ports to send data: ITM->PORT[3] = mydata;
+
+* Debugging what one can do:
+** 1) printout
+** 2) use live expressions
+** 3) redirect to ITM
+** 4) Advanced breakpoints, conditions and actions
+** 5) callstack and memory peeking
+** 6) asserts (assert_param & assert_failed, or assert)
+** 7) SWV Data Trace, can output data borth numerically and as graph
+** 8) GPIO and oscilloscope for debugging and time measurement
+** 9) use SWV trace log to measure time (skickar data formodlingen upp till 6 microsekunder)
