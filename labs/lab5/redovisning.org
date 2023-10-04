@@ -1,0 +1,60 @@
+* Hur många procent har kondensatorn
+* laddats efter 3 * 𝝉? (ofta bra nog)
+** ca 95%
+
+* Efter 5 * 𝝉? (hög precision)
+** ca 99%
+
+* Vad är sample-and-holdkondensatorns storlek? Värsta fallet
+* är högsta värdet, så använd detta.
+** 7 pF
+
+* Vilken resistans ger switchen?
+** 6 kΩ
+
+* Givet enbart dessa, vad blir 5 * 𝝉?
+** 𝝉 = RC = 6 kΩ × 7 pF = 42 * 10^(3) * 10^(-12)
+**   = 42 * 10^(-9) ns = 42 ns
+** 5𝝉 <=> 210 ns <=> 0.21 µs
+
+* Hur lång är en av ADC:ns klockcykler?
+* Dvs. T_ADC = 1 / f_ADC
+* (enheten är sekunder per klockcykel)
+** f_ADC = ?
+** Clock Prescaler = PCLK2/4 = 25 MHz
+** PCLK2 = 100 Mhz
+** T_ADC = 1 / 25 MHz = 0.04 µs / klockcykel = 40 ns / klockcykel
+
+
+* Hur många klockcykler krävs för att
+* hinna med 5 * 𝝉? Räkna alltså ut
+*     n_SAMP = t_5𝝉 / T_ADC
+** n_SAMP = 210ns/40ns = 5.25 klockcyklar ≈ 6 klockcyklar
+** => Bör alltså sampla med åtminstone (avrundat uppåt till närmsta heltal) varje sjätte klockcykel
+**      : detta för att garantera att kondensatorn hunnit ladda upp till 99% av sitt max-värde
+
+* Vilket är det minsta
+* samplingalternativ i CubeMX som
+* krävs för detta?
+** CubeMX har klocksamplings alternativen: 3, 15, 28, ..., 480 cyklar
+** För en till 99% uppladdad kondensator krävdes 5.25 ≈ 6 klockcyklar. 
+**      : Det närmsta samplingalternativet där kondensatorn hunnit laddas upp till 99% är då 15 klockcyklar
+
+* Antag att C_s = 0. Vad blir 5*𝝉 när R_s
+* ges av en termistor som den som
+* nämns ovan?
+** 5*𝜏 = 5*R_s*C_s =  5 * 20k𝛺 * 0 = 0. Eftersom C_s är noll blir resultatet 0.
+
+* Vad blir n_SAMP och vilket värde på
+* samplingstid måste du välja i CubeMX
+* för att garantera en god avläsning?
+** n_SAMP = 5_5𝝉 / T_ADC = 0 / 40ns = 0 klockcyklar, alltså fungerar vilken som helst 
+
+* Extra: 
+* Vad kan hända om man samplar för kort
+* tid? Tänk ett scenario med flera olika
+* källor som konverteras med kort
+* mellanrum. Vad händer om nr 1 är 0V
+* och nr 2 är 3.3V?
+** Om man har en mycket kort samplingstid kan ADC (Analog-Digital Converter) inte hinna fånga de snabba spänningsändringarna mellan de två källorna. Detta kan leda till följande problem:
+** Felaktig avläsning: Med en kort samplingstid kan ADC ge en felaktig avläsning som inte återspeglar de verkliga spänningsförändringarna mellan källorna. Du kanske inte kan särskilja mellan 0V och 3.3V korrekt.
