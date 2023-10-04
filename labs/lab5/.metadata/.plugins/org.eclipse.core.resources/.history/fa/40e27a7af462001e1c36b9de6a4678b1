@@ -62,6 +62,7 @@ TextLCDType lcd;
 uint16_t adc_buffer[ADC_BUF_SIZE] = {0};
 int adc_buf_ix = 0;
 int queue_is_full = 0;
+int count = 0;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -145,9 +146,10 @@ void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef* hadc)
     	else
     	{
     		queue_is_full = 1;
-        	HAL_ADC_Stop(hadc);
     	}
+    	HAL_ADC_Stop(hadc);
 	}
+    count++;
 }
 /* USER CODE END 0 */
 
@@ -185,7 +187,6 @@ int main(void)
   MX_TIM2_Init();
   /* USER CODE BEGIN 2 */
   TextLCD_Init(&lcd, &hi2c1, 0x4E);
-  __HAL_ADC_ENABLE_IT(&hadc1, ADC_IT_EOC);
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -209,13 +210,9 @@ int main(void)
 	      lcd_print_adc(&lcd, x, 0, 0, 0);
 	      if (adc_buf_ix == 0) {
 		      queue_is_full = 0;
-			  HAL_ADC_Start(&hadc1);
 	      }
 	  }
-	  else
-	  {
-		  HAL_ADC_Start(&hadc1);
-	  }
+
       //pos = normalize_12bit(adc_reading);
       //x = normalize_12bit_posneg(adc_reading);
       //lcd_print_adc(&lcd, x, 0, 0, 0);

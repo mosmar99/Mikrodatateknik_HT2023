@@ -40,7 +40,7 @@
 #define JOY_X_IX 0
 #define JOY_Y_IX 1
 #define LM35_IX 2
-#define TEMP_IX 3
+
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -59,9 +59,8 @@ UART_HandleTypeDef huart2;
 
 /* USER CODE BEGIN PV */
 TextLCDType lcd;
-uint16_t adc_buffer[ADC_BUF_SIZE] = {0};
+uint16_t adc_buffer[ADC_BUF_SIZE];
 int adc_buf_ix = 0;
-int queue_is_full = 0;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -134,21 +133,6 @@ void lcd_print_adc(TextLCDType * lcd, float x, float y, float C, float L) {
 	// note: null is at index 5
 	TextLCD_PutChar(lcd, char_x);      // Print the 'x' character
 }
-
-void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef* hadc)
-{
-    if (hadc == &hadc1) {
-        // This callback is for ADC1
-    	if (adc_buf_ix < ADC_BUF_SIZE) {
-    		adc_buffer[adc_buf_ix++] = HAL_ADC_GetValue(&hadc1);
-    	}
-    	else
-    	{
-    		queue_is_full = 1;
-        	HAL_ADC_Stop(hadc);
-    	}
-	}
-}
 /* USER CODE END 0 */
 
 /**
@@ -185,7 +169,6 @@ int main(void)
   MX_TIM2_Init();
   /* USER CODE BEGIN 2 */
   TextLCD_Init(&lcd, &hi2c1, 0x4E);
-  __HAL_ADC_ENABLE_IT(&hadc1, ADC_IT_EOC);
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -201,31 +184,19 @@ int main(void)
   {
 	  // polling
       //adc_reading = read_one_adc_value(&hadc1);
+	  if (__HAL_GET_ADC_FLAG(&hadc1, ADC_FLAG_EOC)) {
 
-	  // interrupt
-	  if (queue_is_full == 1) {
-		  adc_reading = adc_buffer[--adc_buf_ix];
-	      x = normalize_12bit_posneg(adc_reading);
-	      lcd_print_adc(&lcd, x, 0, 0, 0);
-	      if (adc_buf_ix == 0) {
-		      queue_is_full = 0;
-			  HAL_ADC_Start(&hadc1);
-	      }
 	  }
-	  else
-	  {
-		  HAL_ADC_Start(&hadc1);
-	  }
+
       //pos = normalize_12bit(adc_reading);
-      //x = normalize_12bit_posneg(adc_reading);
-      //lcd_print_adc(&lcd, x, 0, 0, 0);
-
-      // UART
+      x = normalize_12bit_posneg(adc_reading);
       // sprintf(buffer, "Normalized (0-1): %2.2f, Normalized (-1 to 1): %2.2f", pos, posneg);
       // HAL_UART_Transmit(&huart2, (uint8_t *)buffer, strlen(buffer), HAL_MAX_DELAY);
       // HAL_UART_Transmit(&huart2, (uint8_t *)"\r", 1, HAL_MAX_DELAY);
 
-      //HAL_Delay(300);
+      lcd_print_adc(&lcd, x, 0, 0, 0);
+
+      HAL_Delay(300);
     
     /* USER CODE END WHILE */
 

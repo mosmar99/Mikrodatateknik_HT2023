@@ -62,6 +62,7 @@ TextLCDType lcd;
 uint16_t adc_buffer[ADC_BUF_SIZE] = {0};
 int adc_buf_ix = 0;
 int queue_is_full = 0;
+int count = 0;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -139,7 +140,7 @@ void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef* hadc)
 {
     if (hadc == &hadc1) {
         // This callback is for ADC1
-    	if (adc_buf_ix < ADC_BUF_SIZE) {
+    	while (adc_buf_ix < ADC_BUF_SIZE) {
     		adc_buffer[adc_buf_ix++] = HAL_ADC_GetValue(&hadc1);
     	}
     	else
@@ -148,6 +149,7 @@ void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef* hadc)
         	HAL_ADC_Stop(hadc);
     	}
 	}
+    count++;
 }
 /* USER CODE END 0 */
 
@@ -209,13 +211,9 @@ int main(void)
 	      lcd_print_adc(&lcd, x, 0, 0, 0);
 	      if (adc_buf_ix == 0) {
 		      queue_is_full = 0;
-			  HAL_ADC_Start(&hadc1);
 	      }
 	  }
-	  else
-	  {
-		  HAL_ADC_Start(&hadc1);
-	  }
+	  HAL_Delay(5);
       //pos = normalize_12bit(adc_reading);
       //x = normalize_12bit_posneg(adc_reading);
       //lcd_print_adc(&lcd, x, 0, 0, 0);

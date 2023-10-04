@@ -196,26 +196,22 @@ int main(void)
   //char buffer[100] = {0};
   float x = 0;
   HAL_UART_Transmit(&huart2, (uint8_t *)"\r", 1, HAL_MAX_DELAY);
-  HAL_ADC_Start(&hadc1);
   while (1)
   {
 	  // polling
       //adc_reading = read_one_adc_value(&hadc1);
 
 	  // interrupt
+	  HAL_ADC_Start(&hadc1);
 	  if (queue_is_full == 1) {
 		  adc_reading = adc_buffer[--adc_buf_ix];
 	      x = normalize_12bit_posneg(adc_reading);
 	      lcd_print_adc(&lcd, x, 0, 0, 0);
 	      if (adc_buf_ix == 0) {
 		      queue_is_full = 0;
-			  HAL_ADC_Start(&hadc1);
 	      }
 	  }
-	  else
-	  {
-		  HAL_ADC_Start(&hadc1);
-	  }
+	  HAL_Delay(5);
       //pos = normalize_12bit(adc_reading);
       //x = normalize_12bit_posneg(adc_reading);
       //lcd_print_adc(&lcd, x, 0, 0, 0);

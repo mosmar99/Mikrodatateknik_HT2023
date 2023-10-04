@@ -35,7 +35,7 @@
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
-#define ADC_BUF_SIZE 1
+#define ADC_BUF_SIZE 100
 
 #define JOY_X_IX 0
 #define JOY_Y_IX 1
@@ -145,8 +145,9 @@ void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef* hadc)
     	else
     	{
     		queue_is_full = 1;
-        	HAL_ADC_Stop(hadc);
     	}
+
+
 	}
 }
 /* USER CODE END 0 */
@@ -185,7 +186,6 @@ int main(void)
   MX_TIM2_Init();
   /* USER CODE BEGIN 2 */
   TextLCD_Init(&lcd, &hi2c1, 0x4E);
-  __HAL_ADC_ENABLE_IT(&hadc1, ADC_IT_EOC);
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -206,16 +206,9 @@ int main(void)
 	  if (queue_is_full == 1) {
 		  adc_reading = adc_buffer[--adc_buf_ix];
 	      x = normalize_12bit_posneg(adc_reading);
-	      lcd_print_adc(&lcd, x, 0, 0, 0);
-	      if (adc_buf_ix == 0) {
-		      queue_is_full = 0;
-			  HAL_ADC_Start(&hadc1);
-	      }
+
 	  }
-	  else
-	  {
-		  HAL_ADC_Start(&hadc1);
-	  }
+
       //pos = normalize_12bit(adc_reading);
       //x = normalize_12bit_posneg(adc_reading);
       //lcd_print_adc(&lcd, x, 0, 0, 0);
