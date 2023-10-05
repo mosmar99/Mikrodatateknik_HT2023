@@ -223,6 +223,8 @@ int main(void)
   // Starta den första ADC-konverteringen - utan interrupt
   // HAL_ADC_Start(&hadc1);
 
+
+
   while (1)
   {
 

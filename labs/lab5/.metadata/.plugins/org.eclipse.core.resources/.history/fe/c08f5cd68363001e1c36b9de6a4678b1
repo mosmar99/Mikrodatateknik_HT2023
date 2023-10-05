@@ -220,8 +220,10 @@ int main(void)
   float x = 0;
   float y = 0;
 
-  // Starta den första ADC-konverteringen - utan interrupt
-  // HAL_ADC_Start(&hadc1);
+  // Starta den första ADC-konverteringen
+  // HAL_ADC_Start(&hadc1); // polling
+
+  //HAL_ADC_Start_IT(&hadc1); // interrupt
 
   while (1)
   {

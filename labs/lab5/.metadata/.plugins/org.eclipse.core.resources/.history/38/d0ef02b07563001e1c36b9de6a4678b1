@@ -60,8 +60,8 @@ UART_HandleTypeDef huart2;
 /* USER CODE BEGIN PV */
 TextLCDType lcd;
 uint16_t adc_buffer[ADC_BUF_SIZE] = {0};
-int queue_is_full = 0;
 int adc_buf_ix = 0;
+int queue_is_full = 0;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -150,25 +150,29 @@ void lcd_print_adc(TextLCDType * lcd, float x, float y, float C, float L) {
 void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef* hadc)
 {
     if (hadc == &hadc1) {
-        // Hantera JOY_X-kanalen
-        if (__HAL_ADC_GET_FLAG(hadc, ADC_FLAG_EOC) && adc_buf_ix == JOY_X) {
-            adc_buffer[JOY_X] = HAL_ADC_GetValue(&hadc1);
-            adc_buf_ix++;
-        }
-        // Hantera JOY_Y-kanalen
-        else if (__HAL_ADC_GET_FLAG(hadc, ADC_FLAG_EOC) && adc_buf_ix == JOY_Y) {
-            // Kopiera värdet från dataregistret för JOY_Y
-            adc_buffer[JOY_Y] = HAL_ADC_GetValue(&hadc1);
+        // This callback is for ADC1
+    	if (adc_buf_ix < ADC_BUF_SIZE)
+    	{
+			if (adc_buf_ix == JOY_X)
+			{
+				adc_buffer[adc_buf_ix++] = HAL_ADC_GetValue(&hadc1);
+			}
 
-            // Hela kön är full, sluta konvertera och flagga
-            queue_is_full = 1;
-            adc_buf_ix = 0;
-            HAL_ADC_Stop(hadc);
-        }
-    }
+			else if (adc_buf_ix == JOY_Y)
+			{
+				adc_buffer[adc_buf_ix++] = HAL_ADC_GetValue(&hadc1);
+
+				// last value from queue has been recieved
+				// no need to wait for another interrupt
+				queue_is_full = 1;
+				HAL_ADC_Stop(hadc);
+			}
+    	}
+    	else
+    	{
+    	}
+	}
 }
-
-
 /* USER CODE END 0 */
 
 /**
@@ -210,54 +214,42 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-
   //uint16_t adc_reading = 0;
   //float pos = 0;
   //float posneg = 0;
   //char buffer[100] = {0};
-  // HAL_UART_Transmit(&huart2, (uint8_t *)"\r", 1, HAL_MAX_DELAY);
-  
   float x = 0;
   float y = 0;
-
-  // Starta den första ADC-konverteringen - utan interrupt
-  // HAL_ADC_Start(&hadc1);
-
+  // HAL_UART_Transmit(&huart2, (uint8_t *)"\r", 1, HAL_MAX_DELAY);
+  HAL_ADC_Start(&hadc1);
   while (1)
   {
-
-    // Vänta på att ADC-konverteringen är klar (hanteras av interrupt)
-    // När queue_is_full flaggan är satt i callback-funktionen,
-    // betyder det att vi har nya värden att behandla
-    if (queue_is_full == 1)
-    {
-        // Läs och normalisera värdena från ADC-buffer
-        x = normalize_12bit_posneg(adc_buffer[JOY_X]);
-        y = normalize_12bit_posneg(adc_buffer[JOY_Y]);
-
-        // Skriv ut värdena på LCD 
-        lcd_print_adc(&lcd, x, y, 0, 0);
-
-        // Återställ flaggan och starta en ny konvertering
-        queue_is_full = 0;
-    }
-    else
-    {
-    	// starta nästa omvandling
-        HAL_ADC_Start_IT(&hadc1);
-    }
-
 	  // polling
       // adc_reading = read_one_adc_value(&hadc1);
       // pos = normalize_12bit(adc_reading);
       // x = normalize_12bit_posneg(adc_reading);
       // lcd_print_adc(&lcd, x, y, 0, 0);
 
+	  // interrupt
+	  if (queue_is_full == 1) {
+          y = normalize_12bit_posneg(adc_buffer[JOY_Y]);
+          x = normalize_12bit_posneg(adc_buffer[JOY_X]);
+          lcd_print_adc(&lcd, x, y, 0, 0);
+          queue_is_full = 0;
+          adc_buf_ix = 0;
+	  }
+	  else
+	  {
+          HAL_ADC_Start(&hadc1);
+	  }
+
       // UART
       // sprintf(buffer, "Normalized (0-1): %2.2f, Normalized (-1 to 1): %2.2f", pos, posneg);
       // HAL_UART_Transmit(&huart2, (uint8_t *)buffer, strlen(buffer), HAL_MAX_DELAY);
       // HAL_UART_Transmit(&huart2, (uint8_t *)"\r", 1, HAL_MAX_DELAY);
-      // HAL_Delay(300);
+
+      //HAL_Delay(300);
+    
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */

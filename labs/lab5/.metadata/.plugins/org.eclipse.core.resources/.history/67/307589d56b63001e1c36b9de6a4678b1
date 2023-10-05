@@ -35,7 +35,7 @@
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
-#define ADC_BUF_SIZE 2
+#define ADC_BUF_SIZE 1
 
 #define JOY_X 0
 #define JOY_Y 1
@@ -60,8 +60,9 @@ UART_HandleTypeDef huart2;
 /* USER CODE BEGIN PV */
 TextLCDType lcd;
 uint16_t adc_buffer[ADC_BUF_SIZE] = {0};
-int queue_is_full = 0;
 int adc_buf_ix = 0;
+int queue_is_full = 0;
+int adc_on = 0;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -111,21 +112,21 @@ float lm35_to_celsius(uint16_t lm35_reading) {
 
 void lcd_print_adc(TextLCDType * lcd, float x, float y, float C, float L) {
 	const char char_x = 'x';
-	const char char_y = 'y';
+	//const char char_y = 'y';
+
+	uint8_t row = 0; // Second row (0-based index)
+	uint8_t col = 0; // Rightmost column (0-based index)
 
 	// Convert float values to strings with signs
 	char x_str[6] = {0};
-	char y_str[6] = {0};
+	//char y_str[5] = {0};
 
 	// Format the strings with signs and two decimal places
 	snprintf(x_str, sizeof(x_str), "%+.2f", x);
-	snprintf(y_str, sizeof(y_str), "%+.2f", y);
+	//snprintf(y_str, sizeof(y_str), "%+.2f", y);
 
-
-  // Set the cursor position for JOY_X (16x2 LCD)
-	uint8_t row = 0; // First row (0-based index)
-	uint8_t col = 0; // Leftmost column (0-based index)
 	TextLCD_SetPos(lcd, row, col);
+
 	TextLCD_PutChar(lcd, x_str[0]); // Print the sign
 	TextLCD_PutChar(lcd, x_str[1]); // Print the first digit
 	TextLCD_PutChar(lcd, x_str[2]); // Print the decimal point
@@ -133,42 +134,23 @@ void lcd_print_adc(TextLCDType * lcd, float x, float y, float C, float L) {
 	TextLCD_PutChar(lcd, x_str[4]); // Print the second decimal digit
 	// note: null is at index 5
 	TextLCD_PutChar(lcd, char_x);      // Print the 'x' character
-
-  // Set the cursor position for JOY_Y (16x2 LCD)
-  row = 1; // Second row (0-based index)
-  col = 0; // Leftmost column (0-based index)
-  TextLCD_SetPos(lcd, row, col);
-  TextLCD_PutChar(lcd, y_str[0]); // Print the sign
-  TextLCD_PutChar(lcd, y_str[1]); // Print the first digit
-  TextLCD_PutChar(lcd, y_str[2]); // Print the decimal point
-  TextLCD_PutChar(lcd, y_str[3]); // Print the first decimal digit
-  TextLCD_PutChar(lcd, y_str[4]); // Print the second decimal digit
-  // note: null is at index 5
-  TextLCD_PutChar(lcd, char_y);      // Print the 'y' character
 }
 
 void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef* hadc)
 {
     if (hadc == &hadc1) {
-        // Hantera JOY_X-kanalen
-        if (__HAL_ADC_GET_FLAG(hadc, ADC_FLAG_EOC) && adc_buf_ix == JOY_X) {
-            adc_buffer[JOY_X] = HAL_ADC_GetValue(&hadc1);
-            adc_buf_ix++;
-        }
-        // Hantera JOY_Y-kanalen
-        else if (__HAL_ADC_GET_FLAG(hadc, ADC_FLAG_EOC) && adc_buf_ix == JOY_Y) {
-            // Kopiera värdet från dataregistret för JOY_Y
-            adc_buffer[JOY_Y] = HAL_ADC_GetValue(&hadc1);
-
-            // Hela kön är full, sluta konvertera och flagga
-            queue_is_full = 1;
-            adc_buf_ix = 0;
-            HAL_ADC_Stop(hadc);
-        }
-    }
+        // This callback is for ADC1
+    	if (adc_buf_ix < ADC_BUF_SIZE) {
+    		adc_buffer[adc_buf_ix++] = HAL_ADC_GetValue(&hadc1);
+    	}
+    	else
+    	{
+    		queue_is_full = 1;
+        	HAL_ADC_Stop(hadc);
+        	adc_on = 0;
+    	}
+	}
 }
-
-
 /* USER CODE END 0 */
 
 /**
@@ -210,54 +192,48 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-
-  //uint16_t adc_reading = 0;
+  uint16_t adc_reading = 0;
   //float pos = 0;
   //float posneg = 0;
   //char buffer[100] = {0};
-  // HAL_UART_Transmit(&huart2, (uint8_t *)"\r", 1, HAL_MAX_DELAY);
-  
   float x = 0;
   float y = 0;
-
-  // Starta den första ADC-konverteringen - utan interrupt
-  // HAL_ADC_Start(&hadc1);
-
+  HAL_UART_Transmit(&huart2, (uint8_t *)"\r", 1, HAL_MAX_DELAY);
+  HAL_ADC_Start(&hadc1);
   while (1)
   {
-
-    // Vänta på att ADC-konverteringen är klar (hanteras av interrupt)
-    // När queue_is_full flaggan är satt i callback-funktionen,
-    // betyder det att vi har nya värden att behandla
-    if (queue_is_full == 1)
-    {
-        // Läs och normalisera värdena från ADC-buffer
-        x = normalize_12bit_posneg(adc_buffer[JOY_X]);
-        y = normalize_12bit_posneg(adc_buffer[JOY_Y]);
-
-        // Skriv ut värdena på LCD 
-        lcd_print_adc(&lcd, x, y, 0, 0);
-
-        // Återställ flaggan och starta en ny konvertering
-        queue_is_full = 0;
-    }
-    else
-    {
-    	// starta nästa omvandling
-        HAL_ADC_Start_IT(&hadc1);
-    }
-
 	  // polling
-      // adc_reading = read_one_adc_value(&hadc1);
-      // pos = normalize_12bit(adc_reading);
-      // x = normalize_12bit_posneg(adc_reading);
-      // lcd_print_adc(&lcd, x, y, 0, 0);
+      //adc_reading = read_one_adc_value(&hadc1);
+
+	  // interrupt
+	  if (queue_is_full == 1) {
+		  adc_reading = adc_buffer[--adc_buf_ix];
+	      x = normalize_12bit_posneg(adc_reading);
+	      lcd_print_adc(&lcd, x, 0, 0, 0);
+	      if (adc_buf_ix == 0) {
+		      queue_is_full = 0;
+		      HAL_ADC_Start(&hadc1);
+
+	      }
+	  }
+	  else
+	  {
+		  if (adc_on == 0) {
+			  HAL_ADC_Start(&hadc1);
+			  adc_on = 1;
+		  }
+	  }
+      //pos = normalize_12bit(adc_reading);
+      //x = normalize_12bit_posneg(adc_reading);
+      //lcd_print_adc(&lcd, x, 0, 0, 0);
 
       // UART
       // sprintf(buffer, "Normalized (0-1): %2.2f, Normalized (-1 to 1): %2.2f", pos, posneg);
       // HAL_UART_Transmit(&huart2, (uint8_t *)buffer, strlen(buffer), HAL_MAX_DELAY);
       // HAL_UART_Transmit(&huart2, (uint8_t *)"\r", 1, HAL_MAX_DELAY);
-      // HAL_Delay(300);
+
+      //HAL_Delay(300);
+    
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */

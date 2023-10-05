@@ -152,8 +152,7 @@ void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef* hadc)
     if (hadc == &hadc1) {
         // Hantera JOY_X-kanalen
         if (__HAL_ADC_GET_FLAG(hadc, ADC_FLAG_EOC) && adc_buf_ix == JOY_X) {
-            adc_buffer[JOY_X] = HAL_ADC_GetValue(&hadc1);
-            adc_buf_ix++;
+            adc_buffer[JOY_X++] = HAL_ADC_GetValue(&hadc1);
         }
         // Hantera JOY_Y-kanalen
         else if (__HAL_ADC_GET_FLAG(hadc, ADC_FLAG_EOC) && adc_buf_ix == JOY_Y) {
@@ -162,7 +161,6 @@ void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef* hadc)
 
             // Hela kön är full, sluta konvertera och flagga
             queue_is_full = 1;
-            adc_buf_ix = 0;
             HAL_ADC_Stop(hadc);
         }
     }
@@ -220,8 +218,10 @@ int main(void)
   float x = 0;
   float y = 0;
 
-  // Starta den första ADC-konverteringen - utan interrupt
-  // HAL_ADC_Start(&hadc1);
+  // Starta den första ADC-konverteringen
+  // HAL_ADC_Start(&hadc1); // polling
+
+  HAL_ADC_Start_IT(&hadc1); // interrupt
 
   while (1)
   {
