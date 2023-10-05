@@ -162,8 +162,8 @@ void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef* hadc)
 
             // Hela kön är full, sluta konvertera och flagga
             queue_is_full = 1;
-            // adc_buf_ix = 0;
-            HAL_ADC_Stop(hadc);
+            adc_buf_ix = 0;
+            __HAL_ADC_DISABLE_IT(&hadc1, ADC_IT_EOC);
         }
     }
 }
@@ -241,6 +241,11 @@ int main(void)
         // Återställ flaggan och starta en ny konvertering
         queue_is_full = 0;
         adc_buf_ix = 0;
+        __HAL_ADC_ENABLE_IT(&hadc1, ADC_IT_EOC);
+    }
+    else
+    {
+    	// starta nästa omvandling
         HAL_ADC_Start_IT(&hadc1);
     }
 

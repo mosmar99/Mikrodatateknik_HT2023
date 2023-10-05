@@ -243,6 +243,7 @@ int main(void)
         adc_buf_ix = 0;
         HAL_ADC_Start_IT(&hadc1);
     }
+    HAL_Delay(1);
 
 	  // polling
       // adc_reading = read_one_adc_value(&hadc1);
