@@ -43,7 +43,7 @@
 * Antag att C_s = 0. Vad blir 5*𝝉 när R_s
 * ges av en termistor som den som
 * nämns ovan?
-** 5*𝜏 = 5*R_s*C_s =  5 * 20k𝛺 * 0 = 0. Eftersom C_s är noll blir resultatet 0.
+** 5*𝜏 = 5*(R_s+R_switch)*(C_sample + C_s) =  5 * (20k𝛺 + 6k𝛺) * (7pF + 0) = 910 ns 
 
 * Vad blir n_SAMP och vilket värde på
 * samplingstid måste du välja i CubeMX

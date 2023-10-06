@@ -35,12 +35,12 @@
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
-#define ADC_BUF_SIZE 2
+#define ADC_BUF_SIZE 4
 
 #define JOY_X 0
 #define JOY_Y 1
-#define LM35 2
-#define TEMP 3
+#define LUX 2
+#define LM35 3
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -76,6 +76,7 @@ uint16_t read_one_adc_value(ADC_HandleTypeDef * hadc);
 float normalize_12bit(uint16_t x);
 float normalize_12bit_posneg(uint16_t x);
 float lm35_to_celsius(uint16_t lm35_reading);
+float fix_lux_format(uint16_t lux_reading);
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
@@ -104,23 +105,37 @@ uint16_t read_one_adc_value(ADC_HandleTypeDef * hadc)
 	return (uint16_t) reading;
 }
 
-float lm35_to_celsius(uint16_t lm35_reading) {
-
-	return 11.0;
+float fix_lux_format(uint16_t lux_reading) {
+    return 1 - (float)lux_reading / 4095.0;
 }
 
-void lcd_print_adc(TextLCDType * lcd, float x, float y, float C, float L) {
+float lm35_to_celsius(uint16_t lm35_reading) {
+    float perc = (float)lm35_reading / 4095.0;
+    float volt = 5 * perc;
+    float celsius = volt / 0.025; // bör vara 0.010 mV/C, 0.025 funkar bra
+    return celsius;
+}
+
+
+// INPUT: x-coordinate of joystick, y-coordinate of joystick, lux_reading, lm35_reading
+void lcd_print_adc(TextLCDType * lcd, float x, float y, float lux_reading, float lm35_reading) {
 	const char char_x = 'x';
 	const char char_y = 'y';
+	const char char_lux_reading = 'L';
+  const char char_lm35_reading_1 = 176;
+  const char char_lm35_reading_2 = 'C';
 
 	// Convert float values to strings with signs
 	char x_str[6] = {0};
 	char y_str[6] = {0};
+	char lux_reading_str[6] = {0};
+  char lm35_reading_str[5] = {0};
 
 	// Format the strings with signs and two decimal places
 	snprintf(x_str, sizeof(x_str), "%+.2f", x);
 	snprintf(y_str, sizeof(y_str), "%+.2f", y);
-
+	snprintf(lux_reading_str, sizeof(lux_reading_str), "%.3f", lux_reading);
+  snprintf(lm35_reading_str, sizeof(lm35_reading_str), "%.1f", lm35_reading);
 
   // Set the cursor position for JOY_X (16x2 LCD)
 	uint8_t row = 0; // First row (0-based index)
@@ -135,8 +150,8 @@ void lcd_print_adc(TextLCDType * lcd, float x, float y, float C, float L) {
 	TextLCD_PutChar(lcd, char_x);      // Print the 'x' character
 
   // Set the cursor position for JOY_Y (16x2 LCD)
-  row = 1; // Second row (0-based index)
-  col = 0; // Leftmost column (0-based index)
+  row = 1;
+  col = 0;
   TextLCD_SetPos(lcd, row, col);
   TextLCD_PutChar(lcd, y_str[0]); // Print the sign
   TextLCD_PutChar(lcd, y_str[1]); // Print the first digit
@@ -145,6 +160,28 @@ void lcd_print_adc(TextLCDType * lcd, float x, float y, float C, float L) {
   TextLCD_PutChar(lcd, y_str[4]); // Print the second decimal digit
   // note: null is at index 5
   TextLCD_PutChar(lcd, char_y);      // Print the 'y' character
+
+  row = 1;
+  col = 10;
+  TextLCD_SetPos(lcd, row, col);
+  TextLCD_PutChar(lcd, lux_reading_str[0]); // Print the first digit
+  TextLCD_PutChar(lcd, lux_reading_str[1]); // Print the decimal point
+  TextLCD_PutChar(lcd, lux_reading_str[2]); // Print the first decimal digit
+  TextLCD_PutChar(lcd, lux_reading_str[3]); // Print the second decimal digit
+  TextLCD_PutChar(lcd, lux_reading_str[4]); // Print the third decimal digit
+  // note: null is at index 5
+  TextLCD_PutChar(lcd, char_lux_reading);      // Print the 'L' character
+
+  row = 0;
+  col = 10;
+  TextLCD_SetPos(lcd, row, col);
+  TextLCD_PutChar(lcd, lm35_reading_str[0]); // Print the first digit
+  TextLCD_PutChar(lcd, lm35_reading_str[1]); // Print the second digit
+  TextLCD_PutChar(lcd, lm35_reading_str[2]); // Print the decimal point
+  TextLCD_PutChar(lcd, lm35_reading_str[3]); // Print the first decimal digit
+  // note: null is at index 4
+  TextLCD_PutChar(lcd, char_lm35_reading_1);      // Print the '°' character
+  TextLCD_PutChar(lcd, char_lm35_reading_2);      // Print the 'C' character
 }
 
 void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef* hadc)
@@ -159,10 +196,21 @@ void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef* hadc)
         else if (__HAL_ADC_GET_FLAG(hadc, ADC_FLAG_EOC) && adc_buf_ix == JOY_Y) {
             // Kopiera värdet från dataregistret för JOY_Y
             adc_buffer[JOY_Y] = HAL_ADC_GetValue(&hadc1);
+            adc_buf_ix++;
+        }
+        else if (__HAL_ADC_GET_FLAG(hadc, ADC_FLAG_EOC) && adc_buf_ix == LUX) {
+            // Handle the light sensor
+            adc_buffer[LUX] = HAL_ADC_GetValue(&hadc1);
+            adc_buf_ix++;
+
+        }
+        else if (__HAL_ADC_GET_FLAG(hadc, ADC_FLAG_EOC) && adc_buf_ix == LM35) {
+            // Handle the temperature sensor
+            adc_buffer[LM35] = HAL_ADC_GetValue(&hadc1);
+            adc_buf_ix++; // increment to assure new values are not read until current queue has been handled
 
             // Hela kön är full, sluta konvertera och flagga
             queue_is_full = 1;
-            // adc_buf_ix = 0;
             HAL_ADC_Stop(hadc);
         }
     }
@@ -219,6 +267,8 @@ int main(void)
   
   float x = 0;
   float y = 0;
+  float lux_reading = 0;
+  float lm35_reading = 0;
 
   // Starta den första ADC-konverteringen - utan interrupt
   // HAL_ADC_Start(&hadc1);
@@ -234,9 +284,11 @@ int main(void)
         // Läs och normalisera värdena från ADC-buffer
         x = normalize_12bit_posneg(adc_buffer[JOY_X]);
         y = normalize_12bit_posneg(adc_buffer[JOY_Y]);
+        lux_reading = fix_lux_format(adc_buffer[LUX]);
+        lm35_reading = lm35_to_celsius(adc_buffer[LM35]);
 
         // Skriv ut värdena på LCD 
-        lcd_print_adc(&lcd, x, y, 0, 0);
+        lcd_print_adc(&lcd, x, y, lux_reading, lm35_reading);
 
         // Återställ flaggan och starta en ny konvertering
         queue_is_full = 0;
@@ -338,7 +390,7 @@ static void MX_ADC1_Init(void)
   hadc1.Init.ExternalTrigConvEdge = ADC_EXTERNALTRIGCONVEDGE_NONE;
   hadc1.Init.ExternalTrigConv = ADC_SOFTWARE_START;
   hadc1.Init.DataAlign = ADC_DATAALIGN_RIGHT;
-  hadc1.Init.NbrOfConversion = 2;
+  hadc1.Init.NbrOfConversion = 4;
   hadc1.Init.DMAContinuousRequests = DISABLE;
   hadc1.Init.EOCSelection = ADC_EOC_SINGLE_CONV;
   if (HAL_ADC_Init(&hadc1) != HAL_OK)
@@ -360,6 +412,24 @@ static void MX_ADC1_Init(void)
   */
   sConfig.Channel = ADC_CHANNEL_1;
   sConfig.Rank = 2;
+  if (HAL_ADC_ConfigChannel(&hadc1, &sConfig) != HAL_OK)
+  {
+    Error_Handler();
+  }
+
+  /** Configure for the selected ADC regular channel its corresponding rank in the sequencer and its sample time.
+  */
+  sConfig.Channel = ADC_CHANNEL_4;
+  sConfig.Rank = 3;
+  if (HAL_ADC_ConfigChannel(&hadc1, &sConfig) != HAL_OK)
+  {
+    Error_Handler();
+  }
+
+  /** Configure for the selected ADC regular channel its corresponding rank in the sequencer and its sample time.
+  */
+  sConfig.Channel = ADC_CHANNEL_8;
+  sConfig.Rank = 4;
   if (HAL_ADC_ConfigChannel(&hadc1, &sConfig) != HAL_OK)
   {
     Error_Handler();
