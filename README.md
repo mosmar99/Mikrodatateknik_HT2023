@@ -44,5 +44,13 @@ Displayed accurately ticking clock on liquid crystal display (LCD: hd44780) with
 - Configure an ADC to read multiple values in sequence.
 - Arrange an ADC for using interrupts.
 - Write code to adjust the values obtained from ADC readings.
-  
 
+- Implemented LM35 Temperature Sensor, MH sensor series of type flying fish (a sensor which reads light intensity in lux) and a Joystick. The joysticks relative X and Y position, the temperature in celcius and lightintensity is displayed on the LCD screen using I2C interface. 16 and 32 bit timers are utilized. When the ADC has finished sampling, an interrupt is generated. There are 4 interrupt channels IN0 (Joystick X coordinate), IN1 (Joystick Y coordinate), IN4 (light sensor input value) and IN8 (temperature). Scan Conversion mode was enabled in order to successivly read from each channel, IN0 to IN8. Continuous conversion mode was also enabled to restart ADC sampling from first element in queue, i.e. after IN8 is sampled by ADC, next element to be sampled from is IN0. The end result can be seen in the video below:
+
+https://github.com/mosmar99/Mikrodatateknik_HT2023/assets/47375043/ae8e7073-3941-4ce3-b7fc-a02ba33c6d0f
+
+Note that the outputed vector from the ADC is an 12 bit vector whose minimum value is 0 and maximum 4095. Thus one needs to format the ADC reading to the sensor in question. For example, joystick coordinate x and y were displayed as a number that could vary between -1.00 and +1.00 respectively. Here is visualization of the joystick coordinates:
+
+  <img width="347" alt="Screenshot 2023-10-06 212842" src="https://github.com/mosmar99/Mikrodatateknik_HT2023/assets/47375043/4a21204e-b591-4352-b14a-5db32e056c2f">
+
+# Lab 6 
