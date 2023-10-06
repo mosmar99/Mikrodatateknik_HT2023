@@ -21,15 +21,15 @@
 * Dvs. T_ADC = 1 / f_ADC
 * (enheten är sekunder per klockcykel)
 ** f_ADC = ?
-** Clock Prescaler = PCLK2/4 = 25 MHz
-** PCLK2 = 100 Mhz
-** T_ADC = 1 / 25 MHz = 0.04 µs / klockcykel = 40 ns / klockcykel
+** Clock Prescaler = PCLK2/4 = 21 MHz
+** PCLK2 = 84 Mhz
+** T_ADC = 1 / 21 MHz = 0.047 µs / klockcykel = 47 ns / klockcykel
 
 
 * Hur många klockcykler krävs för att
 * hinna med 5 * 𝝉? Räkna alltså ut
 *     n_SAMP = t_5𝝉 / T_ADC
-** n_SAMP = 210ns/40ns = 5.25 klockcyklar ≈ 6 klockcyklar
+** n_SAMP = 210ns/47ns = 4.46 klockcyklar ≈(uppåt) 5 klockcyklar
 ** => Bör alltså sampla med åtminstone (avrundat uppåt till närmsta heltal) varje sjätte klockcykel
 **      : detta för att garantera att kondensatorn hunnit ladda upp till 99% av sitt max-värde
 
@@ -37,7 +37,7 @@
 * samplingalternativ i CubeMX som
 * krävs för detta?
 ** CubeMX har klocksamplings alternativen: 3, 15, 28, ..., 480 cyklar
-** För en till 99% uppladdad kondensator krävdes 5.25 ≈ 6 klockcyklar. 
+** För en till 99% uppladdad kondensator krävdes 4.46 ≈ 15 klockcyklar. 
 **      : Det närmsta samplingalternativet där kondensatorn hunnit laddas upp till 99% är då 15 klockcyklar
 
 * Antag att C_s = 0. Vad blir 5*𝝉 när R_s
@@ -48,7 +48,8 @@
 * Vad blir n_SAMP och vilket värde på
 * samplingstid måste du välja i CubeMX
 * för att garantera en god avläsning?
-** n_SAMP = 5_5𝝉 / T_ADC = 0 / 40ns = 0 klockcyklar, alltså fungerar vilken som helst 
+** n_SAMP = 5_5𝝉 / T_ADC = 910ns / 47ns = 19.36 klockcyklar, 
+** alltså fungerar en samplingstid på 28 klockcyklar
 
 * Extra: 
 * Vad kan hända om man samplar för kort
