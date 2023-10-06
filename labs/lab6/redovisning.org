@@ -1,0 +1,45 @@
+* Vilka frekvenser brukar en LED-dimmer arbeta på?
+** Mellan 100 Hz - 20kHz. 
+** Vanligtvis arbetar en LED-dimmer på höga frekvenser för att undgå flimmer.
+
+* Skriv en kort beskrivning (2-4
+* meningar) av hur PWM-generering
+* fungerar. Dessa måste nämnas i din
+* beskrivning: ARR, CNT, CCR1, TIMx_CH12
+** PWM-generering använder en timer (TIMx) och specifikt CCR1 (Capture/Compare Register 1) för att kontrollera pulsbredden. 
+** TIMx_COUNTER (CNT) ökar kontinuerligt och jämförs med CCR1. 
+** TIMx_CH12 representerar kanalen inom timern som används för att generera PWM-utgången 
+** När CNT når CCR1-värdet slås PWM-signalen på, och när det återställs slås den av. 
+** ARR (Auto-Reload Register) bestämmer totalperioden för PWM-signalen.
+
+* Vilka värden valde du för TIM1?
+* f_TIM1 = ?
+* p = ? (psc + 1)
+* n = ? (ARR + 1)
+** minns att: np = f_tim / f_cnt
+** Låt: n = 100 <=> ARR = 99 (max är 65535), f_pwm = 10 kHz och p = 84
+** Notera: f_TIM1 = 84MHz
+** np = f_tim / f_cnt <=> 
+** <=> 100*84 = 84*10^(6) / 10 * 10^(3) <=> 84*10^(2) = 84*10^(2): OK
+** Notera: T_pwm = 1/f_pwm = 100𝜇s > 50𝜇s: OK
+
+
+* Varför kan du ändra ljusets intensitet
+* när processorn är pausad?
+** TIM1 fortsätter att räkna och generera PWM-utgången även när processorn är i pausläge. 
+** Detta är möjligt eftersom TIM1 är en hårdvarubaserad timer och är inte beroende av processorns aktivitet.
+** Ändringar i CCR1, CCR2 och CCR3-värdena påverkar direkt tidpunkterna när PWM-signalen slås på och av, 
+** oavsett om processorn är aktiv eller pausad. 
+
+* Är de tre färgerna av samma
+* ljusintensitet för samma värde på
+* CCRx?
+** Mina lyser med ganska snarlik intensitet
+
+* Om någon färg behöver högre duty
+* cycle för att nå samma intensitet som
+* den starkaste, vad är (grovt gissat)
+* proportionerna?
+** En grov gissning skulle vara att om den starkaste färgen kräver en duty cycle på 50% för att uppnå 
+** sin fulla intensitet, kan en annan färg behöva en duty cycle på kanske 60% eller mer för att nå samma intensitet. 
+
