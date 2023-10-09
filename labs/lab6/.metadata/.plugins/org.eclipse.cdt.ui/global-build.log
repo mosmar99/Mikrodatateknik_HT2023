@@ -2310,3 +2310,135 @@ Finished building: default.size.stdout
  
 Finished building: pwm.list
  
+16:26:41 **** Incremental Build of configuration Debug for project pwm ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:124:9: warning: unused variable 'calc' [-Wunused-variable]
+  124 |   float calc = 0;
+      |         ^~~~
+../Core/Src/main.c:122:13: warning: unused variable 'freq' [-Wunused-variable]
+  122 |   const int freq = 1;
+      |             ^~~~
+../Core/Src/main.c:121:15: warning: unused variable 'half_arr' [-Wunused-variable]
+  121 |   const float half_arr = (ARR+1) / 2.0f; /* set to (ARR+1) / 2.0f !!! */
+      |               ^~~~~~~~
+../Core/Src/main.c:119:15: warning: unused variable 'offset' [-Wunused-variable]
+  119 |   const float offset = M_TWOPI / 3.0f;
+      |               ^~~~~~
+arm-none-eabi-gcc -o "pwm.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab6\pwm\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="pwm.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: pwm.elf
+ 
+arm-none-eabi-size   pwm.elf 
+arm-none-eabi-objdump -h -S  pwm.elf  > "pwm.list"
+   text	   data	    bss	    dec	    hex	filename
+  18448	     20	   1716	  20184	   4ed8	pwm.elf
+Finished building: default.size.stdout
+ 
+Finished building: pwm.list
+ 
+16:40:27 **** Incremental Build of configuration Debug for project pwm ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:121:15: warning: unused variable 'half_arr' [-Wunused-variable]
+  121 |   const float half_arr = (ARR+1) / 2.0f; /* set to (ARR+1) / 2.0f !!! */
+      |               ^~~~~~~~
+../Core/Src/main.c:119:15: warning: unused variable 'offset' [-Wunused-variable]
+  119 |   const float offset = M_TWOPI / 3.0f;
+      |               ^~~~~~
+arm-none-eabi-gcc -o "pwm.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab6\pwm\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="pwm.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: pwm.elf
+ 
+arm-none-eabi-size   pwm.elf 
+arm-none-eabi-objdump -h -S  pwm.elf  > "pwm.list"
+   text	   data	    bss	    dec	    hex	filename
+  18608	     20	   1716	  20344	   4f78	pwm.elf
+Finished building: default.size.stdout
+ 
+Finished building: pwm.list
+ 
+16:42:45 **** Incremental Build of configuration Debug for project pwm ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "pwm.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab6\pwm\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="pwm.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: pwm.elf
+ 
+arm-none-eabi-size   pwm.elf 
+arm-none-eabi-objdump -h -S  pwm.elf  > "pwm.list"
+   text	   data	    bss	    dec	    hex	filename
+  18624	     20	   1716	  20360	   4f88	pwm.elf
+Finished building: default.size.stdout
+ 
+Finished building: pwm.list
+ 
+16:43:19 **** Incremental Build of configuration Debug for project pwm ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "pwm.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab6\pwm\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="pwm.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: pwm.elf
+ 
+arm-none-eabi-size   pwm.elf 
+arm-none-eabi-objdump -h -S  pwm.elf  > "pwm.list"
+   text	   data	    bss	    dec	    hex	filename
+  18624	     20	   1716	  20360	   4f88	pwm.elf
+Finished building: default.size.stdout
+ 
+Finished building: pwm.list
+ 
+16:43:36 **** Incremental Build of configuration Debug for project pwm ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "pwm.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab6\pwm\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="pwm.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: pwm.elf
+ 
+arm-none-eabi-size   pwm.elf 
+arm-none-eabi-objdump -h -S  pwm.elf  > "pwm.list"
+   text	   data	    bss	    dec	    hex	filename
+  18624	     20	   1716	  20360	   4f88	pwm.elf
+Finished building: default.size.stdout
+ 
+Finished building: pwm.list
+ 
+16:43:56 **** Incremental Build of configuration Debug for project pwm ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "pwm.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab6\pwm\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="pwm.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: pwm.elf
+ 
+arm-none-eabi-size   pwm.elf 
+arm-none-eabi-objdump -h -S  pwm.elf  > "pwm.list"
+   text	   data	    bss	    dec	    hex	filename
+  18628	     20	   1716	  20364	   4f8c	pwm.elf
+Finished building: default.size.stdout
+ 
+Finished building: pwm.list
+ 
+16:44:26 **** Incremental Build of configuration Debug for project pwm ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "pwm.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab6\pwm\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="pwm.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: pwm.elf
+ 
+arm-none-eabi-size   pwm.elf 
+arm-none-eabi-objdump -h -S  pwm.elf  > "pwm.list"
+   text	   data	    bss	    dec	    hex	filename
+  18628	     20	   1716	  20364	   4f8c	pwm.elf
+Finished building: default.size.stdout
+ 
+Finished building: pwm.list
+ 
+16:45:56 **** Incremental Build of configuration Debug for project pwm ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "pwm.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab6\pwm\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="pwm.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: pwm.elf
+ 
+arm-none-eabi-size   pwm.elf 
+arm-none-eabi-objdump -h -S  pwm.elf  > "pwm.list"
+   text	   data	    bss	    dec	    hex	filename
+  18652	     20	   1716	  20388	   4fa4	pwm.elf
+Finished building: default.size.stdout
+ 
+Finished building: pwm.list
+ 

@@ -116,19 +116,28 @@ int main(void)
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   static float t = 0.0f;
-  const float offset = (2*M_PI/3);
+  const float offset = M_TWOPI / 3.0f;
   const int ARR = 99;
-  const float f = 0.64;
+  const float half_arr = (ARR+1) / 2.0f; /* set to (ARR+1) / 2.0f !!! */
+  const float f = 1;
   float rf = 10, gf = 0, bf = 2;
   while (1)
   {
 	  if (unhandled_interrupt == 1)
 	  {
-        t = t + 0.0001;
+        // calc = M_TWOPI * t * freq;
+        // rf = sinf((M_TWOPI * t * freq) + (0 * offset));
+        // gf = sinf((M_TWOPI * t * freq) + (1 * offset));
+        // bf = sinf((M_TWOPI * t * freq) + (2 * offset));
+        // rf = (rf + 1.0) * half_arr;
+        // gf = (gf + 1.0) * half_arr;
+        // bf = (bf + 1.0) * half_arr;
+        // t += 0.0001; // should be (1 / f_TIM)
 
-        rf = (ARR+1)*sinf(2*M_PI*f*t + 0*offset);
-        gf = (ARR+1)*sinf(2*M_PI*f*t + 1*offset);
-        bf = (ARR+1)*sinf(2*M_PI*f*t + 2*offset);
+        t = t + 0.0001;
+        rf = sinf(2*M_PI*f*t + 0*(2*M_PI/3));
+        gf = sinf(2*M_PI*f*t + (1*M_PI/3));
+        bf = sinf(2*M_PI*f*t + (2*M_PI/3));
 
         if (bf < 0) {
         	bf = -bf;
@@ -142,13 +151,9 @@ int main(void)
         	bf = -bf;
         }
 
-        TIM1->CCR1 = rf * 0.40;
-        TIM1->CCR2 = gf * 0.10;
-        TIM1->CCR3 = bf * 0.03;
-
-        if (t == 10) {
-        	t = 10;
-        }
+        TIM1->CCR1 = rf * 0.40 * 100;
+        TIM1->CCR2 = gf * 0.10 * 100;
+        TIM1->CCR3 = bf * 0.03 * 100;
 
         unhandled_interrupt = 0;
 	  }

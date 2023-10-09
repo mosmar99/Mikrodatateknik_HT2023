@@ -146,10 +146,6 @@ int main(void)
         TIM1->CCR2 = gf * 0.10;
         TIM1->CCR3 = bf * 0.03;
 
-        if (t == 10) {
-        	t = 10;
-        }
-
         unhandled_interrupt = 0;
 	  }
 
