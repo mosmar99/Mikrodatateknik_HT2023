@@ -1,53 +1,1585 @@
-00:14:21 **** Incremental Build of configuration Debug for project pwm ****
+13:43:37 **** Incremental Build of configuration Debug for project pwm ****
+make -j8 all 
+arm-none-eabi-size   pwm.elf 
+   text	   data	    bss	    dec	    hex	filename
+  13748	     20	   1716	  15484	   3c7c	pwm.elf
+Finished building: default.size.stdout
+ 
+13:43:40 **** Incremental Build of configuration Debug for project pwm ****
+make -j8 all 
+arm-none-eabi-size   pwm.elf 
+   text	   data	    bss	    dec	    hex	filename
+  13748	     20	   1716	  15484	   3c7c	pwm.elf
+Finished building: default.size.stdout
+ 
+13:44:53 **** Incremental Build of configuration Debug for project pwm ****
 make -j8 all 
 arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:126:15: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
+  126 |           if (unhandled_interrupt = 1)
+      |               ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:123:7: warning: unused variable 'calc' [-Wunused-variable]
+  123 |   int calc = 0;
+      |       ^~~~
+../Core/Src/main.c:122:23: warning: unused variable 'bf' [-Wunused-variable]
+  122 |   int rf = 0, gf = 0, bf = 0;
+      |                       ^~
+../Core/Src/main.c:122:15: warning: unused variable 'gf' [-Wunused-variable]
+  122 |   int rf = 0, gf = 0, bf = 0;
+      |               ^~
+../Core/Src/main.c:122:7: warning: unused variable 'rf' [-Wunused-variable]
+  122 |   int rf = 0, gf = 0, bf = 0;
+      |       ^~
+../Core/Src/main.c:121:13: warning: unused variable 'freq' [-Wunused-variable]
+  121 |   const int freq = 0.1;
+      |             ^~~~
+../Core/Src/main.c:120:15: warning: unused variable 'half_arr' [-Wunused-variable]
+  120 |   const float half_arr = (ARR+1) / 2.0f; /* set to (ARR+1) / 2.0f !!! */
+      |               ^~~~~~~~
+../Core/Src/main.c:118:15: warning: unused variable 'offset' [-Wunused-variable]
+  118 |   const float offset = M_TWOPI / 3.0f;
+      |               ^~~~~~
 arm-none-eabi-gcc -o "pwm.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab6\pwm\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="pwm.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 Finished building target: pwm.elf
  
 arm-none-eabi-size   pwm.elf 
 arm-none-eabi-objdump -h -S  pwm.elf  > "pwm.list"
    text	   data	    bss	    dec	    hex	filename
-  19004	     20	   1724	  20748	   510c	pwm.elf
+  13748	     20	   1716	  15484	   3c7c	pwm.elf
 Finished building: default.size.stdout
  
 Finished building: pwm.list
  
-00:14:26 **** Incremental Build of configuration Debug for project pwm ****
-make -j8 all 
-arm-none-eabi-size   pwm.elf 
-   text	   data	    bss	    dec	    hex	filename
-  19004	     20	   1724	  20748	   510c	pwm.elf
-Finished building: default.size.stdout
- 
-00:15:54 **** Incremental Build of configuration Debug for project pwm ****
+13:47:02 **** Incremental Build of configuration Debug for project pwm ****
 make -j8 all 
 arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:126:15: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
+  126 |           if (unhandled_interrupt = 1)
+      |               ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:123:7: warning: unused variable 'calc' [-Wunused-variable]
+  123 |   int calc = 0;
+      |       ^~~~
+../Core/Src/main.c:122:23: warning: unused variable 'bf' [-Wunused-variable]
+  122 |   int rf = 0, gf = 0, bf = 0;
+      |                       ^~
+../Core/Src/main.c:122:15: warning: unused variable 'gf' [-Wunused-variable]
+  122 |   int rf = 0, gf = 0, bf = 0;
+      |               ^~
+../Core/Src/main.c:122:7: warning: unused variable 'rf' [-Wunused-variable]
+  122 |   int rf = 0, gf = 0, bf = 0;
+      |       ^~
+../Core/Src/main.c:121:13: warning: unused variable 'freq' [-Wunused-variable]
+  121 |   const int freq = 0.1;
+      |             ^~~~
+../Core/Src/main.c:120:15: warning: unused variable 'half_arr' [-Wunused-variable]
+  120 |   const float half_arr = (ARR+1) / 2.0f; /* set to (ARR+1) / 2.0f !!! */
+      |               ^~~~~~~~
+../Core/Src/main.c:118:15: warning: unused variable 'offset' [-Wunused-variable]
+  118 |   const float offset = M_TWOPI / 3.0f;
+      |               ^~~~~~
 arm-none-eabi-gcc -o "pwm.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab6\pwm\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="pwm.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 Finished building target: pwm.elf
  
 arm-none-eabi-size   pwm.elf 
 arm-none-eabi-objdump -h -S  pwm.elf  > "pwm.list"
    text	   data	    bss	    dec	    hex	filename
-  19004	     20	   1724	  20748	   510c	pwm.elf
+  13748	     20	   1716	  15484	   3c7c	pwm.elf
 Finished building: default.size.stdout
  
 Finished building: pwm.list
  
-00:16:30 **** Incremental Build of configuration Debug for project pwm ****
+13:48:37 **** Incremental Build of configuration Debug for project pwm ****
 make -j8 all 
 arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:126:15: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
+  126 |           if (unhandled_interrupt = 1)
+      |               ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:123:7: warning: unused variable 'calc' [-Wunused-variable]
+  123 |   int calc = 0;
+      |       ^~~~
+../Core/Src/main.c:122:23: warning: unused variable 'bf' [-Wunused-variable]
+  122 |   int rf = 0, gf = 0, bf = 0;
+      |                       ^~
+../Core/Src/main.c:122:15: warning: unused variable 'gf' [-Wunused-variable]
+  122 |   int rf = 0, gf = 0, bf = 0;
+      |               ^~
+../Core/Src/main.c:122:7: warning: unused variable 'rf' [-Wunused-variable]
+  122 |   int rf = 0, gf = 0, bf = 0;
+      |       ^~
+../Core/Src/main.c:121:13: warning: unused variable 'freq' [-Wunused-variable]
+  121 |   const int freq = 0.1;
+      |             ^~~~
+../Core/Src/main.c:120:15: warning: unused variable 'half_arr' [-Wunused-variable]
+  120 |   const float half_arr = (ARR+1) / 2.0f; /* set to (ARR+1) / 2.0f !!! */
+      |               ^~~~~~~~
+../Core/Src/main.c:118:15: warning: unused variable 'offset' [-Wunused-variable]
+  118 |   const float offset = M_TWOPI / 3.0f;
+      |               ^~~~~~
 arm-none-eabi-gcc -o "pwm.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab6\pwm\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="pwm.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 Finished building target: pwm.elf
  
 arm-none-eabi-size   pwm.elf 
 arm-none-eabi-objdump -h -S  pwm.elf  > "pwm.list"
    text	   data	    bss	    dec	    hex	filename
-  19004	     20	   1724	  20748	   510c	pwm.elf
+  13748	     20	   1716	  15484	   3c7c	pwm.elf
 Finished building: default.size.stdout
  
 Finished building: pwm.list
  
-00:17:26 **** Incremental Build of configuration Debug for project pwm ****
+14:01:23 **** Incremental Build of configuration Debug for project pwm ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:126:15: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
+  126 |           if (unhandled_interrupt = 1)
+      |               ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:123:7: warning: unused variable 'calc' [-Wunused-variable]
+  123 |   int calc = 0;
+      |       ^~~~
+../Core/Src/main.c:122:23: warning: unused variable 'bf' [-Wunused-variable]
+  122 |   int rf = 0, gf = 0, bf = 0;
+      |                       ^~
+../Core/Src/main.c:122:15: warning: unused variable 'gf' [-Wunused-variable]
+  122 |   int rf = 0, gf = 0, bf = 0;
+      |               ^~
+../Core/Src/main.c:122:7: warning: unused variable 'rf' [-Wunused-variable]
+  122 |   int rf = 0, gf = 0, bf = 0;
+      |       ^~
+../Core/Src/main.c:121:13: warning: unused variable 'freq' [-Wunused-variable]
+  121 |   const int freq = 0.1;
+      |             ^~~~
+../Core/Src/main.c:120:15: warning: unused variable 'half_arr' [-Wunused-variable]
+  120 |   const float half_arr = (ARR+1) / 2.0f; /* set to (ARR+1) / 2.0f !!! */
+      |               ^~~~~~~~
+../Core/Src/main.c:118:15: warning: unused variable 'offset' [-Wunused-variable]
+  118 |   const float offset = M_TWOPI / 3.0f;
+      |               ^~~~~~
+arm-none-eabi-gcc -o "pwm.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab6\pwm\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="pwm.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: pwm.elf
+ 
+arm-none-eabi-size   pwm.elf 
+arm-none-eabi-objdump -h -S  pwm.elf  > "pwm.list"
+   text	   data	    bss	    dec	    hex	filename
+  13748	     20	   1716	  15484	   3c7c	pwm.elf
+Finished building: default.size.stdout
+ 
+Finished building: pwm.list
+ 
+14:02:01 **** Incremental Build of configuration Debug for project pwm ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:126:15: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
+  126 |           if (unhandled_interrupt = 1)
+      |               ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:123:7: warning: unused variable 'calc' [-Wunused-variable]
+  123 |   int calc = 0;
+      |       ^~~~
+../Core/Src/main.c:122:23: warning: unused variable 'bf' [-Wunused-variable]
+  122 |   int rf = 0, gf = 0, bf = 0;
+      |                       ^~
+../Core/Src/main.c:122:15: warning: unused variable 'gf' [-Wunused-variable]
+  122 |   int rf = 0, gf = 0, bf = 0;
+      |               ^~
+../Core/Src/main.c:122:7: warning: unused variable 'rf' [-Wunused-variable]
+  122 |   int rf = 0, gf = 0, bf = 0;
+      |       ^~
+../Core/Src/main.c:121:13: warning: unused variable 'freq' [-Wunused-variable]
+  121 |   const int freq = 0.1;
+      |             ^~~~
+../Core/Src/main.c:120:15: warning: unused variable 'half_arr' [-Wunused-variable]
+  120 |   const float half_arr = (ARR+1) / 2.0f; /* set to (ARR+1) / 2.0f !!! */
+      |               ^~~~~~~~
+../Core/Src/main.c:118:15: warning: unused variable 'offset' [-Wunused-variable]
+  118 |   const float offset = M_TWOPI / 3.0f;
+      |               ^~~~~~
+arm-none-eabi-gcc -o "pwm.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab6\pwm\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="pwm.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: pwm.elf
+ 
+arm-none-eabi-size   pwm.elf 
+arm-none-eabi-objdump -h -S  pwm.elf  > "pwm.list"
+   text	   data	    bss	    dec	    hex	filename
+  13748	     20	   1716	  15484	   3c7c	pwm.elf
+Finished building: default.size.stdout
+ 
+Finished building: pwm.list
+ 
+14:04:13 **** Incremental Build of configuration Debug for project pwm ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:126:15: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
+  126 |           if (unhandled_interrupt = 1)
+      |               ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:123:7: warning: unused variable 'calc' [-Wunused-variable]
+  123 |   int calc = 0;
+      |       ^~~~
+../Core/Src/main.c:122:23: warning: unused variable 'bf' [-Wunused-variable]
+  122 |   int rf = 0, gf = 0, bf = 0;
+      |                       ^~
+../Core/Src/main.c:122:15: warning: unused variable 'gf' [-Wunused-variable]
+  122 |   int rf = 0, gf = 0, bf = 0;
+      |               ^~
+../Core/Src/main.c:122:7: warning: unused variable 'rf' [-Wunused-variable]
+  122 |   int rf = 0, gf = 0, bf = 0;
+      |       ^~
+../Core/Src/main.c:121:13: warning: unused variable 'freq' [-Wunused-variable]
+  121 |   const int freq = 0.1;
+      |             ^~~~
+../Core/Src/main.c:120:15: warning: unused variable 'half_arr' [-Wunused-variable]
+  120 |   const float half_arr = (ARR+1) / 2.0f; /* set to (ARR+1) / 2.0f !!! */
+      |               ^~~~~~~~
+../Core/Src/main.c:118:15: warning: unused variable 'offset' [-Wunused-variable]
+  118 |   const float offset = M_TWOPI / 3.0f;
+      |               ^~~~~~
+arm-none-eabi-gcc -o "pwm.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab6\pwm\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="pwm.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: pwm.elf
+ 
+arm-none-eabi-size   pwm.elf 
+arm-none-eabi-objdump -h -S  pwm.elf  > "pwm.list"
+   text	   data	    bss	    dec	    hex	filename
+  13748	     20	   1716	  15484	   3c7c	pwm.elf
+Finished building: default.size.stdout
+ 
+Finished building: pwm.list
+ 
+14:04:48 **** Incremental Build of configuration Debug for project pwm ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:126:15: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
+  126 |           if (unhandled_interrupt = 1)
+      |               ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:123:7: warning: unused variable 'calc' [-Wunused-variable]
+  123 |   int calc = 0;
+      |       ^~~~
+../Core/Src/main.c:122:23: warning: unused variable 'bf' [-Wunused-variable]
+  122 |   int rf = 0, gf = 0, bf = 0;
+      |                       ^~
+../Core/Src/main.c:122:15: warning: unused variable 'gf' [-Wunused-variable]
+  122 |   int rf = 0, gf = 0, bf = 0;
+      |               ^~
+../Core/Src/main.c:122:7: warning: unused variable 'rf' [-Wunused-variable]
+  122 |   int rf = 0, gf = 0, bf = 0;
+      |       ^~
+../Core/Src/main.c:121:13: warning: unused variable 'freq' [-Wunused-variable]
+  121 |   const int freq = 0.1;
+      |             ^~~~
+../Core/Src/main.c:120:15: warning: unused variable 'half_arr' [-Wunused-variable]
+  120 |   const float half_arr = (ARR+1) / 2.0f; /* set to (ARR+1) / 2.0f !!! */
+      |               ^~~~~~~~
+../Core/Src/main.c:118:15: warning: unused variable 'offset' [-Wunused-variable]
+  118 |   const float offset = M_TWOPI / 3.0f;
+      |               ^~~~~~
+arm-none-eabi-gcc -o "pwm.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab6\pwm\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="pwm.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: pwm.elf
+ 
+arm-none-eabi-size   pwm.elf 
+arm-none-eabi-objdump -h -S  pwm.elf  > "pwm.list"
+   text	   data	    bss	    dec	    hex	filename
+  13748	     20	   1716	  15484	   3c7c	pwm.elf
+Finished building: default.size.stdout
+ 
+Finished building: pwm.list
+ 
+14:06:10 **** Incremental Build of configuration Debug for project pwm ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:126:15: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
+  126 |           if (unhandled_interrupt = 1)
+      |               ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:123:7: warning: unused variable 'calc' [-Wunused-variable]
+  123 |   int calc = 0;
+      |       ^~~~
+../Core/Src/main.c:122:23: warning: unused variable 'bf' [-Wunused-variable]
+  122 |   int rf = 0, gf = 0, bf = 0;
+      |                       ^~
+../Core/Src/main.c:122:15: warning: unused variable 'gf' [-Wunused-variable]
+  122 |   int rf = 0, gf = 0, bf = 0;
+      |               ^~
+../Core/Src/main.c:122:7: warning: unused variable 'rf' [-Wunused-variable]
+  122 |   int rf = 0, gf = 0, bf = 0;
+      |       ^~
+../Core/Src/main.c:121:13: warning: unused variable 'freq' [-Wunused-variable]
+  121 |   const int freq = 0.1;
+      |             ^~~~
+../Core/Src/main.c:120:15: warning: unused variable 'half_arr' [-Wunused-variable]
+  120 |   const float half_arr = (ARR+1) / 2.0f; /* set to (ARR+1) / 2.0f !!! */
+      |               ^~~~~~~~
+../Core/Src/main.c:118:15: warning: unused variable 'offset' [-Wunused-variable]
+  118 |   const float offset = M_TWOPI / 3.0f;
+      |               ^~~~~~
+arm-none-eabi-gcc -o "pwm.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab6\pwm\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="pwm.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: pwm.elf
+ 
+arm-none-eabi-size   pwm.elf 
+arm-none-eabi-objdump -h -S  pwm.elf  > "pwm.list"
+   text	   data	    bss	    dec	    hex	filename
+  13748	     20	   1716	  15484	   3c7c	pwm.elf
+Finished building: default.size.stdout
+ 
+Finished building: pwm.list
+ 
+14:06:37 **** Incremental Build of configuration Debug for project pwm ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:126:15: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
+  126 |           if (unhandled_interrupt = 1)
+      |               ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:123:7: warning: unused variable 'calc' [-Wunused-variable]
+  123 |   int calc = 0;
+      |       ^~~~
+../Core/Src/main.c:122:23: warning: unused variable 'bf' [-Wunused-variable]
+  122 |   int rf = 0, gf = 0, bf = 0;
+      |                       ^~
+../Core/Src/main.c:122:15: warning: unused variable 'gf' [-Wunused-variable]
+  122 |   int rf = 0, gf = 0, bf = 0;
+      |               ^~
+../Core/Src/main.c:122:7: warning: unused variable 'rf' [-Wunused-variable]
+  122 |   int rf = 0, gf = 0, bf = 0;
+      |       ^~
+../Core/Src/main.c:121:13: warning: unused variable 'freq' [-Wunused-variable]
+  121 |   const int freq = 0.1;
+      |             ^~~~
+../Core/Src/main.c:120:15: warning: unused variable 'half_arr' [-Wunused-variable]
+  120 |   const float half_arr = (ARR+1) / 2.0f; /* set to (ARR+1) / 2.0f !!! */
+      |               ^~~~~~~~
+../Core/Src/main.c:118:15: warning: unused variable 'offset' [-Wunused-variable]
+  118 |   const float offset = M_TWOPI / 3.0f;
+      |               ^~~~~~
+arm-none-eabi-gcc -o "pwm.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab6\pwm\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="pwm.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: pwm.elf
+ 
+arm-none-eabi-size   pwm.elf 
+arm-none-eabi-objdump -h -S  pwm.elf  > "pwm.list"
+   text	   data	    bss	    dec	    hex	filename
+  13748	     20	   1716	  15484	   3c7c	pwm.elf
+Finished building: default.size.stdout
+ 
+Finished building: pwm.list
+ 
+14:07:26 **** Incremental Build of configuration Debug for project pwm ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:126:15: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
+  126 |           if (unhandled_interrupt = 1)
+      |               ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:123:7: warning: unused variable 'calc' [-Wunused-variable]
+  123 |   int calc = 0;
+      |       ^~~~
+../Core/Src/main.c:122:23: warning: unused variable 'bf' [-Wunused-variable]
+  122 |   int rf = 0, gf = 0, bf = 0;
+      |                       ^~
+../Core/Src/main.c:122:15: warning: unused variable 'gf' [-Wunused-variable]
+  122 |   int rf = 0, gf = 0, bf = 0;
+      |               ^~
+../Core/Src/main.c:122:7: warning: unused variable 'rf' [-Wunused-variable]
+  122 |   int rf = 0, gf = 0, bf = 0;
+      |       ^~
+../Core/Src/main.c:121:13: warning: unused variable 'freq' [-Wunused-variable]
+  121 |   const int freq = 0.1;
+      |             ^~~~
+../Core/Src/main.c:120:15: warning: unused variable 'half_arr' [-Wunused-variable]
+  120 |   const float half_arr = (ARR+1) / 2.0f; /* set to (ARR+1) / 2.0f !!! */
+      |               ^~~~~~~~
+../Core/Src/main.c:118:15: warning: unused variable 'offset' [-Wunused-variable]
+  118 |   const float offset = M_TWOPI / 3.0f;
+      |               ^~~~~~
+arm-none-eabi-gcc -o "pwm.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab6\pwm\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="pwm.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: pwm.elf
+ 
+arm-none-eabi-size   pwm.elf 
+arm-none-eabi-objdump -h -S  pwm.elf  > "pwm.list"
+   text	   data	    bss	    dec	    hex	filename
+  13748	     20	   1716	  15484	   3c7c	pwm.elf
+Finished building: default.size.stdout
+ 
+Finished building: pwm.list
+ 
+14:08:01 **** Incremental Build of configuration Debug for project pwm ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:126:15: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
+  126 |           if (unhandled_interrupt = 1)
+      |               ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:123:7: warning: unused variable 'calc' [-Wunused-variable]
+  123 |   int calc = 0;
+      |       ^~~~
+../Core/Src/main.c:122:23: warning: unused variable 'bf' [-Wunused-variable]
+  122 |   int rf = 0, gf = 0, bf = 0;
+      |                       ^~
+../Core/Src/main.c:122:15: warning: unused variable 'gf' [-Wunused-variable]
+  122 |   int rf = 0, gf = 0, bf = 0;
+      |               ^~
+../Core/Src/main.c:122:7: warning: unused variable 'rf' [-Wunused-variable]
+  122 |   int rf = 0, gf = 0, bf = 0;
+      |       ^~
+../Core/Src/main.c:121:13: warning: unused variable 'freq' [-Wunused-variable]
+  121 |   const int freq = 0.1;
+      |             ^~~~
+../Core/Src/main.c:120:15: warning: unused variable 'half_arr' [-Wunused-variable]
+  120 |   const float half_arr = (ARR+1) / 2.0f; /* set to (ARR+1) / 2.0f !!! */
+      |               ^~~~~~~~
+../Core/Src/main.c:118:15: warning: unused variable 'offset' [-Wunused-variable]
+  118 |   const float offset = M_TWOPI / 3.0f;
+      |               ^~~~~~
+arm-none-eabi-gcc -o "pwm.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab6\pwm\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="pwm.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: pwm.elf
+ 
+arm-none-eabi-size   pwm.elf 
+arm-none-eabi-objdump -h -S  pwm.elf  > "pwm.list"
+   text	   data	    bss	    dec	    hex	filename
+  13748	     20	   1716	  15484	   3c7c	pwm.elf
+Finished building: default.size.stdout
+ 
+Finished building: pwm.list
+ 
+14:10:02 **** Incremental Build of configuration Debug for project pwm ****
+make -j8 all 
+arm-none-eabi-size   pwm.elf 
+   text	   data	    bss	    dec	    hex	filename
+  13748	     20	   1716	  15484	   3c7c	pwm.elf
+Finished building: default.size.stdout
+ 
+14:10:29 **** Incremental Build of configuration Debug for project pwm ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:126:15: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
+  126 |           if (unhandled_interrupt = 1)
+      |               ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:123:7: warning: unused variable 'calc' [-Wunused-variable]
+  123 |   int calc = 0;
+      |       ^~~~
+../Core/Src/main.c:122:23: warning: unused variable 'bf' [-Wunused-variable]
+  122 |   int rf = 0, gf = 0, bf = 0;
+      |                       ^~
+../Core/Src/main.c:122:15: warning: unused variable 'gf' [-Wunused-variable]
+  122 |   int rf = 0, gf = 0, bf = 0;
+      |               ^~
+../Core/Src/main.c:122:7: warning: unused variable 'rf' [-Wunused-variable]
+  122 |   int rf = 0, gf = 0, bf = 0;
+      |       ^~
+../Core/Src/main.c:121:13: warning: unused variable 'freq' [-Wunused-variable]
+  121 |   const int freq = 0.1;
+      |             ^~~~
+../Core/Src/main.c:120:15: warning: unused variable 'half_arr' [-Wunused-variable]
+  120 |   const float half_arr = (ARR+1) / 2.0f; /* set to (ARR+1) / 2.0f !!! */
+      |               ^~~~~~~~
+../Core/Src/main.c:118:15: warning: unused variable 'offset' [-Wunused-variable]
+  118 |   const float offset = M_TWOPI / 3.0f;
+      |               ^~~~~~
+arm-none-eabi-gcc -o "pwm.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab6\pwm\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="pwm.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: pwm.elf
+ 
+arm-none-eabi-size   pwm.elf 
+arm-none-eabi-objdump -h -S  pwm.elf  > "pwm.list"
+   text	   data	    bss	    dec	    hex	filename
+  13748	     20	   1716	  15484	   3c7c	pwm.elf
+Finished building: default.size.stdout
+ 
+Finished building: pwm.list
+ 
+14:11:07 **** Incremental Build of configuration Debug for project pwm ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:126:15: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
+  126 |           if (unhandled_interrupt = 1)
+      |               ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:123:7: warning: unused variable 'calc' [-Wunused-variable]
+  123 |   int calc = 0;
+      |       ^~~~
+../Core/Src/main.c:122:23: warning: unused variable 'bf' [-Wunused-variable]
+  122 |   int rf = 0, gf = 0, bf = 0;
+      |                       ^~
+../Core/Src/main.c:122:15: warning: unused variable 'gf' [-Wunused-variable]
+  122 |   int rf = 0, gf = 0, bf = 0;
+      |               ^~
+../Core/Src/main.c:122:7: warning: unused variable 'rf' [-Wunused-variable]
+  122 |   int rf = 0, gf = 0, bf = 0;
+      |       ^~
+../Core/Src/main.c:121:13: warning: unused variable 'freq' [-Wunused-variable]
+  121 |   const int freq = 0.1;
+      |             ^~~~
+../Core/Src/main.c:120:15: warning: unused variable 'half_arr' [-Wunused-variable]
+  120 |   const float half_arr = (ARR+1) / 2.0f; /* set to (ARR+1) / 2.0f !!! */
+      |               ^~~~~~~~
+../Core/Src/main.c:118:15: warning: unused variable 'offset' [-Wunused-variable]
+  118 |   const float offset = M_TWOPI / 3.0f;
+      |               ^~~~~~
+arm-none-eabi-gcc -o "pwm.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab6\pwm\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="pwm.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: pwm.elf
+ 
+arm-none-eabi-size   pwm.elf 
+arm-none-eabi-objdump -h -S  pwm.elf  > "pwm.list"
+   text	   data	    bss	    dec	    hex	filename
+  13748	     20	   1716	  15484	   3c7c	pwm.elf
+Finished building: default.size.stdout
+ 
+Finished building: pwm.list
+ 
+14:11:43 **** Incremental Build of configuration Debug for project pwm ****
+make -j8 all 
+arm-none-eabi-size   pwm.elf 
+   text	   data	    bss	    dec	    hex	filename
+  13748	     20	   1716	  15484	   3c7c	pwm.elf
+Finished building: default.size.stdout
+ 
+14:12:40 **** Incremental Build of configuration Debug for project pwm ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:126:15: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
+  126 |           if (unhandled_interrupt = 1)
+      |               ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:123:7: warning: unused variable 'calc' [-Wunused-variable]
+  123 |   int calc = 0;
+      |       ^~~~
+../Core/Src/main.c:122:23: warning: unused variable 'bf' [-Wunused-variable]
+  122 |   int rf = 0, gf = 0, bf = 0;
+      |                       ^~
+../Core/Src/main.c:122:15: warning: unused variable 'gf' [-Wunused-variable]
+  122 |   int rf = 0, gf = 0, bf = 0;
+      |               ^~
+../Core/Src/main.c:122:7: warning: unused variable 'rf' [-Wunused-variable]
+  122 |   int rf = 0, gf = 0, bf = 0;
+      |       ^~
+../Core/Src/main.c:121:13: warning: unused variable 'freq' [-Wunused-variable]
+  121 |   const int freq = 0.1;
+      |             ^~~~
+../Core/Src/main.c:120:15: warning: unused variable 'half_arr' [-Wunused-variable]
+  120 |   const float half_arr = (ARR+1) / 2.0f; /* set to (ARR+1) / 2.0f !!! */
+      |               ^~~~~~~~
+../Core/Src/main.c:118:15: warning: unused variable 'offset' [-Wunused-variable]
+  118 |   const float offset = M_TWOPI / 3.0f;
+      |               ^~~~~~
+arm-none-eabi-gcc -o "pwm.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab6\pwm\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="pwm.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: pwm.elf
+ 
+arm-none-eabi-size   pwm.elf 
+arm-none-eabi-objdump -h -S  pwm.elf  > "pwm.list"
+   text	   data	    bss	    dec	    hex	filename
+  13748	     20	   1716	  15484	   3c7c	pwm.elf
+Finished building: default.size.stdout
+ 
+Finished building: pwm.list
+ 
+14:17:01 **** Incremental Build of configuration Debug for project pwm ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:126:15: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
+  126 |           if (unhandled_interrupt = 1)
+      |               ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:123:7: warning: unused variable 'calc' [-Wunused-variable]
+  123 |   int calc = 0;
+      |       ^~~~
+../Core/Src/main.c:122:23: warning: unused variable 'bf' [-Wunused-variable]
+  122 |   int rf = 0, gf = 0, bf = 0;
+      |                       ^~
+../Core/Src/main.c:122:15: warning: unused variable 'gf' [-Wunused-variable]
+  122 |   int rf = 0, gf = 0, bf = 0;
+      |               ^~
+../Core/Src/main.c:122:7: warning: unused variable 'rf' [-Wunused-variable]
+  122 |   int rf = 0, gf = 0, bf = 0;
+      |       ^~
+../Core/Src/main.c:121:13: warning: unused variable 'freq' [-Wunused-variable]
+  121 |   const int freq = 0.1;
+      |             ^~~~
+../Core/Src/main.c:120:15: warning: unused variable 'half_arr' [-Wunused-variable]
+  120 |   const float half_arr = (ARR+1) / 2.0f; /* set to (ARR+1) / 2.0f !!! */
+      |               ^~~~~~~~
+../Core/Src/main.c:118:15: warning: unused variable 'offset' [-Wunused-variable]
+  118 |   const float offset = M_TWOPI / 3.0f;
+      |               ^~~~~~
+arm-none-eabi-gcc -o "pwm.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab6\pwm\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="pwm.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: pwm.elf
+ 
+arm-none-eabi-size   pwm.elf 
+arm-none-eabi-objdump -h -S  pwm.elf  > "pwm.list"
+   text	   data	    bss	    dec	    hex	filename
+  13748	     20	   1716	  15484	   3c7c	pwm.elf
+Finished building: default.size.stdout
+ 
+Finished building: pwm.list
+ 
+14:17:39 **** Incremental Build of configuration Debug for project pwm ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:126:15: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
+  126 |           if (unhandled_interrupt = 1)
+      |               ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:123:7: warning: unused variable 'calc' [-Wunused-variable]
+  123 |   int calc = 0;
+      |       ^~~~
+../Core/Src/main.c:122:23: warning: unused variable 'bf' [-Wunused-variable]
+  122 |   int rf = 0, gf = 0, bf = 0;
+      |                       ^~
+../Core/Src/main.c:122:15: warning: unused variable 'gf' [-Wunused-variable]
+  122 |   int rf = 0, gf = 0, bf = 0;
+      |               ^~
+../Core/Src/main.c:122:7: warning: unused variable 'rf' [-Wunused-variable]
+  122 |   int rf = 0, gf = 0, bf = 0;
+      |       ^~
+../Core/Src/main.c:121:13: warning: unused variable 'freq' [-Wunused-variable]
+  121 |   const int freq = 0.1;
+      |             ^~~~
+../Core/Src/main.c:120:15: warning: unused variable 'half_arr' [-Wunused-variable]
+  120 |   const float half_arr = (ARR+1) / 2.0f; /* set to (ARR+1) / 2.0f !!! */
+      |               ^~~~~~~~
+../Core/Src/main.c:118:15: warning: unused variable 'offset' [-Wunused-variable]
+  118 |   const float offset = M_TWOPI / 3.0f;
+      |               ^~~~~~
+arm-none-eabi-gcc -o "pwm.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab6\pwm\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="pwm.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: pwm.elf
+ 
+arm-none-eabi-size   pwm.elf 
+arm-none-eabi-objdump -h -S  pwm.elf  > "pwm.list"
+   text	   data	    bss	    dec	    hex	filename
+  13748	     20	   1716	  15484	   3c7c	pwm.elf
+Finished building: default.size.stdout
+ 
+Finished building: pwm.list
+ 
+14:19:43 **** Incremental Build of configuration Debug for project pwm ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:126:15: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
+  126 |           if (unhandled_interrupt = 1)
+      |               ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:123:7: warning: unused variable 'calc' [-Wunused-variable]
+  123 |   int calc = 0;
+      |       ^~~~
+../Core/Src/main.c:122:23: warning: unused variable 'bf' [-Wunused-variable]
+  122 |   int rf = 0, gf = 0, bf = 0;
+      |                       ^~
+../Core/Src/main.c:122:15: warning: unused variable 'gf' [-Wunused-variable]
+  122 |   int rf = 0, gf = 0, bf = 0;
+      |               ^~
+../Core/Src/main.c:122:7: warning: unused variable 'rf' [-Wunused-variable]
+  122 |   int rf = 0, gf = 0, bf = 0;
+      |       ^~
+../Core/Src/main.c:121:13: warning: unused variable 'freq' [-Wunused-variable]
+  121 |   const int freq = 0.1;
+      |             ^~~~
+../Core/Src/main.c:120:15: warning: unused variable 'half_arr' [-Wunused-variable]
+  120 |   const float half_arr = (ARR+1) / 2.0f; /* set to (ARR+1) / 2.0f !!! */
+      |               ^~~~~~~~
+../Core/Src/main.c:118:15: warning: unused variable 'offset' [-Wunused-variable]
+  118 |   const float offset = M_TWOPI / 3.0f;
+      |               ^~~~~~
+arm-none-eabi-gcc -o "pwm.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab6\pwm\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="pwm.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: pwm.elf
+ 
+arm-none-eabi-size   pwm.elf 
+arm-none-eabi-objdump -h -S  pwm.elf  > "pwm.list"
+   text	   data	    bss	    dec	    hex	filename
+  13748	     20	   1716	  15484	   3c7c	pwm.elf
+Finished building: default.size.stdout
+ 
+Finished building: pwm.list
+ 
+14:21:13 **** Incremental Build of configuration Debug for project pwm ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:126:15: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
+  126 |           if (unhandled_interrupt = 1)
+      |               ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:123:7: warning: unused variable 'calc' [-Wunused-variable]
+  123 |   int calc = 0;
+      |       ^~~~
+../Core/Src/main.c:122:23: warning: unused variable 'bf' [-Wunused-variable]
+  122 |   int rf = 0, gf = 0, bf = 0;
+      |                       ^~
+../Core/Src/main.c:122:15: warning: unused variable 'gf' [-Wunused-variable]
+  122 |   int rf = 0, gf = 0, bf = 0;
+      |               ^~
+../Core/Src/main.c:122:7: warning: unused variable 'rf' [-Wunused-variable]
+  122 |   int rf = 0, gf = 0, bf = 0;
+      |       ^~
+../Core/Src/main.c:121:13: warning: unused variable 'freq' [-Wunused-variable]
+  121 |   const int freq = 0.1;
+      |             ^~~~
+../Core/Src/main.c:120:15: warning: unused variable 'half_arr' [-Wunused-variable]
+  120 |   const float half_arr = (ARR+1) / 2.0f; /* set to (ARR+1) / 2.0f !!! */
+      |               ^~~~~~~~
+../Core/Src/main.c:118:15: warning: unused variable 'offset' [-Wunused-variable]
+  118 |   const float offset = M_TWOPI / 3.0f;
+      |               ^~~~~~
+arm-none-eabi-gcc -o "pwm.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab6\pwm\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="pwm.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: pwm.elf
+ 
+arm-none-eabi-size   pwm.elf 
+arm-none-eabi-objdump -h -S  pwm.elf  > "pwm.list"
+   text	   data	    bss	    dec	    hex	filename
+  13748	     20	   1716	  15484	   3c7c	pwm.elf
+Finished building: default.size.stdout
+ 
+Finished building: pwm.list
+ 
+14:22:21 **** Incremental Build of configuration Debug for project pwm ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:126:15: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
+  126 |           if (unhandled_interrupt = 1)
+      |               ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:123:7: warning: unused variable 'calc' [-Wunused-variable]
+  123 |   int calc = 0;
+      |       ^~~~
+../Core/Src/main.c:122:23: warning: unused variable 'bf' [-Wunused-variable]
+  122 |   int rf = 0, gf = 0, bf = 0;
+      |                       ^~
+../Core/Src/main.c:122:15: warning: unused variable 'gf' [-Wunused-variable]
+  122 |   int rf = 0, gf = 0, bf = 0;
+      |               ^~
+../Core/Src/main.c:122:7: warning: unused variable 'rf' [-Wunused-variable]
+  122 |   int rf = 0, gf = 0, bf = 0;
+      |       ^~
+../Core/Src/main.c:121:13: warning: unused variable 'freq' [-Wunused-variable]
+  121 |   const int freq = 0.1;
+      |             ^~~~
+../Core/Src/main.c:120:15: warning: unused variable 'half_arr' [-Wunused-variable]
+  120 |   const float half_arr = (ARR+1) / 2.0f; /* set to (ARR+1) / 2.0f !!! */
+      |               ^~~~~~~~
+../Core/Src/main.c:118:15: warning: unused variable 'offset' [-Wunused-variable]
+  118 |   const float offset = M_TWOPI / 3.0f;
+      |               ^~~~~~
+arm-none-eabi-gcc -o "pwm.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab6\pwm\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="pwm.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: pwm.elf
+ 
+arm-none-eabi-size   pwm.elf 
+arm-none-eabi-objdump -h -S  pwm.elf  > "pwm.list"
+   text	   data	    bss	    dec	    hex	filename
+  13748	     20	   1716	  15484	   3c7c	pwm.elf
+Finished building: default.size.stdout
+ 
+Finished building: pwm.list
+ 
+14:23:15 **** Incremental Build of configuration Debug for project pwm ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:126:15: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
+  126 |           if (unhandled_interrupt = 1)
+      |               ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:123:7: warning: unused variable 'calc' [-Wunused-variable]
+  123 |   int calc = 0;
+      |       ^~~~
+../Core/Src/main.c:122:23: warning: unused variable 'bf' [-Wunused-variable]
+  122 |   int rf = 0, gf = 0, bf = 0;
+      |                       ^~
+../Core/Src/main.c:122:15: warning: unused variable 'gf' [-Wunused-variable]
+  122 |   int rf = 0, gf = 0, bf = 0;
+      |               ^~
+../Core/Src/main.c:122:7: warning: unused variable 'rf' [-Wunused-variable]
+  122 |   int rf = 0, gf = 0, bf = 0;
+      |       ^~
+../Core/Src/main.c:121:13: warning: unused variable 'freq' [-Wunused-variable]
+  121 |   const int freq = 0.1;
+      |             ^~~~
+../Core/Src/main.c:120:15: warning: unused variable 'half_arr' [-Wunused-variable]
+  120 |   const float half_arr = (ARR+1) / 2.0f; /* set to (ARR+1) / 2.0f !!! */
+      |               ^~~~~~~~
+../Core/Src/main.c:118:15: warning: unused variable 'offset' [-Wunused-variable]
+  118 |   const float offset = M_TWOPI / 3.0f;
+      |               ^~~~~~
+arm-none-eabi-gcc -o "pwm.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab6\pwm\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="pwm.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: pwm.elf
+ 
+arm-none-eabi-size   pwm.elf 
+arm-none-eabi-objdump -h -S  pwm.elf  > "pwm.list"
+   text	   data	    bss	    dec	    hex	filename
+  13748	     20	   1716	  15484	   3c7c	pwm.elf
+Finished building: default.size.stdout
+ 
+Finished building: pwm.list
+ 
+14:23:45 **** Incremental Build of configuration Debug for project pwm ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:126:15: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
+  126 |           if (unhandled_interrupt = 1)
+      |               ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:123:7: warning: unused variable 'calc' [-Wunused-variable]
+  123 |   int calc = 0;
+      |       ^~~~
+../Core/Src/main.c:122:23: warning: unused variable 'bf' [-Wunused-variable]
+  122 |   int rf = 0, gf = 0, bf = 0;
+      |                       ^~
+../Core/Src/main.c:122:15: warning: unused variable 'gf' [-Wunused-variable]
+  122 |   int rf = 0, gf = 0, bf = 0;
+      |               ^~
+../Core/Src/main.c:122:7: warning: unused variable 'rf' [-Wunused-variable]
+  122 |   int rf = 0, gf = 0, bf = 0;
+      |       ^~
+../Core/Src/main.c:121:13: warning: unused variable 'freq' [-Wunused-variable]
+  121 |   const int freq = 0.1;
+      |             ^~~~
+../Core/Src/main.c:120:15: warning: unused variable 'half_arr' [-Wunused-variable]
+  120 |   const float half_arr = (ARR+1) / 2.0f; /* set to (ARR+1) / 2.0f !!! */
+      |               ^~~~~~~~
+../Core/Src/main.c:118:15: warning: unused variable 'offset' [-Wunused-variable]
+  118 |   const float offset = M_TWOPI / 3.0f;
+      |               ^~~~~~
+arm-none-eabi-gcc -o "pwm.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab6\pwm\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="pwm.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: pwm.elf
+ 
+arm-none-eabi-size   pwm.elf 
+arm-none-eabi-objdump -h -S  pwm.elf  > "pwm.list"
+   text	   data	    bss	    dec	    hex	filename
+  13748	     20	   1716	  15484	   3c7c	pwm.elf
+Finished building: default.size.stdout
+ 
+Finished building: pwm.list
+ 
+14:24:17 **** Incremental Build of configuration Debug for project pwm ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:126:15: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
+  126 |           if (unhandled_interrupt = 1)
+      |               ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:123:7: warning: unused variable 'calc' [-Wunused-variable]
+  123 |   int calc = 0;
+      |       ^~~~
+../Core/Src/main.c:122:23: warning: unused variable 'bf' [-Wunused-variable]
+  122 |   int rf = 0, gf = 0, bf = 0;
+      |                       ^~
+../Core/Src/main.c:122:15: warning: unused variable 'gf' [-Wunused-variable]
+  122 |   int rf = 0, gf = 0, bf = 0;
+      |               ^~
+../Core/Src/main.c:122:7: warning: unused variable 'rf' [-Wunused-variable]
+  122 |   int rf = 0, gf = 0, bf = 0;
+      |       ^~
+../Core/Src/main.c:121:13: warning: unused variable 'freq' [-Wunused-variable]
+  121 |   const int freq = 0.1;
+      |             ^~~~
+../Core/Src/main.c:120:15: warning: unused variable 'half_arr' [-Wunused-variable]
+  120 |   const float half_arr = (ARR+1) / 2.0f; /* set to (ARR+1) / 2.0f !!! */
+      |               ^~~~~~~~
+../Core/Src/main.c:118:15: warning: unused variable 'offset' [-Wunused-variable]
+  118 |   const float offset = M_TWOPI / 3.0f;
+      |               ^~~~~~
+arm-none-eabi-gcc -o "pwm.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab6\pwm\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="pwm.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: pwm.elf
+ 
+arm-none-eabi-size   pwm.elf 
+arm-none-eabi-objdump -h -S  pwm.elf  > "pwm.list"
+   text	   data	    bss	    dec	    hex	filename
+  13748	     20	   1716	  15484	   3c7c	pwm.elf
+Finished building: default.size.stdout
+ 
+Finished building: pwm.list
+ 
+14:25:17 **** Incremental Build of configuration Debug for project pwm ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:126:15: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
+  126 |           if (unhandled_interrupt = 1)
+      |               ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:123:7: warning: unused variable 'calc' [-Wunused-variable]
+  123 |   int calc = 0;
+      |       ^~~~
+../Core/Src/main.c:122:23: warning: unused variable 'bf' [-Wunused-variable]
+  122 |   int rf = 0, gf = 0, bf = 0;
+      |                       ^~
+../Core/Src/main.c:122:15: warning: unused variable 'gf' [-Wunused-variable]
+  122 |   int rf = 0, gf = 0, bf = 0;
+      |               ^~
+../Core/Src/main.c:122:7: warning: unused variable 'rf' [-Wunused-variable]
+  122 |   int rf = 0, gf = 0, bf = 0;
+      |       ^~
+../Core/Src/main.c:121:13: warning: unused variable 'freq' [-Wunused-variable]
+  121 |   const int freq = 0.1;
+      |             ^~~~
+../Core/Src/main.c:120:15: warning: unused variable 'half_arr' [-Wunused-variable]
+  120 |   const float half_arr = (ARR+1) / 2.0f; /* set to (ARR+1) / 2.0f !!! */
+      |               ^~~~~~~~
+../Core/Src/main.c:118:15: warning: unused variable 'offset' [-Wunused-variable]
+  118 |   const float offset = M_TWOPI / 3.0f;
+      |               ^~~~~~
+arm-none-eabi-gcc -o "pwm.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab6\pwm\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="pwm.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: pwm.elf
+ 
+arm-none-eabi-size   pwm.elf 
+arm-none-eabi-objdump -h -S  pwm.elf  > "pwm.list"
+   text	   data	    bss	    dec	    hex	filename
+  13748	     20	   1716	  15484	   3c7c	pwm.elf
+Finished building: default.size.stdout
+ 
+Finished building: pwm.list
+ 
+14:26:08 **** Incremental Build of configuration Debug for project pwm ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:126:15: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
+  126 |           if (unhandled_interrupt = 1)
+      |               ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:123:7: warning: unused variable 'calc' [-Wunused-variable]
+  123 |   int calc = 0;
+      |       ^~~~
+../Core/Src/main.c:122:23: warning: unused variable 'bf' [-Wunused-variable]
+  122 |   int rf = 0, gf = 0, bf = 0;
+      |                       ^~
+../Core/Src/main.c:122:15: warning: unused variable 'gf' [-Wunused-variable]
+  122 |   int rf = 0, gf = 0, bf = 0;
+      |               ^~
+../Core/Src/main.c:122:7: warning: unused variable 'rf' [-Wunused-variable]
+  122 |   int rf = 0, gf = 0, bf = 0;
+      |       ^~
+../Core/Src/main.c:121:13: warning: unused variable 'freq' [-Wunused-variable]
+  121 |   const int freq = 0.1;
+      |             ^~~~
+../Core/Src/main.c:120:15: warning: unused variable 'half_arr' [-Wunused-variable]
+  120 |   const float half_arr = (ARR+1) / 2.0f; /* set to (ARR+1) / 2.0f !!! */
+      |               ^~~~~~~~
+../Core/Src/main.c:118:15: warning: unused variable 'offset' [-Wunused-variable]
+  118 |   const float offset = M_TWOPI / 3.0f;
+      |               ^~~~~~
+arm-none-eabi-gcc -o "pwm.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab6\pwm\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="pwm.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: pwm.elf
+ 
+arm-none-eabi-size   pwm.elf 
+arm-none-eabi-objdump -h -S  pwm.elf  > "pwm.list"
+   text	   data	    bss	    dec	    hex	filename
+  13748	     20	   1716	  15484	   3c7c	pwm.elf
+Finished building: default.size.stdout
+ 
+Finished building: pwm.list
+ 
+14:27:28 **** Incremental Build of configuration Debug for project pwm ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:126:15: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
+  126 |           if (unhandled_interrupt = 1)
+      |               ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:123:7: warning: unused variable 'calc' [-Wunused-variable]
+  123 |   int calc = 0;
+      |       ^~~~
+../Core/Src/main.c:122:23: warning: unused variable 'bf' [-Wunused-variable]
+  122 |   int rf = 0, gf = 0, bf = 0;
+      |                       ^~
+../Core/Src/main.c:122:15: warning: unused variable 'gf' [-Wunused-variable]
+  122 |   int rf = 0, gf = 0, bf = 0;
+      |               ^~
+../Core/Src/main.c:122:7: warning: unused variable 'rf' [-Wunused-variable]
+  122 |   int rf = 0, gf = 0, bf = 0;
+      |       ^~
+../Core/Src/main.c:121:13: warning: unused variable 'freq' [-Wunused-variable]
+  121 |   const int freq = 0.1;
+      |             ^~~~
+../Core/Src/main.c:120:15: warning: unused variable 'half_arr' [-Wunused-variable]
+  120 |   const float half_arr = (ARR+1) / 2.0f; /* set to (ARR+1) / 2.0f !!! */
+      |               ^~~~~~~~
+../Core/Src/main.c:118:15: warning: unused variable 'offset' [-Wunused-variable]
+  118 |   const float offset = M_TWOPI / 3.0f;
+      |               ^~~~~~
+arm-none-eabi-gcc -o "pwm.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab6\pwm\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="pwm.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: pwm.elf
+ 
+arm-none-eabi-size   pwm.elf 
+arm-none-eabi-objdump -h -S  pwm.elf  > "pwm.list"
+   text	   data	    bss	    dec	    hex	filename
+  13748	     20	   1716	  15484	   3c7c	pwm.elf
+Finished building: default.size.stdout
+ 
+Finished building: pwm.list
+ 
+14:28:49 **** Incremental Build of configuration Debug for project pwm ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:126:15: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
+  126 |           if (unhandled_interrupt = 1)
+      |               ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:123:7: warning: unused variable 'calc' [-Wunused-variable]
+  123 |   int calc = 0;
+      |       ^~~~
+../Core/Src/main.c:122:23: warning: unused variable 'bf' [-Wunused-variable]
+  122 |   int rf = 0, gf = 0, bf = 0;
+      |                       ^~
+../Core/Src/main.c:122:15: warning: unused variable 'gf' [-Wunused-variable]
+  122 |   int rf = 0, gf = 0, bf = 0;
+      |               ^~
+../Core/Src/main.c:122:7: warning: unused variable 'rf' [-Wunused-variable]
+  122 |   int rf = 0, gf = 0, bf = 0;
+      |       ^~
+../Core/Src/main.c:121:13: warning: unused variable 'freq' [-Wunused-variable]
+  121 |   const int freq = 0.1;
+      |             ^~~~
+../Core/Src/main.c:120:15: warning: unused variable 'half_arr' [-Wunused-variable]
+  120 |   const float half_arr = (ARR+1) / 2.0f; /* set to (ARR+1) / 2.0f !!! */
+      |               ^~~~~~~~
+../Core/Src/main.c:118:15: warning: unused variable 'offset' [-Wunused-variable]
+  118 |   const float offset = M_TWOPI / 3.0f;
+      |               ^~~~~~
+arm-none-eabi-gcc -o "pwm.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab6\pwm\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="pwm.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: pwm.elf
+ 
+arm-none-eabi-size   pwm.elf 
+arm-none-eabi-objdump -h -S  pwm.elf  > "pwm.list"
+   text	   data	    bss	    dec	    hex	filename
+  13748	     20	   1716	  15484	   3c7c	pwm.elf
+Finished building: default.size.stdout
+ 
+Finished building: pwm.list
+ 
+14:32:12 **** Incremental Build of configuration Debug for project pwm ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:126:15: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
+  126 |           if (unhandled_interrupt = 1)
+      |               ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:123:7: warning: unused variable 'calc' [-Wunused-variable]
+  123 |   int calc = 0;
+      |       ^~~~
+../Core/Src/main.c:122:23: warning: unused variable 'bf' [-Wunused-variable]
+  122 |   int rf = 0, gf = 0, bf = 0;
+      |                       ^~
+../Core/Src/main.c:122:15: warning: unused variable 'gf' [-Wunused-variable]
+  122 |   int rf = 0, gf = 0, bf = 0;
+      |               ^~
+../Core/Src/main.c:122:7: warning: unused variable 'rf' [-Wunused-variable]
+  122 |   int rf = 0, gf = 0, bf = 0;
+      |       ^~
+../Core/Src/main.c:121:13: warning: unused variable 'freq' [-Wunused-variable]
+  121 |   const int freq = 0.1;
+      |             ^~~~
+../Core/Src/main.c:120:15: warning: unused variable 'half_arr' [-Wunused-variable]
+  120 |   const float half_arr = (ARR+1) / 2.0f; /* set to (ARR+1) / 2.0f !!! */
+      |               ^~~~~~~~
+../Core/Src/main.c:118:15: warning: unused variable 'offset' [-Wunused-variable]
+  118 |   const float offset = M_TWOPI / 3.0f;
+      |               ^~~~~~
+arm-none-eabi-gcc -o "pwm.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab6\pwm\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="pwm.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: pwm.elf
+ 
+arm-none-eabi-size   pwm.elf 
+arm-none-eabi-objdump -h -S  pwm.elf  > "pwm.list"
+   text	   data	    bss	    dec	    hex	filename
+  13748	     20	   1716	  15484	   3c7c	pwm.elf
+Finished building: default.size.stdout
+ 
+Finished building: pwm.list
+ 
+14:33:52 **** Incremental Build of configuration Debug for project pwm ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:126:15: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
+  126 |           if (unhandled_interrupt = 1)
+      |               ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:123:7: warning: unused variable 'calc' [-Wunused-variable]
+  123 |   int calc = 0;
+      |       ^~~~
+../Core/Src/main.c:122:23: warning: unused variable 'bf' [-Wunused-variable]
+  122 |   int rf = 0, gf = 0, bf = 0;
+      |                       ^~
+../Core/Src/main.c:122:15: warning: unused variable 'gf' [-Wunused-variable]
+  122 |   int rf = 0, gf = 0, bf = 0;
+      |               ^~
+../Core/Src/main.c:122:7: warning: unused variable 'rf' [-Wunused-variable]
+  122 |   int rf = 0, gf = 0, bf = 0;
+      |       ^~
+../Core/Src/main.c:121:13: warning: unused variable 'freq' [-Wunused-variable]
+  121 |   const int freq = 0.1;
+      |             ^~~~
+../Core/Src/main.c:120:15: warning: unused variable 'half_arr' [-Wunused-variable]
+  120 |   const float half_arr = (ARR+1) / 2.0f; /* set to (ARR+1) / 2.0f !!! */
+      |               ^~~~~~~~
+../Core/Src/main.c:118:15: warning: unused variable 'offset' [-Wunused-variable]
+  118 |   const float offset = M_TWOPI / 3.0f;
+      |               ^~~~~~
+arm-none-eabi-gcc -o "pwm.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab6\pwm\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="pwm.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: pwm.elf
+ 
+arm-none-eabi-size   pwm.elf 
+arm-none-eabi-objdump -h -S  pwm.elf  > "pwm.list"
+   text	   data	    bss	    dec	    hex	filename
+  13748	     20	   1716	  15484	   3c7c	pwm.elf
+Finished building: default.size.stdout
+ 
+Finished building: pwm.list
+ 
+14:34:14 **** Incremental Build of configuration Debug for project pwm ****
+make -j8 all 
+arm-none-eabi-size   pwm.elf 
+   text	   data	    bss	    dec	    hex	filename
+  13748	     20	   1716	  15484	   3c7c	pwm.elf
+Finished building: default.size.stdout
+ 
+14:36:12 **** Incremental Build of configuration Debug for project pwm ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:126:15: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
+  126 |           if (unhandled_interrupt = 1)
+      |               ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:123:7: warning: unused variable 'calc' [-Wunused-variable]
+  123 |   int calc = 0;
+      |       ^~~~
+../Core/Src/main.c:122:23: warning: unused variable 'bf' [-Wunused-variable]
+  122 |   int rf = 0, gf = 0, bf = 0;
+      |                       ^~
+../Core/Src/main.c:122:15: warning: unused variable 'gf' [-Wunused-variable]
+  122 |   int rf = 0, gf = 0, bf = 0;
+      |               ^~
+../Core/Src/main.c:122:7: warning: unused variable 'rf' [-Wunused-variable]
+  122 |   int rf = 0, gf = 0, bf = 0;
+      |       ^~
+../Core/Src/main.c:121:13: warning: unused variable 'freq' [-Wunused-variable]
+  121 |   const int freq = 0.1;
+      |             ^~~~
+../Core/Src/main.c:120:15: warning: unused variable 'half_arr' [-Wunused-variable]
+  120 |   const float half_arr = (ARR+1) / 2.0f; /* set to (ARR+1) / 2.0f !!! */
+      |               ^~~~~~~~
+../Core/Src/main.c:118:15: warning: unused variable 'offset' [-Wunused-variable]
+  118 |   const float offset = M_TWOPI / 3.0f;
+      |               ^~~~~~
+arm-none-eabi-gcc -o "pwm.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab6\pwm\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="pwm.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: pwm.elf
+ 
+arm-none-eabi-size   pwm.elf 
+arm-none-eabi-objdump -h -S  pwm.elf  > "pwm.list"
+   text	   data	    bss	    dec	    hex	filename
+  13748	     20	   1716	  15484	   3c7c	pwm.elf
+Finished building: default.size.stdout
+ 
+Finished building: pwm.list
+ 
+14:37:09 **** Incremental Build of configuration Debug for project pwm ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:126:15: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
+  126 |           if (unhandled_interrupt = 1)
+      |               ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:123:7: warning: unused variable 'calc' [-Wunused-variable]
+  123 |   int calc = 0;
+      |       ^~~~
+../Core/Src/main.c:122:23: warning: unused variable 'bf' [-Wunused-variable]
+  122 |   int rf = 0, gf = 0, bf = 0;
+      |                       ^~
+../Core/Src/main.c:122:15: warning: unused variable 'gf' [-Wunused-variable]
+  122 |   int rf = 0, gf = 0, bf = 0;
+      |               ^~
+../Core/Src/main.c:122:7: warning: unused variable 'rf' [-Wunused-variable]
+  122 |   int rf = 0, gf = 0, bf = 0;
+      |       ^~
+../Core/Src/main.c:121:13: warning: unused variable 'freq' [-Wunused-variable]
+  121 |   const int freq = 0.1;
+      |             ^~~~
+../Core/Src/main.c:120:15: warning: unused variable 'half_arr' [-Wunused-variable]
+  120 |   const float half_arr = (ARR+1) / 2.0f; /* set to (ARR+1) / 2.0f !!! */
+      |               ^~~~~~~~
+../Core/Src/main.c:118:15: warning: unused variable 'offset' [-Wunused-variable]
+  118 |   const float offset = M_TWOPI / 3.0f;
+      |               ^~~~~~
+arm-none-eabi-gcc -o "pwm.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab6\pwm\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="pwm.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: pwm.elf
+ 
+arm-none-eabi-size   pwm.elf 
+arm-none-eabi-objdump -h -S  pwm.elf  > "pwm.list"
+   text	   data	    bss	    dec	    hex	filename
+  13748	     20	   1716	  15484	   3c7c	pwm.elf
+Finished building: default.size.stdout
+ 
+Finished building: pwm.list
+ 
+14:38:07 **** Incremental Build of configuration Debug for project pwm ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:126:15: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
+  126 |           if (unhandled_interrupt = 1)
+      |               ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:123:7: warning: unused variable 'calc' [-Wunused-variable]
+  123 |   int calc = 0;
+      |       ^~~~
+../Core/Src/main.c:122:23: warning: unused variable 'bf' [-Wunused-variable]
+  122 |   int rf = 0, gf = 0, bf = 0;
+      |                       ^~
+../Core/Src/main.c:122:15: warning: unused variable 'gf' [-Wunused-variable]
+  122 |   int rf = 0, gf = 0, bf = 0;
+      |               ^~
+../Core/Src/main.c:122:7: warning: unused variable 'rf' [-Wunused-variable]
+  122 |   int rf = 0, gf = 0, bf = 0;
+      |       ^~
+../Core/Src/main.c:121:13: warning: unused variable 'freq' [-Wunused-variable]
+  121 |   const int freq = 0.1;
+      |             ^~~~
+../Core/Src/main.c:120:15: warning: unused variable 'half_arr' [-Wunused-variable]
+  120 |   const float half_arr = (ARR+1) / 2.0f; /* set to (ARR+1) / 2.0f !!! */
+      |               ^~~~~~~~
+../Core/Src/main.c:118:15: warning: unused variable 'offset' [-Wunused-variable]
+  118 |   const float offset = M_TWOPI / 3.0f;
+      |               ^~~~~~
+arm-none-eabi-gcc -o "pwm.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab6\pwm\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="pwm.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: pwm.elf
+ 
+arm-none-eabi-size   pwm.elf 
+arm-none-eabi-objdump -h -S  pwm.elf  > "pwm.list"
+   text	   data	    bss	    dec	    hex	filename
+  13748	     20	   1716	  15484	   3c7c	pwm.elf
+Finished building: default.size.stdout
+ 
+Finished building: pwm.list
+ 
+14:39:14 **** Incremental Build of configuration Debug for project pwm ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:126:15: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
+  126 |           if (unhandled_interrupt = 1)
+      |               ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:123:7: warning: unused variable 'calc' [-Wunused-variable]
+  123 |   int calc = 0;
+      |       ^~~~
+../Core/Src/main.c:122:23: warning: unused variable 'bf' [-Wunused-variable]
+  122 |   int rf = 0, gf = 0, bf = 0;
+      |                       ^~
+../Core/Src/main.c:122:15: warning: unused variable 'gf' [-Wunused-variable]
+  122 |   int rf = 0, gf = 0, bf = 0;
+      |               ^~
+../Core/Src/main.c:122:7: warning: unused variable 'rf' [-Wunused-variable]
+  122 |   int rf = 0, gf = 0, bf = 0;
+      |       ^~
+../Core/Src/main.c:121:13: warning: unused variable 'freq' [-Wunused-variable]
+  121 |   const int freq = 0.1;
+      |             ^~~~
+../Core/Src/main.c:120:15: warning: unused variable 'half_arr' [-Wunused-variable]
+  120 |   const float half_arr = (ARR+1) / 2.0f; /* set to (ARR+1) / 2.0f !!! */
+      |               ^~~~~~~~
+../Core/Src/main.c:118:15: warning: unused variable 'offset' [-Wunused-variable]
+  118 |   const float offset = M_TWOPI / 3.0f;
+      |               ^~~~~~
+arm-none-eabi-gcc -o "pwm.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab6\pwm\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="pwm.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: pwm.elf
+ 
+arm-none-eabi-size   pwm.elf 
+arm-none-eabi-objdump -h -S  pwm.elf  > "pwm.list"
+   text	   data	    bss	    dec	    hex	filename
+  13748	     20	   1716	  15484	   3c7c	pwm.elf
+Finished building: default.size.stdout
+ 
+Finished building: pwm.list
+ 
+14:39:50 **** Incremental Build of configuration Debug for project pwm ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:126:15: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
+  126 |           if (unhandled_interrupt = 1)
+      |               ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:123:7: warning: unused variable 'calc' [-Wunused-variable]
+  123 |   int calc = 0;
+      |       ^~~~
+../Core/Src/main.c:122:23: warning: unused variable 'bf' [-Wunused-variable]
+  122 |   int rf = 0, gf = 0, bf = 0;
+      |                       ^~
+../Core/Src/main.c:122:15: warning: unused variable 'gf' [-Wunused-variable]
+  122 |   int rf = 0, gf = 0, bf = 0;
+      |               ^~
+../Core/Src/main.c:122:7: warning: unused variable 'rf' [-Wunused-variable]
+  122 |   int rf = 0, gf = 0, bf = 0;
+      |       ^~
+../Core/Src/main.c:121:13: warning: unused variable 'freq' [-Wunused-variable]
+  121 |   const int freq = 0.1;
+      |             ^~~~
+../Core/Src/main.c:120:15: warning: unused variable 'half_arr' [-Wunused-variable]
+  120 |   const float half_arr = (ARR+1) / 2.0f; /* set to (ARR+1) / 2.0f !!! */
+      |               ^~~~~~~~
+../Core/Src/main.c:118:15: warning: unused variable 'offset' [-Wunused-variable]
+  118 |   const float offset = M_TWOPI / 3.0f;
+      |               ^~~~~~
+arm-none-eabi-gcc -o "pwm.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab6\pwm\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="pwm.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: pwm.elf
+ 
+arm-none-eabi-size   pwm.elf 
+arm-none-eabi-objdump -h -S  pwm.elf  > "pwm.list"
+   text	   data	    bss	    dec	    hex	filename
+  13748	     20	   1716	  15484	   3c7c	pwm.elf
+Finished building: default.size.stdout
+ 
+Finished building: pwm.list
+ 
+14:40:59 **** Incremental Build of configuration Debug for project pwm ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:126:15: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
+  126 |           if (unhandled_interrupt = 1)
+      |               ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:123:7: warning: unused variable 'calc' [-Wunused-variable]
+  123 |   int calc = 0;
+      |       ^~~~
+../Core/Src/main.c:122:23: warning: unused variable 'bf' [-Wunused-variable]
+  122 |   int rf = 0, gf = 0, bf = 0;
+      |                       ^~
+../Core/Src/main.c:122:15: warning: unused variable 'gf' [-Wunused-variable]
+  122 |   int rf = 0, gf = 0, bf = 0;
+      |               ^~
+../Core/Src/main.c:122:7: warning: unused variable 'rf' [-Wunused-variable]
+  122 |   int rf = 0, gf = 0, bf = 0;
+      |       ^~
+../Core/Src/main.c:121:13: warning: unused variable 'freq' [-Wunused-variable]
+  121 |   const int freq = 0.1;
+      |             ^~~~
+../Core/Src/main.c:120:15: warning: unused variable 'half_arr' [-Wunused-variable]
+  120 |   const float half_arr = (ARR+1) / 2.0f; /* set to (ARR+1) / 2.0f !!! */
+      |               ^~~~~~~~
+../Core/Src/main.c:118:15: warning: unused variable 'offset' [-Wunused-variable]
+  118 |   const float offset = M_TWOPI / 3.0f;
+      |               ^~~~~~
+arm-none-eabi-gcc -o "pwm.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab6\pwm\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="pwm.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: pwm.elf
+ 
+arm-none-eabi-size   pwm.elf 
+arm-none-eabi-objdump -h -S  pwm.elf  > "pwm.list"
+   text	   data	    bss	    dec	    hex	filename
+  13748	     20	   1716	  15484	   3c7c	pwm.elf
+Finished building: default.size.stdout
+ 
+Finished building: pwm.list
+ 
+14:41:48 **** Incremental Build of configuration Debug for project pwm ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:126:15: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
+  126 |           if (unhandled_interrupt = 1)
+      |               ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:123:7: warning: unused variable 'calc' [-Wunused-variable]
+  123 |   int calc = 0;
+      |       ^~~~
+../Core/Src/main.c:122:23: warning: unused variable 'bf' [-Wunused-variable]
+  122 |   int rf = 0, gf = 0, bf = 0;
+      |                       ^~
+../Core/Src/main.c:122:15: warning: unused variable 'gf' [-Wunused-variable]
+  122 |   int rf = 0, gf = 0, bf = 0;
+      |               ^~
+../Core/Src/main.c:122:7: warning: unused variable 'rf' [-Wunused-variable]
+  122 |   int rf = 0, gf = 0, bf = 0;
+      |       ^~
+../Core/Src/main.c:121:13: warning: unused variable 'freq' [-Wunused-variable]
+  121 |   const int freq = 0.1;
+      |             ^~~~
+../Core/Src/main.c:120:15: warning: unused variable 'half_arr' [-Wunused-variable]
+  120 |   const float half_arr = (ARR+1) / 2.0f; /* set to (ARR+1) / 2.0f !!! */
+      |               ^~~~~~~~
+../Core/Src/main.c:118:15: warning: unused variable 'offset' [-Wunused-variable]
+  118 |   const float offset = M_TWOPI / 3.0f;
+      |               ^~~~~~
+arm-none-eabi-gcc -o "pwm.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab6\pwm\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="pwm.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: pwm.elf
+ 
+arm-none-eabi-size   pwm.elf 
+arm-none-eabi-objdump -h -S  pwm.elf  > "pwm.list"
+   text	   data	    bss	    dec	    hex	filename
+  13748	     20	   1716	  15484	   3c7c	pwm.elf
+Finished building: default.size.stdout
+ 
+Finished building: pwm.list
+ 
+14:42:34 **** Incremental Build of configuration Debug for project pwm ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:126:15: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
+  126 |           if (unhandled_interrupt = 1)
+      |               ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:123:7: warning: unused variable 'calc' [-Wunused-variable]
+  123 |   int calc = 0;
+      |       ^~~~
+../Core/Src/main.c:122:23: warning: unused variable 'bf' [-Wunused-variable]
+  122 |   int rf = 0, gf = 0, bf = 0;
+      |                       ^~
+../Core/Src/main.c:122:15: warning: unused variable 'gf' [-Wunused-variable]
+  122 |   int rf = 0, gf = 0, bf = 0;
+      |               ^~
+../Core/Src/main.c:122:7: warning: unused variable 'rf' [-Wunused-variable]
+  122 |   int rf = 0, gf = 0, bf = 0;
+      |       ^~
+../Core/Src/main.c:121:13: warning: unused variable 'freq' [-Wunused-variable]
+  121 |   const int freq = 0.1;
+      |             ^~~~
+../Core/Src/main.c:120:15: warning: unused variable 'half_arr' [-Wunused-variable]
+  120 |   const float half_arr = (ARR+1) / 2.0f; /* set to (ARR+1) / 2.0f !!! */
+      |               ^~~~~~~~
+../Core/Src/main.c:118:15: warning: unused variable 'offset' [-Wunused-variable]
+  118 |   const float offset = M_TWOPI / 3.0f;
+      |               ^~~~~~
+arm-none-eabi-gcc -o "pwm.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab6\pwm\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="pwm.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: pwm.elf
+ 
+arm-none-eabi-size   pwm.elf 
+arm-none-eabi-objdump -h -S  pwm.elf  > "pwm.list"
+   text	   data	    bss	    dec	    hex	filename
+  13748	     20	   1716	  15484	   3c7c	pwm.elf
+Finished building: default.size.stdout
+ 
+Finished building: pwm.list
+ 
+14:43:55 **** Incremental Build of configuration Debug for project pwm ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:126:15: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
+  126 |           if (unhandled_interrupt = 1)
+      |               ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:123:7: warning: unused variable 'calc' [-Wunused-variable]
+  123 |   int calc = 0;
+      |       ^~~~
+../Core/Src/main.c:122:23: warning: unused variable 'bf' [-Wunused-variable]
+  122 |   int rf = 0, gf = 0, bf = 0;
+      |                       ^~
+../Core/Src/main.c:122:15: warning: unused variable 'gf' [-Wunused-variable]
+  122 |   int rf = 0, gf = 0, bf = 0;
+      |               ^~
+../Core/Src/main.c:122:7: warning: unused variable 'rf' [-Wunused-variable]
+  122 |   int rf = 0, gf = 0, bf = 0;
+      |       ^~
+../Core/Src/main.c:121:13: warning: unused variable 'freq' [-Wunused-variable]
+  121 |   const int freq = 0.1;
+      |             ^~~~
+../Core/Src/main.c:120:15: warning: unused variable 'half_arr' [-Wunused-variable]
+  120 |   const float half_arr = (ARR+1) / 2.0f; /* set to (ARR+1) / 2.0f !!! */
+      |               ^~~~~~~~
+../Core/Src/main.c:118:15: warning: unused variable 'offset' [-Wunused-variable]
+  118 |   const float offset = M_TWOPI / 3.0f;
+      |               ^~~~~~
+arm-none-eabi-gcc -o "pwm.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab6\pwm\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="pwm.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: pwm.elf
+ 
+arm-none-eabi-size   pwm.elf 
+arm-none-eabi-objdump -h -S  pwm.elf  > "pwm.list"
+   text	   data	    bss	    dec	    hex	filename
+  13748	     20	   1716	  15484	   3c7c	pwm.elf
+Finished building: default.size.stdout
+ 
+Finished building: pwm.list
+ 
+14:47:17 **** Incremental Build of configuration Debug for project pwm ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:126:15: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
+  126 |           if (unhandled_interrupt = 1)
+      |               ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:123:7: warning: unused variable 'calc' [-Wunused-variable]
+  123 |   int calc = 0;
+      |       ^~~~
+../Core/Src/main.c:122:23: warning: unused variable 'bf' [-Wunused-variable]
+  122 |   int rf = 0, gf = 0, bf = 0;
+      |                       ^~
+../Core/Src/main.c:122:15: warning: unused variable 'gf' [-Wunused-variable]
+  122 |   int rf = 0, gf = 0, bf = 0;
+      |               ^~
+../Core/Src/main.c:122:7: warning: unused variable 'rf' [-Wunused-variable]
+  122 |   int rf = 0, gf = 0, bf = 0;
+      |       ^~
+../Core/Src/main.c:121:13: warning: unused variable 'freq' [-Wunused-variable]
+  121 |   const int freq = 0.1;
+      |             ^~~~
+../Core/Src/main.c:120:15: warning: unused variable 'half_arr' [-Wunused-variable]
+  120 |   const float half_arr = (ARR+1) / 2.0f; /* set to (ARR+1) / 2.0f !!! */
+      |               ^~~~~~~~
+../Core/Src/main.c:118:15: warning: unused variable 'offset' [-Wunused-variable]
+  118 |   const float offset = M_TWOPI / 3.0f;
+      |               ^~~~~~
+arm-none-eabi-gcc -o "pwm.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab6\pwm\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="pwm.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: pwm.elf
+ 
+arm-none-eabi-size   pwm.elf 
+arm-none-eabi-objdump -h -S  pwm.elf  > "pwm.list"
+   text	   data	    bss	    dec	    hex	filename
+  13748	     20	   1716	  15484	   3c7c	pwm.elf
+Finished building: default.size.stdout
+ 
+Finished building: pwm.list
+ 
+14:47:47 **** Incremental Build of configuration Debug for project pwm ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:126:15: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
+  126 |           if (unhandled_interrupt = 1)
+      |               ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:123:7: warning: unused variable 'calc' [-Wunused-variable]
+  123 |   int calc = 0;
+      |       ^~~~
+../Core/Src/main.c:122:23: warning: unused variable 'bf' [-Wunused-variable]
+  122 |   int rf = 0, gf = 0, bf = 0;
+      |                       ^~
+../Core/Src/main.c:122:15: warning: unused variable 'gf' [-Wunused-variable]
+  122 |   int rf = 0, gf = 0, bf = 0;
+      |               ^~
+../Core/Src/main.c:122:7: warning: unused variable 'rf' [-Wunused-variable]
+  122 |   int rf = 0, gf = 0, bf = 0;
+      |       ^~
+../Core/Src/main.c:121:13: warning: unused variable 'freq' [-Wunused-variable]
+  121 |   const int freq = 0.1;
+      |             ^~~~
+../Core/Src/main.c:120:15: warning: unused variable 'half_arr' [-Wunused-variable]
+  120 |   const float half_arr = (ARR+1) / 2.0f; /* set to (ARR+1) / 2.0f !!! */
+      |               ^~~~~~~~
+../Core/Src/main.c:118:15: warning: unused variable 'offset' [-Wunused-variable]
+  118 |   const float offset = M_TWOPI / 3.0f;
+      |               ^~~~~~
+arm-none-eabi-gcc -o "pwm.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab6\pwm\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="pwm.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: pwm.elf
+ 
+arm-none-eabi-size   pwm.elf 
+arm-none-eabi-objdump -h -S  pwm.elf  > "pwm.list"
+   text	   data	    bss	    dec	    hex	filename
+  13748	     20	   1716	  15484	   3c7c	pwm.elf
+Finished building: default.size.stdout
+ 
+Finished building: pwm.list
+ 
+14:48:11 **** Incremental Build of configuration Debug for project pwm ****
+make -j8 all 
+arm-none-eabi-size   pwm.elf 
+   text	   data	    bss	    dec	    hex	filename
+  13748	     20	   1716	  15484	   3c7c	pwm.elf
+Finished building: default.size.stdout
+ 
+14:49:52 **** Incremental Build of configuration Debug for project pwm ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:126:15: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
+  126 |           if (unhandled_interrupt = 1)
+      |               ^~~~~~~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "pwm.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab6\pwm\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="pwm.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: pwm.elf
+ 
+arm-none-eabi-size   pwm.elf 
+arm-none-eabi-objdump -h -S  pwm.elf  > "pwm.list"
+   text	   data	    bss	    dec	    hex	filename
+  18632	     20	   1716	  20368	   4f90	pwm.elf
+Finished building: default.size.stdout
+ 
+Finished building: pwm.list
+ 
+14:50:58 **** Incremental Build of configuration Debug for project pwm ****
 make -j8 all 
 arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
 arm-none-eabi-gcc -o "pwm.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab6\pwm\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="pwm.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
@@ -56,7 +1588,508 @@ Finished building target: pwm.elf
 arm-none-eabi-size   pwm.elf 
 arm-none-eabi-objdump -h -S  pwm.elf  > "pwm.list"
    text	   data	    bss	    dec	    hex	filename
-  19004	     20	   1724	  20748	   510c	pwm.elf
+  18640	     20	   1716	  20376	   4f98	pwm.elf
+Finished building: default.size.stdout
+ 
+Finished building: pwm.list
+ 
+14:51:57 **** Incremental Build of configuration Debug for project pwm ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "pwm.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab6\pwm\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="pwm.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: pwm.elf
+ 
+arm-none-eabi-size   pwm.elf 
+arm-none-eabi-objdump -h -S  pwm.elf  > "pwm.list"
+   text	   data	    bss	    dec	    hex	filename
+  18640	     20	   1716	  20376	   4f98	pwm.elf
+Finished building: default.size.stdout
+ 
+Finished building: pwm.list
+ 
+14:53:45 **** Incremental Build of configuration Debug for project pwm ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "pwm.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab6\pwm\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="pwm.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: pwm.elf
+ 
+arm-none-eabi-size   pwm.elf 
+arm-none-eabi-objdump -h -S  pwm.elf  > "pwm.list"
+   text	   data	    bss	    dec	    hex	filename
+  18640	     20	   1716	  20376	   4f98	pwm.elf
+Finished building: default.size.stdout
+ 
+Finished building: pwm.list
+ 
+15:38:40 **** Incremental Build of configuration Debug for project pwm ****
+make -j8 all 
+arm-none-eabi-size   pwm.elf 
+   text	   data	    bss	    dec	    hex	filename
+  18640	     20	   1716	  20376	   4f98	pwm.elf
+Finished building: default.size.stdout
+ 
+15:41:31 **** Incremental Build of configuration Debug for project pwm ****
+make -j8 all 
+arm-none-eabi-size   pwm.elf 
+   text	   data	    bss	    dec	    hex	filename
+  18640	     20	   1716	  20376	   4f98	pwm.elf
+Finished building: default.size.stdout
+ 
+15:41:57 **** Incremental Build of configuration Debug for project pwm ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "pwm.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab6\pwm\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="pwm.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: pwm.elf
+ 
+arm-none-eabi-size   pwm.elf 
+arm-none-eabi-objdump -h -S  pwm.elf  > "pwm.list"
+   text	   data	    bss	    dec	    hex	filename
+  18632	     20	   1716	  20368	   4f90	pwm.elf
+Finished building: default.size.stdout
+ 
+Finished building: pwm.list
+ 
+15:42:40 **** Incremental Build of configuration Debug for project pwm ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "pwm.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab6\pwm\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="pwm.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: pwm.elf
+ 
+arm-none-eabi-size   pwm.elf 
+arm-none-eabi-objdump -h -S  pwm.elf  > "pwm.list"
+   text	   data	    bss	    dec	    hex	filename
+  18632	     20	   1716	  20368	   4f90	pwm.elf
+Finished building: default.size.stdout
+ 
+Finished building: pwm.list
+ 
+15:43:12 **** Incremental Build of configuration Debug for project pwm ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "pwm.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab6\pwm\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="pwm.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: pwm.elf
+ 
+arm-none-eabi-size   pwm.elf 
+arm-none-eabi-objdump -h -S  pwm.elf  > "pwm.list"
+   text	   data	    bss	    dec	    hex	filename
+  18640	     20	   1716	  20376	   4f98	pwm.elf
+Finished building: default.size.stdout
+ 
+Finished building: pwm.list
+ 
+15:47:48 **** Incremental Build of configuration Debug for project pwm ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:123:7: warning: unused variable 'calc' [-Wunused-variable]
+  123 |   int calc = 0;
+      |       ^~~~
+../Core/Src/main.c:121:13: warning: unused variable 'freq' [-Wunused-variable]
+  121 |   const int freq = 1;
+      |             ^~~~
+../Core/Src/main.c:120:15: warning: unused variable 'half_arr' [-Wunused-variable]
+  120 |   const float half_arr = (ARR+1) / 2.0f; /* set to (ARR+1) / 2.0f !!! */
+      |               ^~~~~~~~
+../Core/Src/main.c:118:15: warning: unused variable 'offset' [-Wunused-variable]
+  118 |   const float offset = M_TWOPI / 3.0f;
+      |               ^~~~~~
+arm-none-eabi-gcc -o "pwm.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab6\pwm\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="pwm.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: pwm.elf
+ 
+arm-none-eabi-size   pwm.elf 
+arm-none-eabi-objdump -h -S  pwm.elf  > "pwm.list"
+   text	   data	    bss	    dec	    hex	filename
+  19512	     20	   1716	  21248	   5300	pwm.elf
+Finished building: default.size.stdout
+ 
+Finished building: pwm.list
+ 
+15:48:24 **** Incremental Build of configuration Debug for project pwm ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:123:7: warning: unused variable 'calc' [-Wunused-variable]
+  123 |   int calc = 0;
+      |       ^~~~
+../Core/Src/main.c:121:13: warning: unused variable 'freq' [-Wunused-variable]
+  121 |   const int freq = 1;
+      |             ^~~~
+../Core/Src/main.c:120:15: warning: unused variable 'half_arr' [-Wunused-variable]
+  120 |   const float half_arr = (ARR+1) / 2.0f; /* set to (ARR+1) / 2.0f !!! */
+      |               ^~~~~~~~
+../Core/Src/main.c:118:15: warning: unused variable 'offset' [-Wunused-variable]
+  118 |   const float offset = M_TWOPI / 3.0f;
+      |               ^~~~~~
+arm-none-eabi-gcc -o "pwm.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab6\pwm\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="pwm.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: pwm.elf
+ 
+arm-none-eabi-size   pwm.elf 
+arm-none-eabi-objdump -h -S  pwm.elf  > "pwm.list"
+   text	   data	    bss	    dec	    hex	filename
+  19712	     20	   1716	  21448	   53c8	pwm.elf
+Finished building: default.size.stdout
+ 
+Finished building: pwm.list
+ 
+15:49:17 **** Incremental Build of configuration Debug for project pwm ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:146:13: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
+  146 |         if (t = 2) {
+      |             ^
+../Core/Src/main.c:123:7: warning: unused variable 'calc' [-Wunused-variable]
+  123 |   int calc = 0;
+      |       ^~~~
+../Core/Src/main.c:121:13: warning: unused variable 'freq' [-Wunused-variable]
+  121 |   const int freq = 1;
+      |             ^~~~
+../Core/Src/main.c:120:15: warning: unused variable 'half_arr' [-Wunused-variable]
+  120 |   const float half_arr = (ARR+1) / 2.0f; /* set to (ARR+1) / 2.0f !!! */
+      |               ^~~~~~~~
+../Core/Src/main.c:118:15: warning: unused variable 'offset' [-Wunused-variable]
+  118 |   const float offset = M_TWOPI / 3.0f;
+      |               ^~~~~~
+arm-none-eabi-gcc -o "pwm.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab6\pwm\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="pwm.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: pwm.elf
+ 
+arm-none-eabi-size   pwm.elf 
+arm-none-eabi-objdump -h -S  pwm.elf  > "pwm.list"
+   text	   data	    bss	    dec	    hex	filename
+  19744	     20	   1716	  21480	   53e8	pwm.elf
+Finished building: default.size.stdout
+ 
+Finished building: pwm.list
+ 
+15:50:34 **** Incremental Build of configuration Debug for project pwm ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:146:13: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
+  146 |         if (t = 2) {
+      |             ^
+../Core/Src/main.c:123:7: warning: unused variable 'calc' [-Wunused-variable]
+  123 |   int calc = 0;
+      |       ^~~~
+../Core/Src/main.c:121:13: warning: unused variable 'freq' [-Wunused-variable]
+  121 |   const int freq = 1;
+      |             ^~~~
+../Core/Src/main.c:120:15: warning: unused variable 'half_arr' [-Wunused-variable]
+  120 |   const float half_arr = (ARR+1) / 2.0f; /* set to (ARR+1) / 2.0f !!! */
+      |               ^~~~~~~~
+../Core/Src/main.c:118:15: warning: unused variable 'offset' [-Wunused-variable]
+  118 |   const float offset = M_TWOPI / 3.0f;
+      |               ^~~~~~
+arm-none-eabi-gcc -o "pwm.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab6\pwm\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="pwm.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: pwm.elf
+ 
+arm-none-eabi-size   pwm.elf 
+arm-none-eabi-objdump -h -S  pwm.elf  > "pwm.list"
+   text	   data	    bss	    dec	    hex	filename
+  18344	     20	   1716	  20080	   4e70	pwm.elf
+Finished building: default.size.stdout
+ 
+Finished building: pwm.list
+ 
+15:50:49 **** Incremental Build of configuration Debug for project pwm ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:87:1: error: expected expression before '=' token
+   87 | =  HAL_Init();
+      | ^
+../Core/Src/main.c:146:13: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
+  146 |         if (t = 2) {
+      |             ^
+../Core/Src/main.c:123:7: warning: unused variable 'calc' [-Wunused-variable]
+  123 |   int calc = 0;
+      |       ^~~~
+../Core/Src/main.c:121:13: warning: unused variable 'freq' [-Wunused-variable]
+  121 |   const int freq = 1;
+      |             ^~~~
+../Core/Src/main.c:120:15: warning: unused variable 'half_arr' [-Wunused-variable]
+  120 |   const float half_arr = (ARR+1) / 2.0f; /* set to (ARR+1) / 2.0f !!! */
+      |               ^~~~~~~~
+../Core/Src/main.c:118:15: warning: unused variable 'offset' [-Wunused-variable]
+  118 |   const float offset = M_TWOPI / 3.0f;
+      |               ^~~~~~
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+15:51:02 **** Incremental Build of configuration Debug for project pwm ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:123:7: warning: unused variable 'calc' [-Wunused-variable]
+  123 |   int calc = 0;
+      |       ^~~~
+../Core/Src/main.c:121:13: warning: unused variable 'freq' [-Wunused-variable]
+  121 |   const int freq = 1;
+      |             ^~~~
+../Core/Src/main.c:120:15: warning: unused variable 'half_arr' [-Wunused-variable]
+  120 |   const float half_arr = (ARR+1) / 2.0f; /* set to (ARR+1) / 2.0f !!! */
+      |               ^~~~~~~~
+../Core/Src/main.c:118:15: warning: unused variable 'offset' [-Wunused-variable]
+  118 |   const float offset = M_TWOPI / 3.0f;
+      |               ^~~~~~
+arm-none-eabi-gcc -o "pwm.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab6\pwm\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="pwm.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: pwm.elf
+ 
+arm-none-eabi-size   pwm.elf 
+arm-none-eabi-objdump -h -S  pwm.elf  > "pwm.list"
+   text	   data	    bss	    dec	    hex	filename
+  18344	     20	   1716	  20080	   4e70	pwm.elf
+Finished building: default.size.stdout
+ 
+Finished building: pwm.list
+ 
+15:52:11 **** Incremental Build of configuration Debug for project pwm ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:123:9: warning: unused variable 'calc' [-Wunused-variable]
+  123 |   float calc = 0;
+      |         ^~~~
+../Core/Src/main.c:121:13: warning: unused variable 'freq' [-Wunused-variable]
+  121 |   const int freq = 1;
+      |             ^~~~
+../Core/Src/main.c:120:15: warning: unused variable 'half_arr' [-Wunused-variable]
+  120 |   const float half_arr = (ARR+1) / 2.0f; /* set to (ARR+1) / 2.0f !!! */
+      |               ^~~~~~~~
+../Core/Src/main.c:118:15: warning: unused variable 'offset' [-Wunused-variable]
+  118 |   const float offset = M_TWOPI / 3.0f;
+      |               ^~~~~~
+arm-none-eabi-gcc -o "pwm.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab6\pwm\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="pwm.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: pwm.elf
+ 
+arm-none-eabi-size   pwm.elf 
+arm-none-eabi-objdump -h -S  pwm.elf  > "pwm.list"
+   text	   data	    bss	    dec	    hex	filename
+  18344	     20	   1716	  20080	   4e70	pwm.elf
+Finished building: default.size.stdout
+ 
+Finished building: pwm.list
+ 
+15:56:46 **** Incremental Build of configuration Debug for project pwm ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:123:9: warning: unused variable 'calc' [-Wunused-variable]
+  123 |   float calc = 0;
+      |         ^~~~
+../Core/Src/main.c:121:13: warning: unused variable 'freq' [-Wunused-variable]
+  121 |   const int freq = 1;
+      |             ^~~~
+../Core/Src/main.c:120:15: warning: unused variable 'half_arr' [-Wunused-variable]
+  120 |   const float half_arr = (ARR+1) / 2.0f; /* set to (ARR+1) / 2.0f !!! */
+      |               ^~~~~~~~
+../Core/Src/main.c:118:15: warning: unused variable 'offset' [-Wunused-variable]
+  118 |   const float offset = M_TWOPI / 3.0f;
+      |               ^~~~~~
+arm-none-eabi-gcc -o "pwm.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab6\pwm\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="pwm.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: pwm.elf
+ 
+arm-none-eabi-size   pwm.elf 
+arm-none-eabi-objdump -h -S  pwm.elf  > "pwm.list"
+   text	   data	    bss	    dec	    hex	filename
+  18376	     20	   1716	  20112	   4e90	pwm.elf
+Finished building: default.size.stdout
+ 
+Finished building: pwm.list
+ 
+15:59:27 **** Incremental Build of configuration Debug for project pwm ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:123:9: warning: unused variable 'calc' [-Wunused-variable]
+  123 |   float calc = 0;
+      |         ^~~~
+../Core/Src/main.c:121:13: warning: unused variable 'freq' [-Wunused-variable]
+  121 |   const int freq = 1;
+      |             ^~~~
+../Core/Src/main.c:120:15: warning: unused variable 'half_arr' [-Wunused-variable]
+  120 |   const float half_arr = (ARR+1) / 2.0f; /* set to (ARR+1) / 2.0f !!! */
+      |               ^~~~~~~~
+../Core/Src/main.c:118:15: warning: unused variable 'offset' [-Wunused-variable]
+  118 |   const float offset = M_TWOPI / 3.0f;
+      |               ^~~~~~
+arm-none-eabi-gcc -o "pwm.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab6\pwm\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="pwm.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: pwm.elf
+ 
+arm-none-eabi-size   pwm.elf 
+arm-none-eabi-objdump -h -S  pwm.elf  > "pwm.list"
+   text	   data	    bss	    dec	    hex	filename
+  18304	     20	   1716	  20040	   4e48	pwm.elf
+Finished building: default.size.stdout
+ 
+Finished building: pwm.list
+ 
+16:00:01 **** Incremental Build of configuration Debug for project pwm ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:123:9: warning: unused variable 'calc' [-Wunused-variable]
+  123 |   float calc = 0;
+      |         ^~~~
+../Core/Src/main.c:121:13: warning: unused variable 'freq' [-Wunused-variable]
+  121 |   const int freq = 1;
+      |             ^~~~
+../Core/Src/main.c:120:15: warning: unused variable 'half_arr' [-Wunused-variable]
+  120 |   const float half_arr = (ARR+1) / 2.0f; /* set to (ARR+1) / 2.0f !!! */
+      |               ^~~~~~~~
+../Core/Src/main.c:118:15: warning: unused variable 'offset' [-Wunused-variable]
+  118 |   const float offset = M_TWOPI / 3.0f;
+      |               ^~~~~~
+arm-none-eabi-gcc -o "pwm.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab6\pwm\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="pwm.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: pwm.elf
+ 
+arm-none-eabi-size   pwm.elf 
+arm-none-eabi-objdump -h -S  pwm.elf  > "pwm.list"
+   text	   data	    bss	    dec	    hex	filename
+  18376	     20	   1716	  20112	   4e90	pwm.elf
+Finished building: default.size.stdout
+ 
+Finished building: pwm.list
+ 
+16:00:08 **** Incremental Build of configuration Debug for project pwm ****
+make -j8 all 
+arm-none-eabi-size   pwm.elf 
+   text	   data	    bss	    dec	    hex	filename
+  18376	     20	   1716	  20112	   4e90	pwm.elf
+Finished building: default.size.stdout
+ 
+16:01:27 **** Incremental Build of configuration Debug for project pwm ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:123:9: warning: unused variable 'calc' [-Wunused-variable]
+  123 |   float calc = 0;
+      |         ^~~~
+../Core/Src/main.c:121:13: warning: unused variable 'freq' [-Wunused-variable]
+  121 |   const int freq = 1;
+      |             ^~~~
+../Core/Src/main.c:120:15: warning: unused variable 'half_arr' [-Wunused-variable]
+  120 |   const float half_arr = (ARR+1) / 2.0f; /* set to (ARR+1) / 2.0f !!! */
+      |               ^~~~~~~~
+../Core/Src/main.c:118:15: warning: unused variable 'offset' [-Wunused-variable]
+  118 |   const float offset = M_TWOPI / 3.0f;
+      |               ^~~~~~
+arm-none-eabi-gcc -o "pwm.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab6\pwm\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="pwm.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: pwm.elf
+ 
+arm-none-eabi-size   pwm.elf 
+arm-none-eabi-objdump -h -S  pwm.elf  > "pwm.list"
+   text	   data	    bss	    dec	    hex	filename
+  18392	     20	   1716	  20128	   4ea0	pwm.elf
+Finished building: default.size.stdout
+ 
+Finished building: pwm.list
+ 
+16:02:22 **** Incremental Build of configuration Debug for project pwm ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:123:9: warning: unused variable 'calc' [-Wunused-variable]
+  123 |   float calc = 0;
+      |         ^~~~
+../Core/Src/main.c:121:13: warning: unused variable 'freq' [-Wunused-variable]
+  121 |   const int freq = 1;
+      |             ^~~~
+../Core/Src/main.c:120:15: warning: unused variable 'half_arr' [-Wunused-variable]
+  120 |   const float half_arr = (ARR+1) / 2.0f; /* set to (ARR+1) / 2.0f !!! */
+      |               ^~~~~~~~
+../Core/Src/main.c:118:15: warning: unused variable 'offset' [-Wunused-variable]
+  118 |   const float offset = M_TWOPI / 3.0f;
+      |               ^~~~~~
+arm-none-eabi-gcc -o "pwm.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab6\pwm\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="pwm.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: pwm.elf
+ 
+arm-none-eabi-size   pwm.elf 
+arm-none-eabi-objdump -h -S  pwm.elf  > "pwm.list"
+   text	   data	    bss	    dec	    hex	filename
+  18368	     20	   1716	  20104	   4e88	pwm.elf
+Finished building: default.size.stdout
+ 
+Finished building: pwm.list
+ 
+16:03:39 **** Incremental Build of configuration Debug for project pwm ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "pwm.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab6\pwm\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="pwm.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: pwm.elf
+ 
+arm-none-eabi-size   pwm.elf 
+arm-none-eabi-objdump -h -S  pwm.elf  > "pwm.list"
+   text	   data	    bss	    dec	    hex	filename
+  18576	     20	   1716	  20312	   4f58	pwm.elf
+Finished building: default.size.stdout
+ 
+Finished building: pwm.list
+ 
+16:04:08 **** Incremental Build of configuration Debug for project pwm ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "pwm.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab6\pwm\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="pwm.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: pwm.elf
+ 
+arm-none-eabi-size   pwm.elf 
+arm-none-eabi-objdump -h -S  pwm.elf  > "pwm.list"
+   text	   data	    bss	    dec	    hex	filename
+  18576	     20	   1716	  20312	   4f58	pwm.elf
+Finished building: default.size.stdout
+ 
+Finished building: pwm.list
+ 
+16:04:32 **** Incremental Build of configuration Debug for project pwm ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "pwm.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab6\pwm\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="pwm.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: pwm.elf
+ 
+arm-none-eabi-size   pwm.elf 
+arm-none-eabi-objdump -h -S  pwm.elf  > "pwm.list"
+   text	   data	    bss	    dec	    hex	filename
+  18576	     20	   1716	  20312	   4f58	pwm.elf
+Finished building: default.size.stdout
+ 
+Finished building: pwm.list
+ 
+16:05:13 **** Incremental Build of configuration Debug for project pwm ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "pwm.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab6\pwm\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="pwm.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: pwm.elf
+ 
+arm-none-eabi-size   pwm.elf 
+arm-none-eabi-objdump -h -S  pwm.elf  > "pwm.list"
+   text	   data	    bss	    dec	    hex	filename
+  18516	     20	   1716	  20252	   4f1c	pwm.elf
+Finished building: default.size.stdout
+ 
+Finished building: pwm.list
+ 
+16:05:56 **** Incremental Build of configuration Debug for project pwm ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:123:9: warning: unused variable 'calc' [-Wunused-variable]
+  123 |   float calc = 0;
+      |         ^~~~
+../Core/Src/main.c:121:13: warning: unused variable 'freq' [-Wunused-variable]
+  121 |   const int freq = 1;
+      |             ^~~~
+../Core/Src/main.c:120:15: warning: unused variable 'half_arr' [-Wunused-variable]
+  120 |   const float half_arr = (ARR+1) / 2.0f; /* set to (ARR+1) / 2.0f !!! */
+      |               ^~~~~~~~
+../Core/Src/main.c:118:15: warning: unused variable 'offset' [-Wunused-variable]
+  118 |   const float offset = M_TWOPI / 3.0f;
+      |               ^~~~~~
+arm-none-eabi-gcc -o "pwm.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab6\pwm\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="pwm.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: pwm.elf
+ 
+arm-none-eabi-size   pwm.elf 
+arm-none-eabi-objdump -h -S  pwm.elf  > "pwm.list"
+   text	   data	    bss	    dec	    hex	filename
+  18368	     20	   1716	  20104	   4e88	pwm.elf
 Finished building: default.size.stdout
  
 Finished building: pwm.list

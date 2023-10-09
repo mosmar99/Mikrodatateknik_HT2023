@@ -1,0 +1,30 @@
+* DMA
+** [1]    Hardware which reads data from a source and writes to a destination
+** [2]    Various configurations (source and destination address can be changed, incr or decr)
+
+* Microcontroller bild:
+** DMA1 och DMA2, kan kommunicera med olika bussar
+** 8 strömmar är kopplade, processorn kan setup 8 bussar som den kan skicka till
+
+* [Basics of DMA - CONFIG]
+** [1]    Enable clock to DMA module
+** [2]    Init control registers
+** [3]    Load SARn with source address
+** [4]    Load DARn with destination address
+** [5]    Load BCRn with number of bytes to transer
+** [6]    Clear DSRn[DONE]
+
+* [Start transfer by setting DCRn[START]]
+* [END TRANSER]
+** [1]    Interrupt generated if DCRn[EINT] is set (DMAn_IRQHandler) 
+** [2]    Or else poll DSRn[DONE]
+
+* DMA1 är kopplad till APB2 (8 strömmar) och DMA2 till APB1 (8 strömmar)
+
+*  [QUESTIONS]
+** [1] schemat i vid förklara riktigt dåligt i videon
+** [2] min blå lampa funkar inte
+** [3] kan man ha flera DMA strömmar igång samtidigt, samma fråga med arbiter
+** latcha vid reset?? (låsa, vid reset börjar lamporna lysa)
+
+* [Performance Comparison]

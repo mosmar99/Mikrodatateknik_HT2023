@@ -1,17 +1,30 @@
-00:17:26 **** Incremental Build of configuration Debug for project pwm ****
+16:05:56 **** Incremental Build of configuration Debug for project pwm ****
 make -j8 all 
 arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:123:9: warning: unused variable 'calc' [-Wunused-variable]
+  123 |   float calc = 0;
+      |         ^~~~
+../Core/Src/main.c:121:13: warning: unused variable 'freq' [-Wunused-variable]
+  121 |   const int freq = 1;
+      |             ^~~~
+../Core/Src/main.c:120:15: warning: unused variable 'half_arr' [-Wunused-variable]
+  120 |   const float half_arr = (ARR+1) / 2.0f; /* set to (ARR+1) / 2.0f !!! */
+      |               ^~~~~~~~
+../Core/Src/main.c:118:15: warning: unused variable 'offset' [-Wunused-variable]
+  118 |   const float offset = M_TWOPI / 3.0f;
+      |               ^~~~~~
 arm-none-eabi-gcc -o "pwm.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\JU\Microdata_Technology\Mikrodatateknik_HT2023\labs\lab6\pwm\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="pwm.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 Finished building target: pwm.elf
  
 arm-none-eabi-size   pwm.elf 
 arm-none-eabi-objdump -h -S  pwm.elf  > "pwm.list"
    text	   data	    bss	    dec	    hex	filename
-  19004	     20	   1724	  20748	   510c	pwm.elf
+  18368	     20	   1716	  20104	   4e88	pwm.elf
 Finished building: default.size.stdout
  
 Finished building: pwm.list
  
 
-00:17:27 Build Finished. 0 errors, 0 warnings. (took 608ms)
+16:05:58 Build Finished. 0 errors, 4 warnings. (took 1s.672ms)
 
