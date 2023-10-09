@@ -22,7 +22,6 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include <math.h>
-#include <stdlib.h>
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -139,18 +138,6 @@ int main(void)
         rf = sinf(t);
         gf = sinf((1*M_PI/3) + t);
         bf = sinf((2*M_PI/3) + t);
-
-        if (bf < 0) {
-        	bf = -bf;
-        }
-
-        if (gf < 0) {
-        	gf = -gf;
-        }
-
-        if (bf < 0) {
-        	bf = -bf;
-        }
 
         TIM1->CCR1 = rf * 0.30 * 100;
         TIM1->CCR2 = gf * 0.10 * 100;

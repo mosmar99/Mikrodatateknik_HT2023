@@ -141,15 +141,7 @@ int main(void)
         bf = sinf((2*M_PI/3) + t);
 
         if (bf < 0) {
-        	bf = -bf;
-        }
-
-        if (gf < 0) {
-        	gf = -gf;
-        }
-
-        if (bf < 0) {
-        	bf = -bf;
+        	bf = -bf
         }
 
         TIM1->CCR1 = rf * 0.30 * 100;

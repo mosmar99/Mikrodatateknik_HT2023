@@ -144,14 +144,6 @@ int main(void)
         	bf = -bf;
         }
 
-        if (gf < 0) {
-        	gf = -gf;
-        }
-
-        if (bf < 0) {
-        	bf = -bf;
-        }
-
         TIM1->CCR1 = rf * 0.30 * 100;
         TIM1->CCR2 = gf * 0.10 * 100;
         TIM1->CCR3 = bf * 0.03 * 100;
