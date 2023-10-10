@@ -120,8 +120,6 @@ int main(void)
   const int ARR = 99;
   const float f = 0.64;
   float rf = 10, gf = 0, bf = 2;
-  const float half_arr = (ARR+1) / 2.0f; /* set to (ARR+1) / 2.0f !!! */
-
   while (1)
   {
 	  if (unhandled_interrupt == 1)
@@ -155,9 +153,9 @@ int main(void)
         rf = sinf((M_TWOPI * f * t) + (0 * offset));
         gf = sinf((M_TWOPI * f * t) + (1 * offset));
         bf = sinf((M_TWOPI * f * t) + (2 * offset));
-        rf = (rf + 1.0) * half_arr;
-        gf = (gf + 1.0) * half_arr;
-        bf = (bf + 1.0) * half_arr;
+        rf = (rf + 1.0) * 50;
+        gf = (gf + 1.0) * 50;
+        bf = (bf + 1.0) * 50;
         TIM1->CCR1 = rf * 0.40;
         TIM1->CCR2 = gf * 0.10;
         TIM1->CCR3 = bf * 0.03;
