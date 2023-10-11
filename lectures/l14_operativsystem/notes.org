@@ -43,6 +43,7 @@
 * [ Priority Inheritence ]
 :::    Den låga prioriteten "ärver" hög priortet under exempelvis mutex:en
 
-
-
-
+* [ Vill du ha många fler timrar? ]
+**        [1] Istället för en hårdvarutimer så kan man använda mjukvarutimers
+**        [2] 
+**        [3] 
