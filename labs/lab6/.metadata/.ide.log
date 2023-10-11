@@ -482,3 +482,4 @@
 2023-10-11 11:05:27,461 [INFO] CADModel:114 - Register for checkConnection events
 2023-10-11 11:05:27,517 [INFO] OpenFileManager:328 - Restore cursor
 2023-10-11 11:05:48,682 [INFO] Gpio:273 - dependency for GPIO [RCC, SYS, TIM1, USART2]
+2023-10-11 11:32:16,757 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 

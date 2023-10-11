@@ -45,5 +45,9 @@
 
 * [ Vill du ha många fler timrar? ]
 **        [1] Istället för en hårdvarutimer så kan man använda mjukvarutimers
-**        [2] 
-**        [3] 
+
+* definition `reentrant function`: 
+: A reentrant function is one that can be safely called by multiple processes or threads simultaneously without interference. 
+: It's designed to avoid shared data or resources, ensuring each call operates independently. 
+: Reentrant functions are essential for concurrent programming to prevent conflicts between processes.
+
