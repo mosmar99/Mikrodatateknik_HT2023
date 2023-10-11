@@ -1,7 +1,11 @@
+* [ FRÅGOR ]
+
+*     { fråga 1 }
 * Vilka frekvenser brukar en LED-dimmer arbeta på?
 ** Mellan 100 Hz - 20kHz. 
 ** Vanligtvis arbetar en LED-dimmer på höga frekvenser för att undgå flimmer.
 
+*     { fråga 2 }
 * Skriv en kort beskrivning (2-4
 * meningar) av hur PWM-generering
 * fungerar. Dessa måste nämnas i din
@@ -12,6 +16,7 @@
 ** När CNT når CCR1-värdet slås PWM-signalen på, och när det återställs slås den av. 
 ** ARR (Auto-Reload Register) bestämmer totalperioden för PWM-signalen.
 
+*     { fråga 2 }
 * Vilka värden valde du för TIM1?
 * f_TIM1 = ?
 * p = ? (psc + 1)
@@ -23,7 +28,7 @@
 ** <=> 100*84 = 84*10^(6) / 10 * 10^(3) <=> 84*10^(2) = 84*10^(2): OK
 ** Notera: T_pwm = 1/f_pwm = 100𝜇s > 50𝜇s: OK
 
-
+*     { fråga 3 }
 * Varför kan du ändra ljusets intensitet
 * när processorn är pausad?
 ** TIM1 fortsätter att räkna och generera PWM-utgången även när processorn är i pausläge. 
@@ -31,15 +36,15 @@
 ** Ändringar i CCR1, CCR2 och CCR3-värdena påverkar direkt tidpunkterna när PWM-signalen slås på och av, 
 ** oavsett om processorn är aktiv eller pausad. 
 
+*     { fråga 4 }
 * Är de tre färgerna av samma
 * ljusintensitet för samma värde på
 * CCRx?
 ** Mina lyser med ganska snarlik intensitet
 
+*     { fråga 5 }
 * Om någon färg behöver högre duty
 * cycle för att nå samma intensitet som
 * den starkaste, vad är (grovt gissat)
 * proportionerna?
-** En grov gissning skulle vara att om den starkaste färgen kräver en duty cycle på 50% för att uppnå 
-** sin fulla intensitet, kan en annan färg behöva en duty cycle på kanske 60% eller mer för att nå samma intensitet. 
-
+***    (r) 60%  | (g) 30%  | (b) 10% sum

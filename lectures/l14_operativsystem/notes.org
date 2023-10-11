@@ -1,0 +1,48 @@
+* [ OPERATIV SYSTEM ]
+***    Roundrobbing i dator: delar upp processorntiden, upplevs som dom körs pararellt
+*     { RTOS }
+:::    Scheduler: pausar nuvarande körning, kör en ett annat program, sen går tillbaka
+:::    Small footprint: (Hela processorn 20-30kByte)
+:::    Dynamic (under körtid) and static allocation (läggs vid kompileringen)
+:::    Tracefunctionality, kunna se vart i programmet man är
+:::    Tickless Mode: Göra något som är extremt energisnålt (chatgpt)
+
+*     { FREETOS - generellt}
+**        [1] CMSIS API wrapper 
+
+*     { API CATEOGIRES }
+**        [1] Task creation
+**        [2] Task control
+**        [3] Task utilities
+**        [4] Kernel control 
+**        [5] Queue management
+**        [6] Semaphores
+
+*     { Primitives }
+**        [1] Task, ISR, Timer  
+**        [2] Binary semaphore, counting semaphore, mutex semaphore
+**        [3] Mailbox, Message Queue, Event flag
+
+* [ Semaphores ]
+***    definition `Semaphores`: They help prevent multiple processes or threads from simultaneously modifying data, 
+***    ensuring orderly execution of code.
+
+* [ Context Switching ]
+***    Context switching is the process where the operating system saves the state of a running process and restores the 
+***    state of another, allowing multiple processes to share the CPU.
+
+* [ Mutex ]
+***    Låser resurser så att ingen annan task kan använda utom den låsta till
+
+* [ Scheduling ]
+***    Higher priority always get to use resources first otherwise shared resources (Time-Sharing RR, Non-preemptive)
+
+* [ Priority Inversion ]
+:::    Lägre prioritet får alltid köra klart först 
+
+* [ Priority Inheritence ]
+:::    Den låga prioriteten "ärver" hög priortet under exempelvis mutex:en
+
+
+
+

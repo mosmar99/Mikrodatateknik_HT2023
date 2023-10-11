@@ -162,7 +162,7 @@ int main(void)
         TIM1->CCR2 = gf * 0.10;
         TIM1->CCR3 = bf * 0.03;
         t += 0.0001; // should be (1 / f_TIM)
-
+        
         unhandled_interrupt = 0;
 	  }
 
