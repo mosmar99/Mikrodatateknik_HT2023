@@ -54,3 +54,8 @@ Note that the outputed vector from the ADC is an 12 bit vector whose minimum val
   <img width="347" alt="Screenshot 2023-10-06 212842" src="https://github.com/mosmar99/Mikrodatateknik_HT2023/assets/47375043/4a21204e-b591-4352-b14a-5db32e056c2f">
 
 # Lab 6 
+Through 3 PWM Channels implemented 3_Clor rbg light. Each color has 8 bits, enabling 2^(24) color combinations. Colors are rotating through the use of rudimentary trigometry, sinusfunctions with offsets. Each color is implemented using its own PWM channel, sampling every 480 clockcycles. The timer TIM1 is to count with a frequency of 10kHz, i.e. an interrupt is generated 10000 times a second. When an interrupt is generated, then the RGB colors are updated. The end result is shown in the video below:
+
+https://github.com/mosmar99/Mikrodatateknik_HT2023/assets/47375043/49b83724-0f40-4f96-98b7-38e1bdeed6d2
+
+
