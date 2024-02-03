@@ -1,14 +1,10 @@
-# Mikrodatateknik_HT2023 (Microdata Techonology Course)
-- Laborations for Microdatatechnology, Spring 2023
+# Course Purpose:
+_"The purpose of the course is to introduce students to microcomputer technology and embedded systems through theoretical and practical elements."_
 
 # Description
 - The repository highlights and archives my coursework, specially the laboratories.
 - Each completed laboratory is showcased below with a video, clearly demonstrating the end result.
 - All C code, laboratory description, lecture notes, etc are available in folders above.
-
-  
-# Course Purpose:
-_"The purpose of the course is to introduce students to microcomputer technology and embedded systems through theoretical and practical elements."_
 
 ## The course includes the following components:
 - Introduction to microcomputers (including single-chip computers) and the structure of different processor families
