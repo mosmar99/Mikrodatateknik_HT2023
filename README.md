@@ -1,17 +1,17 @@
 # Course Purpose:
 _"The purpose of the course is to introduce students to microcomputer technology and embedded systems through theoretical and practical elements."_
 
-# Description
-- The repository highlights and archives my coursework, specially the laboratories.
-- Each completed laboratory is showcased below with a video, clearly demonstrating the end result.
-- All C code, laboratory description, lecture notes, etc are available in folders above.
-
 ## The course includes the following components:
 - Introduction to microcomputers (including single-chip computers) and the structure of different processor families
 - Low-level programming in Assembler and C
 - Interface with the external environment (peripheral devices and buses)
 - Development tools, debugging, and methods
 - Code analysis, security, code certification, standards
+
+# Description
+- The repository highlights and archives my coursework, specially the laboratories.
+- Each completed laboratory is showcased below with a video, clearly demonstrating the end result.
+- All C code, laboratory description, lecture notes, etc are available in folders above.
 
 # Nucleo Board
 - Type: STM32F411RE (datasheets and reference manuals are available in the repository)
